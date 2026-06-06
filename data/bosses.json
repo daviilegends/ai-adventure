@@ -222,5 +222,61 @@
         "correct": 2
       }
     ]
+  },
+  {
+    "id": "b-w5",
+    "type": "boss",
+    "title": "The Code Constructor",
+    "subtitle": "Final Boss · JavaScript Essentials",
+    "description": "The Constructor builds and rebuilds programs from raw logic, and it won't let you pass without proving you can do the same. This battle blends everything from the world — variables, functions, conditionals, loops, arrays, and objects — into one final test.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Constructor.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "Which keyword should you use to declare a variable that will never be reassigned?",
+        "options": [
+          "var",
+          "let",
+          "const",
+          "fixed"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "true-false",
+        "question": "A function only runs when it is called, not when it is defined.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What does `function double(n) { return n * 2; } double(6);` evaluate to?",
+        "options": [
+          "6",
+          "12",
+          "\"6 * 2\"",
+          "undefined"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple-choice",
+        "question": "How many times will `for (let i = 0; i < 4; i++) { ... }` run its body?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "Infinitely"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "`[1, 2, 3].filter(n => n > 5)` produces an empty array `[]`.",
+        "correct": true
+      }
+    ]
   }
 ]

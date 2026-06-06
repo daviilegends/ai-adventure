@@ -78,5 +78,45 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "mb-w5",
+    "type": "miniboss",
+    "title": "The Syntax Sentinel",
+    "subtitle": "Stage Checkpoint · JavaScript Essentials",
+    "description": "The Sentinel guards the path to Arrays and Objects, testing whether you can read code the way a computer does — tracking variables, following logic, and predicting what loops will produce. Answer carefully; the Sentinel doesn't accept guesses.",
+    "objective": "Answer at least 2 of 3 questions correctly to pass the checkpoint.",
+    "passThreshold": 0.67,
+    "xpReward": 60,
+    "coinsReward": 25,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What does `typeof \"7\"` return in JavaScript?",
+        "options": [
+          "\"number\"",
+          "\"string\"",
+          "\"boolean\"",
+          "7"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "In JavaScript, `const` variables can be reassigned a new value after they're created.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the final value of `count` after `let count = 0; for (let i = 0; i < 3; i++) { count = count + 2; }`?",
+        "options": [
+          "3",
+          "5",
+          "6",
+          "0"
+        ],
+        "correct": 2
+      }
+    ]
   }
 ]

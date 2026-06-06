@@ -367,5 +367,128 @@
         "correct": 2
       }
     ]
+  },
+  {
+    "id": "w5-s1-c1",
+    "type": "challenge",
+    "title": "Variables Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What will `let count = 5; count = count + 1;` leave stored in `count`?",
+        "options": [
+          "5",
+          "6",
+          "\"5+1\"",
+          "An error"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why would `const total = 100; total = 200;` cause an error?",
+        "options": [
+          "100 is not a valid number",
+          "const variables cannot be reassigned after creation",
+          "200 is too large for JavaScript",
+          "You must use let for numbers"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Which value is a boolean?",
+        "options": [
+          "\"true\"",
+          "1",
+          "true",
+          "\"yes\""
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w5-s3-c1",
+    "type": "challenge",
+    "title": "Logic Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What does `!(5 > 3)` evaluate to?",
+        "options": [
+          "true",
+          "false",
+          "5",
+          "An error"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Which condition correctly checks that a number is between 1 and 10 (inclusive)?",
+        "options": [
+          "n > 1 || n < 10",
+          "n >= 1 && n <= 10",
+          "n = 1 && n = 10",
+          "n >= 1 || n >= 10"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What will `if (false) { console.log(\"A\"); } else { console.log(\"B\"); }` print?",
+        "options": [
+          "A",
+          "B",
+          "Both A and B",
+          "Nothing"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s5-c1",
+    "type": "challenge",
+    "title": "Arrays and Objects Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What does `[\"a\", \"b\", \"c\"].length` equal?",
+        "options": [
+          "2",
+          "3",
+          "\"abc\"",
+          "undefined"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Given `let user = { name: \"Sam\", age: 30 };`, which line correctly updates the age to 31?",
+        "options": [
+          "user.age = 31;",
+          "age.user = 31;",
+          "user[age] = 31;",
+          "user(age) = 31;"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "quiz",
+        "question": "What does `[1, 2, 3].map(n => n + 10)` produce?",
+        "options": [
+          "[1, 2, 3]",
+          "[11, 12, 13]",
+          "[10, 20, 30]",
+          "6"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

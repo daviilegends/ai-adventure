@@ -1071,5 +1071,382 @@
         "correct": 2
       }
     ]
+  },
+  {
+    "id": "w5-s1-l1",
+    "type": "lesson",
+    "title": "What is a Variable?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Naming your data",
+        "body": "A variable is a labeled container for storing a piece of information so your program can use it later. Think of it like a sticky note with a name on a box — you can look inside whenever you need to, and swap out what's inside without changing the label."
+      },
+      {
+        "type": "text",
+        "heading": "Declaring a variable",
+        "body": "In JavaScript, you create a variable with a keyword (like `let`) followed by a name and a value: `let score = 10;`. Now `score` holds the number 10, and you can use it anywhere in your code — print it, change it, or do math with it."
+      },
+      {
+        "type": "quiz",
+        "question": "What does a variable do in a program?",
+        "options": [
+          "Deletes data permanently",
+          "Stores a value so it can be used and reused later",
+          "Runs the program faster",
+          "Connects to the internet"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s1-l2",
+    "type": "lesson",
+    "title": "Data Types",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Different kinds of values",
+        "body": "Every value in JavaScript has a type. The most common ones are strings (text, like \"hello\"), numbers (like 42 or 3.14), and booleans (true or false). Knowing a value's type tells you what you can do with it — you can do math with numbers, but not with text."
+      },
+      {
+        "type": "text",
+        "heading": "Spotting types in code",
+        "body": "Strings are wrapped in quotes: `\"Apprentice\"`. Numbers stand alone: `25`. Booleans are exactly `true` or `false`, with no quotes. Mixing them up — like writing `\"25\"` when you mean the number 25 — is one of the most common beginner mistakes."
+      },
+      {
+        "type": "quiz",
+        "question": "Which of these is a string in JavaScript?",
+        "options": [
+          "42",
+          "true",
+          "\"42\"",
+          "false"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w5-s1-l3",
+    "type": "lesson",
+    "title": "const, let, and var",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Three ways to declare",
+        "body": "JavaScript gives you three keywords to create variables: `var` (the old way, rarely used now), `let` (for values that may change), and `const` (for values that should never be reassigned). Most modern code reaches for `const` first and only uses `let` when a value truly needs to change."
+      },
+      {
+        "type": "text",
+        "heading": "Why const by default?",
+        "body": "Using `const` signals to anyone reading your code — including future you — that this value is fixed, which makes programs easier to understand and debug. If you try to reassign a `const`, JavaScript throws an error, catching mistakes early."
+      },
+      {
+        "type": "quiz",
+        "question": "You're storing a user's name, which won't change after it's set. Which keyword is the best choice?",
+        "options": [
+          "var",
+          "let",
+          "const",
+          "static"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w5-s2-l1",
+    "type": "lesson",
+    "title": "What is a Function?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Reusable blocks of logic",
+        "body": "A function is a named, reusable block of code that performs a task. Instead of writing the same steps over and over, you wrap them in a function once and \"call\" it by name whenever you need that task done — like a recipe you can follow again and again."
+      },
+      {
+        "type": "text",
+        "heading": "Defining and calling",
+        "body": "You define a function with the `function` keyword: `function greet() { console.log(\"Hello!\"); }`. To run it, you call it by writing its name with parentheses: `greet();`. Defining a function doesn't run it — calling it does."
+      },
+      {
+        "type": "quiz",
+        "question": "What's the difference between defining a function and calling it?",
+        "options": [
+          "There is no difference",
+          "Defining creates the function; calling it actually runs its code",
+          "Calling creates the function; defining runs it",
+          "Defining only works for numbers"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s2-l2",
+    "type": "lesson",
+    "title": "Parameters and Return Values",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Feeding data in",
+        "body": "Parameters are placeholders inside a function's parentheses that let you pass information in: `function greet(name) { console.log(\"Hi \" + name); }`. When you call `greet(\"Mira\")`, the value `\"Mira\"` flows into `name`, making the function flexible and reusable for any input."
+      },
+      {
+        "type": "text",
+        "heading": "Sending results back",
+        "body": "A function can hand a value back to whoever called it using `return`: `function double(n) { return n * 2; }`. The expression `double(5)` evaluates to `10`, which you can store in a variable, print, or pass into another function."
+      },
+      {
+        "type": "quiz",
+        "question": "Given `function add(a, b) { return a + b; }`, what does `add(3, 4)` produce?",
+        "options": [
+          "\"3 + 4\"",
+          "34",
+          "7",
+          "undefined"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w5-s2-l3",
+    "type": "lesson",
+    "title": "Arrow Functions",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "A shorter syntax",
+        "body": "Arrow functions are a more compact way to write functions, especially short ones: `const double = (n) => n * 2;` does exactly what a longer `function` definition would, but with less typing. The `=>` (\"arrow\") replaces the `function` keyword and curly braces when the body is a single expression."
+      },
+      {
+        "type": "text",
+        "heading": "When you'll see them",
+        "body": "Arrow functions are everywhere in modern JavaScript — especially as quick, throwaway functions passed into other functions, like `numbers.map(n => n * 2)`. You don't have to use them, but you'll need to recognize them when reading real-world code."
+      },
+      {
+        "type": "quiz",
+        "question": "Which arrow function correctly returns the square of a number?",
+        "options": [
+          "const square = (n) -> n * n;",
+          "const square = (n) => n * n;",
+          "const square = (n) == n * n;",
+          "const square = function => n * n;"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s3-l1",
+    "type": "lesson",
+    "title": "Comparison and Logical Operators",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Asking true-or-false questions",
+        "body": "Comparison operators let your code ask questions about values and get back `true` or `false`: `5 > 3` is `true`, `5 === 3` is `false`. The `===` operator checks if two values are exactly equal — use it instead of `==`, which can produce confusing results by converting types behind the scenes."
+      },
+      {
+        "type": "text",
+        "heading": "Combining conditions",
+        "body": "Logical operators let you combine multiple true/false checks: `&&` (AND) is true only if both sides are true, `||` (OR) is true if at least one side is true, and `!` (NOT) flips a value. For example, `age >= 13 && age <= 19` checks whether someone is a teenager."
+      },
+      {
+        "type": "quiz",
+        "question": "What does `10 === \"10\"` evaluate to in JavaScript?",
+        "options": [
+          "true, because they look the same",
+          "false, because === checks both value and type",
+          "An error",
+          "undefined"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s3-l2",
+    "type": "lesson",
+    "title": "If/Else Statements",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Branching your code",
+        "body": "An `if` statement runs a block of code only when a condition is true: `if (score > 50) { console.log(\"Pass\"); }`. Add an `else` to handle the opposite case: `else { console.log(\"Try again\"); }`. Together, they let your program make decisions and react differently to different situations."
+      },
+      {
+        "type": "text",
+        "heading": "Chaining with else if",
+        "body": "When you have more than two possibilities, chain conditions with `else if`: `if (score >= 90) { grade = \"A\"; } else if (score >= 80) { grade = \"B\"; } else { grade = \"C\"; }`. JavaScript checks each condition top to bottom and runs the first block whose condition is true."
+      },
+      {
+        "type": "quiz",
+        "question": "Given `let score = 85;` and the chain from the lesson, what value does `grade` end up with?",
+        "options": [
+          "\"A\"",
+          "\"B\"",
+          "\"C\"",
+          "undefined"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s4-l1",
+    "type": "lesson",
+    "title": "The for Loop",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Repeating with control",
+        "body": "A `for` loop repeats a block of code a set number of times: `for (let i = 0; i < 5; i++) { console.log(i); }` prints `0` through `4`. The three parts inside the parentheses set a starting point (`let i = 0`), a condition to keep going (`i < 5`), and a step to take each time (`i++`, which adds 1)."
+      },
+      {
+        "type": "text",
+        "heading": "Why loops matter",
+        "body": "Without loops, processing a list of 100 items would mean writing the same line 100 times. A loop lets you say \"do this for every item\" once, and JavaScript handles the repetition — making your code shorter, more flexible, and far less error-prone."
+      },
+      {
+        "type": "quiz",
+        "question": "How many times does `for (let i = 0; i < 3; i++) { console.log(i); }` run its body?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "Infinitely"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s4-l2",
+    "type": "lesson",
+    "title": "The while Loop and Loop Control",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Looping on a condition",
+        "body": "A `while` loop keeps running as long as its condition stays true: `while (energy > 0) { energy = energy - 1; }`. Unlike a `for` loop, you don't set a fixed count up front — the loop checks the condition before each pass and stops the moment it becomes false."
+      },
+      {
+        "type": "text",
+        "heading": "Breaking out early",
+        "body": "Sometimes you need to exit a loop before its natural end. The `break` keyword stops the loop immediately, while `continue` skips to the next pass without finishing the current one. Forgetting to update the condition inside a `while` loop is a classic way to create an infinite loop that never stops."
+      },
+      {
+        "type": "quiz",
+        "question": "What's the danger of writing `while (true) { console.log(\"hi\"); }` without a `break`?",
+        "options": [
+          "It will only run once",
+          "It creates an infinite loop that never stops",
+          "It causes a syntax error",
+          "It prints nothing"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s5-l1",
+    "type": "lesson",
+    "title": "Arrays — Storing Lists of Data",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "A box for many values",
+        "body": "An array is an ordered list of values stored under one variable name: `let colors = [\"red\", \"green\", \"blue\"];`. Each item has a position, called an index, starting at `0` — so `colors[0]` is `\"red\"` and `colors[2]` is `\"blue\"`."
+      },
+      {
+        "type": "text",
+        "heading": "Reading and changing items",
+        "body": "You can read any item by its index, find out how many items there are with `.length`, and change an item by assigning to its position: `colors[1] = \"yellow\";` replaces `\"green\"` with `\"yellow\"`. Arrays are the go-to tool whenever you need to work with a collection of related values."
+      },
+      {
+        "type": "quiz",
+        "question": "Given `let colors = [\"red\", \"green\", \"blue\"];`, what does `colors[1]` equal?",
+        "options": [
+          "\"red\"",
+          "\"green\"",
+          "\"blue\"",
+          "1"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s5-l2",
+    "type": "lesson",
+    "title": "Useful Array Methods",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Transforming with map",
+        "body": "Arrays come with built-in methods that save you from writing loops by hand. `.map()` creates a new array by applying a function to every item: `[1, 2, 3].map(n => n * 2)` produces `[2, 4, 6]`. The original array stays unchanged — `.map()` always returns a brand-new one."
+      },
+      {
+        "type": "text",
+        "heading": "Filtering and searching",
+        "body": "`.filter()` builds a new array containing only the items that pass a test: `[1, 2, 3, 4].filter(n => n > 2)` produces `[3, 4]`. `.find()` returns the first matching item instead of a whole array. Together, `.map()` and `.filter()` cover most everyday array tasks without a single hand-written loop."
+      },
+      {
+        "type": "quiz",
+        "question": "What does `[1, 2, 3, 4].filter(n => n > 2)` produce?",
+        "options": [
+          "[1, 2]",
+          "[3, 4]",
+          "[1, 2, 3, 4]",
+          "4"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s5-l3",
+    "type": "lesson",
+    "title": "Objects — Structured Data",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Storing related details together",
+        "body": "An object groups related information into named properties: `let player = { name: \"Mira\", level: 5, active: true };`. Unlike an array's numeric positions, each value has a descriptive key — `player.name` is `\"Mira\"`, and `player.level` is `5`."
+      },
+      {
+        "type": "text",
+        "heading": "Reading and updating properties",
+        "body": "You can access a property with dot notation (`player.level`) or bracket notation (`player[\"level\"]`), and update it the same way: `player.level = 6;`. Objects are how JavaScript represents real-world things — a user, a product, a game character — as a single, organized value."
+      },
+      {
+        "type": "quiz",
+        "question": "Given `let player = { name: \"Mira\", level: 5 };`, how do you access the player's level?",
+        "options": [
+          "player[0]",
+          "player.level",
+          "player(\"level\")",
+          "level.player"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

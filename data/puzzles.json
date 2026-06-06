@@ -238,5 +238,85 @@
         "correct": 3
       }
     ]
+  },
+  {
+    "id": "w5-s2-p1",
+    "type": "puzzle",
+    "title": "Function Tracing Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Trace the execution",
+        "body": "Tracing means stepping through code line by line and tracking what each variable holds. Given:\n\nfunction multiply(a, b) {\n  return a * b;\n}\nlet result = multiply(4, 5);\n\n`multiply` is called with `4` and `5`, so inside the function `a` is `4` and `b` is `5`. The function returns `4 * 5`, which is `20`, and that value is stored in `result`."
+      },
+      {
+        "type": "text",
+        "heading": "Following the data",
+        "body": "Now trace this:\n\nfunction addOne(n) {\n  return n + 1;\n}\nlet x = addOne(addOne(3));\n\nThe inner call `addOne(3)` runs first and returns `4`. That `4` becomes the input to the outer call, `addOne(4)`, which returns `5`. So `x` ends up holding `5`."
+      },
+      {
+        "type": "quiz",
+        "question": "What value does `result` hold after `function multiply(a, b) { return a * b; } let result = multiply(4, 5);` runs?",
+        "options": [
+          "9",
+          "20",
+          "\"4 * 5\"",
+          "undefined"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What does `x` equal after `function addOne(n) { return n + 1; } let x = addOne(addOne(3));`?",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "\"addOne(addOne(3))\""
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w5-s4-p1",
+    "type": "puzzle",
+    "title": "Loop Tracing Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Tracing a for loop",
+        "body": "Trace this loop:\n\nlet total = 0;\nfor (let i = 1; i <= 4; i++) {\n  total = total + i;\n}\n\nStarting with `total = 0`, the loop runs with `i` equal to `1`, `2`, `3`, then `4`. Each pass adds `i` to `total`: `0+1=1`, `1+2=3`, `3+3=6`, `6+4=10`. After the loop ends, `total` holds `10`."
+      },
+      {
+        "type": "text",
+        "heading": "Tracing a while loop",
+        "body": "Now trace:\n\nlet n = 8;\nlet steps = 0;\nwhile (n > 1) {\n  n = n / 2;\n  steps = steps + 1;\n}\n\n`n` starts at `8`. Each pass halves `n` and adds 1 to `steps`: `8→4` (steps=1), `4→2` (steps=2), `2→1` (steps=3). Since `1 > 1` is false, the loop stops with `steps` equal to `3`."
+      },
+      {
+        "type": "quiz",
+        "question": "After `let total = 0; for (let i = 1; i <= 4; i++) { total = total + i; }` runs, what does `total` equal?",
+        "options": [
+          "4",
+          "8",
+          "10",
+          "0"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "After the while-loop trace above runs, what value does `steps` end up holding?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "8"
+        ],
+        "correct": 2
+      }
+    ]
   }
 ]
