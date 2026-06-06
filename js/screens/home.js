@@ -16,6 +16,10 @@ const Home = {
       btn.addEventListener('click', () => {
         const target = btn.dataset.nav;
         if (target !== 'home' && target !== 'map') return;
+
+        document.getElementById('home-screen').classList.remove('hidden');
+        document.getElementById('achievements-screen').classList.add('hidden');
+
         this._view = target;
         document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('nav-btn--active'));
         btn.classList.add('nav-btn--active');
@@ -116,8 +120,8 @@ const Home = {
     }
 
     const { node, world, stage } = nextItem;
-    const typeIcons  = { lesson:'🎓', challenge:'⚡', puzzle:'🧩', miniboss:'🥈', boss:'👑' };
     const typeLabels = { lesson:'Lesson', challenge:'Challenge', puzzle:'Puzzle', miniboss:'Checkpoint', boss:'Boss Battle' };
+    const type = node.type || 'lesson';
 
     return `
       <div class="home-section">
@@ -127,15 +131,60 @@ const Home = {
             World ${world.id} · Stage ${stage.order}: ${stage.title}
           </div>
           <div class="home-continue-card__main">
-            <div class="home-continue-card__icon">${typeIcons[node.type] || '🎓'}</div>
+            <div class="home-continue-card__icon" style="color:${this._typeIconColor(type)}">${this._typeIcon(type)}</div>
             <div class="home-continue-card__info">
               <div class="home-continue-card__title">${node.title}</div>
-              <div class="home-continue-card__meta">${typeLabels[node.type] || 'Lesson'}</div>
+              <div class="home-continue-card__meta">${typeLabels[type] || 'Lesson'}</div>
             </div>
             <svg class="home-continue-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
         </button>
       </div>`;
+  },
+
+  _typeIconColor(type) {
+    const colors = {
+      lesson:   'var(--text-2)',
+      challenge:'#B87A3A',
+      puzzle:   '#5B7FA6',
+      miniboss: 'var(--gold-2)',
+      boss:     'var(--gold)',
+    };
+    return colors[type] || colors.lesson;
+  },
+
+  _typeIcon(type) {
+    const icons = {
+      lesson: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+      </svg>`,
+
+      challenge: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+      </svg>`,
+
+      puzzle: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+        <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+        <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+        <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+        <rect x="14" y="14" width="7" height="7" rx="1.5" opacity="0.35" stroke-dasharray="3 2.5"/>
+      </svg>`,
+
+      miniboss: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <polyline points="9 12 11 14 15 10"/>
+      </svg>`,
+
+      boss: `<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <path d="M7 34V25L15 15L22 22L29 15L37 25V34Z" fill="currentColor" opacity="0.18" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="7" y="32" width="30" height="5" rx="1.5" fill="currentColor"/>
+        <circle cx="22" cy="20.5" r="3.5" fill="currentColor"/>
+        <circle cx="15" cy="16" r="2.5" fill="currentColor" opacity="0.75"/>
+        <circle cx="29" cy="16" r="2.5" fill="currentColor" opacity="0.75"/>
+      </svg>`,
+    };
+    return icons[type] || icons.lesson;
   },
 
   _renderWorldProgressSection(world, player) {
@@ -229,20 +278,22 @@ const Home = {
   // VISUAL MAP  (isometric island layout)
   // ================================================================
 
-  // Pixel positions [left, top] for each world island on a 360px wide canvas
+  // Pixel positions [left, top] for each world island on a 360px wide canvas.
+  // Zigzag columns (left x=15, right x=200) with 95px vertical steps so
+  // islands (140x~155px) never overlap — the map scrolls instead.
   _MAP_POS: {
-    1:  [15,   20],
-    2:  [195,  100],
-    3:  [195,  265],
-    4:  [15,   330],
-    5:  [15,   490],
-    6:  [195,  450],
-    7:  [15,   625],
-    8:  [113,  645],
-    9:  [203,  625],
-    10: [15,   800],
-    11: [195,  800],
-    12: [113,  960],
+    1:  [15,  15],
+    2:  [200, 110],
+    3:  [15,  205],
+    4:  [200, 300],
+    5:  [15,  395],
+    6:  [200, 490],
+    7:  [15,  585],
+    8:  [200, 680],
+    9:  [15,  775],
+    10: [200, 870],
+    11: [15,  965],
+    12: [200, 1060],
   },
 
   // Island card is 140px wide, art is 90px tall, card is 65px → center at (+70, +82)
@@ -271,34 +322,25 @@ const Home = {
     const statusOf = {};
     worlds.forEach(w => { statusOf[w.id] = this._worldStatus(w, player, curWorldId); });
 
-    // Bezier segment data: [from, to, cp1, cp2]
-    const segments = [
-      [1,  2,  [185, 100], [265, 135]],
-      [2,  3,  [285, 220], [285, 285]],
-      [3,  4,  [265, 410], [85,  330]],
-      [4,  5,  [55,  455], [55,  525]],
-      [5,  6,  [185, 490], [195, 460]],
-      [6,  7,  [265, 625], [85,  625]],
-      [7,  8,  [125, 680], [148, 700]],
-      [8,  9,  [218, 700], [250, 700]],
-      [9,  10, [275, 810], [85,  810]],
-      [10, 11, [175, 850], [175, 860]],
-      [11, 12, [265, 970], [183, 970]],
-    ];
+    const ids = worlds.map(w => w.id).filter(id => this._MAP_POS[id]);
 
-    const paths = segments.map(([fromId, toId, cp1, cp2]) => {
+    // Gentle S-curve between each consecutive pair of island centers —
+    // the zigzag layout means this naturally follows the path.
+    const paths = ids.slice(0, -1).map((fromId, i) => {
+      const toId    = ids[i + 1];
       const [fx, fy] = this._MAP_CENTER(fromId);
       const [tx, ty] = this._MAP_CENTER(toId);
       const done     = statusOf[fromId] === 'completed';
       const color    = done ? '#7E8C54' : '#2A343E';
       const opacity  = done ? '1' : '0.6';
-      return `<path d="M${fx},${fy} C${cp1[0]},${cp1[1]} ${cp2[0]},${cp2[1]} ${tx},${ty}"
+      const bend     = (ty - fy) / 2.6;
+      return `<path d="M${fx},${fy} C${fx},${fy + bend} ${tx},${ty - bend} ${tx},${ty}"
                 stroke="${color}" stroke-width="3" stroke-dasharray="10 7"
                 stroke-linecap="round" fill="none" opacity="${opacity}"/>`;
     }).join('\n');
 
     return `
-      <svg class="map-paths-svg" viewBox="0 0 360 1130" width="360" height="1130"
+      <svg class="map-paths-svg" viewBox="0 0 360 1240" width="360" height="1240"
            xmlns="http://www.w3.org/2000/svg">
         ${paths}
       </svg>`;

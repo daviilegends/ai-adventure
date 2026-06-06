@@ -1507,12 +1507,11 @@ button, [role="button"], a {
    ================================================================ */
 
 .achievements-screen {
-  position: absolute;
-  inset: 0;
+  flex: 1;
+  min-height: 0;
   background: var(--bg);
   display: flex;
   flex-direction: column;
-  z-index: 10;
   overflow: hidden;
 }
 
@@ -2047,7 +2046,7 @@ button, [role="button"], a {
 .map-island-view {
   position: relative;
   width: 360px;
-  height: 1130px;
+  height: 1240px;
   margin: 0 auto;
 }
 

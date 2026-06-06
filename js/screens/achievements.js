@@ -20,14 +20,6 @@ const AchievementsScreen = {
     document.querySelector('.nav-btn[data-nav="achievements"]').classList.add('nav-btn--active');
   },
 
-  _hide() {
-    this._el.classList.add('hidden');
-    document.getElementById('home-screen').classList.remove('hidden');
-    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('nav-btn--active'));
-    document.querySelector('.nav-btn[data-nav="home"]').classList.add('nav-btn--active');
-    Home.render();
-  },
-
   _render() {
     const all = AchievementService.getAll();
     const unlockedCount = all.filter(a => a.unlocked).length;
@@ -36,9 +28,6 @@ const AchievementsScreen = {
 
     this._el.innerHTML = `
       <div class="ach-header">
-        <button class="lesson-back" id="ach-back">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
         <h1 class="ach-title">Achievements</h1>
         <span class="ach-count">${unlockedCount} / ${total}</span>
       </div>
@@ -64,7 +53,6 @@ const AchievementsScreen = {
       </div>
     `;
 
-    document.getElementById('ach-back').addEventListener('click', () => this._hide());
     this._wireFilters();
   },
 
