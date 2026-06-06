@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Adventure</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app">
+
+    <header class="header">
+      <div class="header__brand">
+        <span class="brand-icon">⚔️</span>
+        <span class="brand-name">AI Adventure</span>
+      </div>
+      <div class="header__stats">
+        <div class="stat-chip">
+          <span>🔥</span>
+          <span>0</span>
+        </div>
+        <div class="stat-chip">
+          <span>💎</span>
+          <span>0</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="scroll-area">
+
+      <div class="player-card">
+        <div class="player-avatar">🤖</div>
+        <div class="player-details">
+          <p class="player-name">Apprentice</p>
+          <p class="player-title">AI Learner · Level 1</p>
+          <div class="xp-bar">
+            <div class="xp-bar__track">
+              <div class="xp-bar__fill" style="width: 45%"></div>
+            </div>
+            <span class="xp-bar__label">45 / 100 XP</span>
+          </div>
+        </div>
+      </div>
+
+      <main class="world-map">
+
+        <section class="world world--w1">
+          <div class="world-header">
+            <span class="world-badge">World 1</span>
+            <h2 class="world-title">🤖 AI Foundations</h2>
+            <p class="world-desc">Learn the basics of AI and Large Language Models</p>
+          </div>
+          <div class="world-path">
+            <div class="path-node node--completed">
+              <button class="node-btn">✓</button>
+              <span class="node-label">What is AI?</span>
+            </div>
+            <div class="path-node node--active">
+              <button class="node-btn">★</button>
+              <span class="node-label">What is an LLM?</span>
+            </div>
+            <div class="path-node node--locked">
+              <button class="node-btn" disabled>🔒</button>
+              <span class="node-label">Understanding Prompts</span>
+            </div>
+            <div class="path-node node--locked">
+              <button class="node-btn" disabled>🔒</button>
+              <span class="node-label">Prompt Structure</span>
+            </div>
+            <div class="path-node node--locked">
+              <button class="node-btn" disabled>🔒</button>
+              <span class="node-label">Prompt Examples</span>
+            </div>
+            <div class="path-node node--locked node--boss">
+              <button class="node-btn" disabled>👑</button>
+              <span class="node-label node-label--boss">Boss Battle</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="world world--w2 world--locked">
+          <div class="world-header">
+            <span class="world-badge">World 2</span>
+            <h2 class="world-title">💬 Prompt Engineering</h2>
+            <p class="world-desc">Master the art of crafting effective prompts</p>
+            <p class="world-locked-msg">🔒 Complete World 1 to unlock</p>
+          </div>
+        </section>
+
+        <section class="world world--w3 world--locked">
+          <div class="world-header">
+            <span class="world-badge">World 3</span>
+            <h2 class="world-title">⚙️ Automation Basics</h2>
+            <p class="world-desc">Introduction to test automation concepts</p>
+            <p class="world-locked-msg">🔒 Complete World 2 to unlock</p>
+          </div>
+        </section>
+
+        <section class="world world--w4 world--locked">
+          <div class="world-header">
+            <span class="world-badge">World 4</span>
+            <h2 class="world-title">🎭 Playwright Fundamentals</h2>
+            <p class="world-desc">Browser automation with Playwright</p>
+            <p class="world-locked-msg">🔒 Complete World 3 to unlock</p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn nav-btn--active">
+        <span class="nav-icon">🗺️</span>
+        <span class="nav-label">Map</span>
+      </button>
+      <button class="nav-btn">
+        <span class="nav-icon">👤</span>
+        <span class="nav-label">Profile</span>
+      </button>
+      <button class="nav-btn">
+        <span class="nav-icon">🏆</span>
+        <span class="nav-label">Ranks</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <script src="js/state.js"></script>
+  <script src="js/xp.js"></script>
+  <script src="js/screens/home.js"></script>
+  <script src="js/screens/lesson.js"></script>
+  <script src="js/screens/quiz.js"></script>
+  <script src="js/screens/boss.js"></script>
+  <script src="js/screens/profile.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
