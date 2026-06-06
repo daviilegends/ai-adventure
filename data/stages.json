@@ -1070,5 +1070,125 @@
         "nodeType": "boss"
       }
     ]
+  },
+  {
+    "id": "w11-s1",
+    "worldId": 11,
+    "order": 1,
+    "title": "Personal Productivity",
+    "nodes": [
+      {
+        "nodeId": "w11-s1-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s1-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s1-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s1-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w11-s2",
+    "worldId": 11,
+    "order": 2,
+    "title": "Content Creation",
+    "nodes": [
+      {
+        "nodeId": "w11-s2-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s2-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s2-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s2-p1",
+        "nodeType": "puzzle"
+      }
+    ]
+  },
+  {
+    "id": "w11-s3",
+    "worldId": 11,
+    "order": 3,
+    "title": "Research",
+    "nodes": [
+      {
+        "nodeId": "w11-s3-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s3-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s3-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w11-s4",
+    "worldId": 11,
+    "order": 4,
+    "title": "Business Use Cases",
+    "nodes": [
+      {
+        "nodeId": "w11-s4-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s4-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s4-p1",
+        "nodeType": "puzzle"
+      },
+      {
+        "nodeId": "mb-w11",
+        "nodeType": "miniboss"
+      }
+    ]
+  },
+  {
+    "id": "w11-s5",
+    "worldId": 11,
+    "order": 5,
+    "title": "Advanced Workflows",
+    "nodes": [
+      {
+        "nodeId": "w11-s5-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s5-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s5-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w11-s5-c1",
+        "nodeType": "challenge"
+      },
+      {
+        "nodeId": "b-w11",
+        "nodeType": "boss"
+      }
+    ]
   }
 ]

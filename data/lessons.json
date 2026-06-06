@@ -3333,5 +3333,382 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w11-s1-l1",
+    "type": "lesson",
+    "title": "Using AI as a Daily Assistant",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "More than answering questions",
+        "body": "AI tools can help with everyday tasks well beyond looking things up — drafting an email, summarizing a long document, brainstorming options for a decision, or organizing a messy list of ideas into a clear plan. Thinking of AI as an assistant you delegate small tasks to, rather than just a search box, opens up a lot of everyday value."
+      },
+      {
+        "type": "text",
+        "heading": "Starting from a clear ask",
+        "body": "The more clearly you describe what you want — the goal, the audience, the tone, any constraints — the more useful the result tends to be. \"Write something about my trip\" leaves a lot to guess at; \"write a 3-sentence caption for a beach photo, casual tone, mentioning it was a surprise trip\" gives the AI what it needs to help well."
+      },
+      {
+        "type": "quiz",
+        "question": "Why does giving an AI tool a clear, specific request tend to produce better results than a vague one?",
+        "options": [
+          "AI tools cannot process vague requests at all",
+          "A specific request gives the AI the goal, context, and constraints it needs to produce something useful",
+          "Vague requests always cause errors",
+          "Specific requests are required by law"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s1-l2",
+    "type": "lesson",
+    "title": "Summarizing and Organizing Information",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Turning a wall of text into something usable",
+        "body": "One of the most practical everyday uses of AI is condensing — turning a long article, a cluttered inbox, or a sprawling set of notes into a short summary or a clear list of key points. This saves the work of reading everything in full just to find what matters."
+      },
+      {
+        "type": "text",
+        "heading": "Asking for the right shape",
+        "body": "The usefulness of a summary depends on its shape matching your need: a bulleted list of action items is useful before a meeting; a one-paragraph overview is useful for catching up quickly; a table comparing options is useful when deciding between them. Specifying the shape you want is often as important as specifying the topic."
+      },
+      {
+        "type": "quiz",
+        "question": "Why might you ask an AI to summarize a long document as a bulleted list of action items rather than a single paragraph?",
+        "options": [
+          "Bulleted lists are always more accurate",
+          "Because the shape of a summary should match what you actually need to do with it",
+          "Paragraphs cannot contain useful information",
+          "AI tools can only produce bulleted lists"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s1-l3",
+    "type": "lesson",
+    "title": "Knowing When (and When Not) to Rely on AI",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Good for drafts, not always for final answers",
+        "body": "AI tools are often excellent at producing a useful starting point — a first draft, a rough plan, an initial summary — that you then review and refine. They're less reliable as a final, unchecked source of truth, especially for facts, numbers, or anything where being wrong has real consequences."
+      },
+      {
+        "type": "text",
+        "heading": "Keeping a human in the loop",
+        "body": "A practical habit is to treat AI output as a draft to be checked rather than an answer to be trusted outright — verifying important facts, rereading generated text for tone and accuracy, and using your own judgment for decisions that matter. This mirrors the same \"confirm before consequential actions\" idea you saw with AI agents."
+      },
+      {
+        "type": "quiz",
+        "question": "What is a practical way to use AI output for important tasks?",
+        "options": [
+          "Accept it without ever checking it",
+          "Treat it as a useful draft or starting point that you review and verify before relying on it",
+          "Avoid using AI for any task, ever",
+          "Only use AI for tasks with no real consequences"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s2-l1",
+    "type": "lesson",
+    "title": "Drafting With AI",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Getting past the blank page",
+        "body": "One of AI's most popular uses is helping generate a first draft — a blog post outline, a social media caption, a project description — giving you something concrete to react to and refine instead of staring at an empty page. Often it's far easier to edit existing words than to invent the first ones."
+      },
+      {
+        "type": "text",
+        "heading": "Iterating toward the right tone",
+        "body": "A first draft rarely matches exactly what you want, and that's expected — the real value comes from iterating: \"make this more casual,\" \"shorten it by half,\" \"add an example.\" Treating the process as a conversation, rather than a one-shot request, usually produces a far better result."
+      },
+      {
+        "type": "quiz",
+        "question": "Why might generating a rough first draft with AI be valuable, even if it needs a lot of editing afterward?",
+        "options": [
+          "Because editing existing text is often easier than starting from a blank page",
+          "Because first drafts are always perfect",
+          "Because editing is illegal without a draft",
+          "Because AI cannot produce more than one version"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  {
+    "id": "w11-s2-l2",
+    "type": "lesson",
+    "title": "Adapting Content for Different Audiences",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Same idea, different framing",
+        "body": "The same underlying information often needs to be presented differently depending on who's receiving it — a technical update for engineers, a plain-language summary for stakeholders, a short and catchy version for social media. AI can help reshape one piece of content into several audience-appropriate versions quickly."
+      },
+      {
+        "type": "text",
+        "heading": "Being explicit about the audience",
+        "body": "Telling the AI who the content is for — \"explain this to someone with no technical background\" or \"write this for an audience of experienced developers\" — shapes word choice, level of detail, and tone in ways that dramatically change how well the result lands with its intended readers."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is it helpful to tell an AI tool who the intended audience for a piece of content is?",
+        "options": [
+          "It isn't helpful — audience never matters",
+          "Because the right word choice, detail level, and tone depend heavily on who will be reading it",
+          "Because AI tools refuse to write without an audience specified",
+          "Because every audience needs the exact same content"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s2-l3",
+    "type": "lesson",
+    "title": "Originality and Attribution",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Starting point, not final word",
+        "body": "AI-generated content is a starting point shaped by patterns in its training — useful for ideas and drafts, but worth treating as something to personalize, fact-check, and make genuinely your own rather than publishing untouched. Adding your own voice, examples, and judgment is what turns a generic draft into something worth sharing."
+      },
+      {
+        "type": "text",
+        "heading": "Being transparent and responsible",
+        "body": "Depending on the context — school, work, publishing — there may be expectations about disclosing AI assistance or verifying claims before sharing them publicly. Being thoughtful about when and how you used AI, and taking responsibility for what you ultimately publish, is part of using these tools well."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is it a good idea to personalize and fact-check AI-generated content before publishing it?",
+        "options": [
+          "Because AI-generated text is always factually perfect",
+          "Because it's a starting point that benefits from your own voice, judgment, and verification",
+          "Because publishing AI-assisted content is always forbidden",
+          "Because personalizing content makes it load faster"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s3-l1",
+    "type": "lesson",
+    "title": "Using AI to Explore a Topic",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "A starting point for understanding",
+        "body": "AI tools can help you get oriented in an unfamiliar topic quickly — explaining a concept in plain terms, suggesting angles you hadn't considered, or breaking a big question into smaller ones worth investigating. This makes them useful early in a research process, when you're still mapping out what you need to learn."
+      },
+      {
+        "type": "text",
+        "heading": "Asking better follow-up questions",
+        "body": "A good research conversation often isn't a single question and answer — it's a back-and-forth where each response helps you ask a sharper follow-up: \"what's the strongest counterargument to that?\", \"what would an expert in the field say is missing from this explanation?\" Each round can sharpen your understanding further."
+      },
+      {
+        "type": "quiz",
+        "question": "Why might a back-and-forth conversation with an AI tool be more useful for research than a single question and answer?",
+        "options": [
+          "Because longer conversations are always more accurate",
+          "Because each response can help you form sharper follow-up questions that deepen your understanding",
+          "Because AI tools forget the topic after one question",
+          "Because follow-up questions are required by the tool"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s3-l2",
+    "type": "lesson",
+    "title": "Verifying What You Learn",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Treating answers as leads, not conclusions",
+        "body": "Language models can sound confident while being wrong — generating plausible-sounding facts, dates, or sources that don't actually check out. Treating an AI's claims as leads to verify, rather than settled facts, protects you from building further work on a shaky foundation."
+      },
+      {
+        "type": "text",
+        "heading": "Cross-checking with other sources",
+        "body": "A practical habit is to use AI to identify what to look into, then verify the important claims against other sources — official documentation, reputable publications, primary data — especially before using that information in something that matters, like a report, a decision, or a published piece."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is it important to verify important claims an AI makes against other sources?",
+        "options": [
+          "AI tools are always completely accurate, so this is unnecessary",
+          "Language models can sound confident while stating things that aren't actually true",
+          "Verification is required by every web browser",
+          "Other sources are always less reliable than AI"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s4-l1",
+    "type": "lesson",
+    "title": "Where AI Fits Into Everyday Work",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Common workplace tasks AI can support",
+        "body": "In a work setting, AI tools are often used to draft routine communications, summarize meeting notes, generate first drafts of reports or proposals, brainstorm options, and help analyze patterns in text or data. The common thread is freeing up time spent on repetitive groundwork so people can focus on judgment-heavy work."
+      },
+      {
+        "type": "text",
+        "heading": "Matching the tool to the task",
+        "body": "Not every task is a good fit — a quick internal status update might be perfectly suited to AI assistance, while a sensitive negotiation or a decision with major consequences calls for more human judgment and care. Recognizing which kinds of tasks benefit most is part of using these tools well at work."
+      },
+      {
+        "type": "quiz",
+        "question": "What is a common theme in how AI tools tend to help with everyday work tasks?",
+        "options": [
+          "They eliminate the need for any human involvement",
+          "They take on repetitive groundwork, freeing up time for judgment-heavy work",
+          "They guarantee every business decision is correct",
+          "They only work for technology companies"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s4-l2",
+    "type": "lesson",
+    "title": "Privacy and Responsible Use at Work",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Thinking before you share",
+        "body": "Pasting sensitive information — confidential documents, customer data, internal strategy — into an AI tool can carry real risks, depending on how that tool handles and stores what it receives. A sensible default is to treat AI tools the way you'd treat any third-party service: think about what you're sharing and with whom."
+      },
+      {
+        "type": "text",
+        "heading": "Following workplace guidelines",
+        "body": "Many organizations have specific policies about which AI tools can be used, for what purposes, and with what kinds of information. Checking and following those guidelines — rather than assuming anything goes — is a basic part of using AI responsibly in a professional setting."
+      },
+      {
+        "type": "quiz",
+        "question": "Why should you think carefully before pasting confidential business information into an AI tool?",
+        "options": [
+          "Because AI tools cannot process any text",
+          "Because how that information is handled and stored may carry real privacy and security risks",
+          "Because confidential information is always public anyway",
+          "Because AI tools refuse confidential information automatically"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s5-l1",
+    "type": "lesson",
+    "title": "Chaining Tasks Together",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "From single requests to multi-step workflows",
+        "body": "Instead of using AI for one isolated request at a time, you can chain steps together into a workflow: research a topic, draft an outline from the findings, expand the outline into a full piece, then generate a summary version for social media — each step building on the last, much like the multi-step plans you saw with AI agents."
+      },
+      {
+        "type": "text",
+        "heading": "Designing the handoffs",
+        "body": "The quality of a chained workflow often depends on how well one step's output feeds the next — a messy research summary makes for a messy outline, which makes for a messy draft. Thinking about what each step needs to produce for the next step to work well is at the heart of designing a good workflow."
+      },
+      {
+        "type": "quiz",
+        "question": "Why does the quality of each step in a chained AI workflow matter to the steps that follow?",
+        "options": [
+          "It doesn't — each step is completely independent",
+          "Because each step's output typically becomes the input to the next, so problems can compound",
+          "Because only the final step is ever used",
+          "Because earlier steps are automatically corrected by later ones"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s5-l2",
+    "type": "lesson",
+    "title": "Templates and Repeatable Processes",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Turning a one-off into a routine",
+        "body": "When you find a request or sequence of steps that works well, turning it into a reusable template — a saved prompt, a checklist, a standard set of instructions — saves you from reinventing it every time. This is the same instinct behind reusable fixtures and page objects: do the design work once, then reuse it."
+      },
+      {
+        "type": "text",
+        "heading": "Refining templates over time",
+        "body": "A good template usually isn't perfect on the first try — you adjust it as you notice where results fall short, much like iterating on a draft. Treating your favorite workflows as living templates that improve with use turns ad-hoc AI usage into a dependable, ever-improving personal toolkit."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the benefit of turning a successful AI request or process into a reusable template?",
+        "options": [
+          "It guarantees perfect results forever with no further changes",
+          "It saves you from reinventing a process that already works well, and gives you something to refine over time",
+          "It prevents the process from ever being used again",
+          "It makes the AI tool run on a different computer"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s5-l3",
+    "type": "lesson",
+    "title": "Designing Your Own AI Productivity Workflow",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Putting it all together",
+        "body": "Designing a workflow means identifying a recurring task worth streamlining, breaking it into clear steps, deciding where AI genuinely helps (and where it doesn't), and building in checkpoints — moments where you review, adjust, or verify — before anything important happens based on the result."
+      },
+      {
+        "type": "text",
+        "heading": "Starting small and iterating",
+        "body": "The most reliable workflows usually start small — automating one annoying step rather than an entire process at once — and grow as you learn what works. This mirrors good system design: start simple, observe where the friction really is, and expand deliberately rather than all at once."
+      },
+      {
+        "type": "quiz",
+        "question": "What is a sensible way to start designing your own AI productivity workflow?",
+        "options": [
+          "Automate your entire job at once on the first attempt",
+          "Start small with one recurring annoyance, then expand as you learn what genuinely helps",
+          "Avoid using AI for any part of the process",
+          "Skip checkpoints to save time"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

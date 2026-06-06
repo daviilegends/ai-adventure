@@ -718,5 +718,85 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w11-s2-p1",
+    "type": "puzzle",
+    "title": "Content Creation Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Spotting a vague content request",
+        "body": "Someone asks an AI tool: \"write something for my business.\" The result comes back generic and unusable — it doesn't know what the business does, who reads it, or what it's for. The request was missing the very details that would have shaped a useful answer."
+      },
+      {
+        "type": "text",
+        "heading": "Rebuilding the request with the missing pieces",
+        "body": "A stronger version: \"Write a 100-word Instagram caption announcing that my bakery is now open on Sundays, in a warm and friendly tone, aimed at local regulars.\" Now the AI knows the topic, the format, the length, the tone, and the audience — everything it needs to produce something genuinely close to useful on the first try."
+      },
+      {
+        "type": "quiz",
+        "question": "What was the main problem with the original request, 'write something for my business'?",
+        "options": [
+          "It was too long",
+          "It lacked the context — topic, audience, tone, format — needed to produce something useful",
+          "AI tools cannot write about businesses",
+          "It used the word 'business' incorrectly"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What makes the rewritten request more likely to produce a useful result?",
+        "options": [
+          "It is written in all capital letters",
+          "It specifies the topic, format, length, tone, and audience clearly",
+          "It avoids mentioning the business at all",
+          "It is shorter than the original"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s4-p1",
+    "type": "puzzle",
+    "title": "Business Use Case Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Choosing a good fit for AI assistance",
+        "body": "A team lead has two tasks: (1) drafting a friendly internal reminder about an upcoming team lunch, and (2) deciding whether to lay off part of the team due to a budget shortfall. The first is a low-stakes, repetitive communication task — a strong candidate for AI assistance with a quick human review. The second involves people's livelihoods, sensitive judgment, and major consequences — something that calls for careful human deliberation, not a quick generated draft."
+      },
+      {
+        "type": "text",
+        "heading": "Recognizing what changes the calculus",
+        "body": "What separates these isn't the topic itself but the stakes and the kind of judgment required: routine, low-risk, easily-reviewed tasks are a good fit for AI assistance, while high-stakes decisions involving real consequences for people call for careful human judgment, with AI playing — at most — a supporting role like organizing information."
+      },
+      {
+        "type": "quiz",
+        "question": "Which of the team lead's two tasks is a stronger candidate for AI-assisted drafting?",
+        "options": [
+          "The layoff decision, because it's important",
+          "The lunch reminder, because it's routine, low-stakes, and easy to review",
+          "Neither — AI should never be used at work",
+          "Both equally — stakes don't matter"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What mainly determines whether a work task is a good fit for AI assistance?",
+        "options": [
+          "How long the task takes to complete",
+          "The stakes involved and the kind of judgment the task requires",
+          "Whether the task involves any text at all",
+          "The time of day the task is performed"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

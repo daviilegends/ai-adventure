@@ -1105,5 +1105,128 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w11-s1-c1",
+    "type": "challenge",
+    "title": "Personal Productivity Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What is one everyday task an AI assistant can help with beyond answering simple questions?",
+        "options": [
+          "Drafting an email or summarizing a long document",
+          "Physically organizing your desk",
+          "Replacing the need for sleep",
+          "Guaranteeing a decision is correct"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "quiz",
+        "question": "Why does specifying the 'shape' of a summary (list, paragraph, table) matter?",
+        "options": [
+          "It doesn't — all shapes are equally useful in every situation",
+          "Because the shape should match what you actually plan to do with the information",
+          "Because AI tools can only produce one shape",
+          "Because longer summaries are always better"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is a sensible way to treat AI-generated output for an important task?",
+        "options": [
+          "As a final answer that needs no review",
+          "As a useful draft that should be reviewed and verified before you rely on it",
+          "As something to ignore completely",
+          "As something that is always wrong"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s3-c1",
+    "type": "challenge",
+    "title": "Research Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "How can AI be useful early in a research process?",
+        "options": [
+          "By guaranteeing every fact it provides is correct",
+          "By helping you get oriented in a topic and identify angles or questions worth exploring",
+          "By replacing the need to read any other sources",
+          "By making research illegal to do manually"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why might a back-and-forth conversation produce better research insight than a single question?",
+        "options": [
+          "Because each answer can help sharpen your next, more specific question",
+          "Because AI tools charge less for longer conversations",
+          "Because single questions are against the tool's policy",
+          "Because longer conversations are always shorter to read"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "quiz",
+        "question": "What is a sound way to treat factual claims made by an AI tool?",
+        "options": [
+          "As guaranteed truth that never needs checking",
+          "As leads worth verifying against other reliable sources before relying on them",
+          "As something to ignore entirely",
+          "As more reliable than primary sources"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w11-s5-c1",
+    "type": "challenge",
+    "title": "Advanced Workflows Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What does it mean to 'chain' AI tasks together into a workflow?",
+        "options": [
+          "Running the exact same request many times",
+          "Connecting multiple steps so each one's output feeds into the next",
+          "Avoiding the use of AI for any single step",
+          "Using only one AI tool ever"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is the value of turning a successful AI request into a reusable template?",
+        "options": [
+          "It locks the process so it can never be changed",
+          "It saves effort by reusing something that already works, and gives you a starting point to refine",
+          "It prevents anyone else from using the process",
+          "It guarantees the AI tool will never make mistakes again"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why is it sensible to start an AI productivity workflow small rather than automating everything at once?",
+        "options": [
+          "Because small workflows are illegal to expand later",
+          "Because starting small lets you learn what genuinely helps before expanding deliberately",
+          "Because AI tools can only handle one step ever",
+          "Because larger workflows always perform worse"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

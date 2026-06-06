@@ -558,5 +558,61 @@
         "correct": true
       }
     ]
+  },
+  {
+    "id": "b-w11",
+    "type": "boss",
+    "title": "The Productivity Paragon",
+    "subtitle": "Final Boss · AI Productivity",
+    "description": "The Paragon has streamlined a thousand workflows and seen just as many fall apart from vague requests and misplaced trust. To pass, you'll need to show you can request well, verify wisely, and design a workflow that actually holds up.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Paragon.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What tends to make a request to an AI assistant more useful?",
+        "options": [
+          "Leaving out as much detail as possible",
+          "Including a clear goal, audience, tone, and relevant constraints",
+          "Repeating the same vague request many times",
+          "Avoiding any mention of what you actually want"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "AI-generated drafts are generally a good starting point to review and refine, rather than a guaranteed final answer.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Why should you verify important factual claims an AI makes before relying on them?",
+        "options": [
+          "Because AI tools are always completely wrong",
+          "Because language models can sound confident while stating things that aren't true",
+          "Because verification is illegal",
+          "Because facts never matter in research"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What kind of work task is a strong candidate for AI assistance?",
+        "options": [
+          "A high-stakes decision with serious consequences for people",
+          "A routine, low-stakes task that's easy to review afterward",
+          "A task involving information you shouldn't share with third parties",
+          "None — AI should never be used professionally"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "A good AI productivity workflow often starts small, with one recurring task, and grows as you learn what genuinely helps.",
+        "correct": true
+      }
+    ]
   }
 ]

@@ -318,5 +318,45 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "mb-w11",
+    "type": "miniboss",
+    "title": "The Workflow Wraith",
+    "subtitle": "Stage Checkpoint · AI Productivity",
+    "description": "The Wraith drifts between drafts, research threads, and half-finished workflows, testing whether you can tell a well-framed request from a vague one — and a good fit for AI from a task that calls for human judgment.",
+    "objective": "Answer at least 2 of 3 questions correctly to pass the checkpoint.",
+    "passThreshold": 0.67,
+    "xpReward": 60,
+    "coinsReward": 25,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What makes a request to an AI tool more likely to produce a useful result?",
+        "options": [
+          "Keeping it as vague as possible",
+          "Including a clear goal, audience, tone, and any relevant constraints",
+          "Never specifying a format",
+          "Avoiding any mention of the topic"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "It's a good idea to verify important factual claims an AI makes before relying on them.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What kind of work task is generally a good fit for AI assistance?",
+        "options": [
+          "A high-stakes decision with major consequences for people",
+          "A routine, low-stakes task that's easy to review afterward",
+          "A task involving confidential data with no review process",
+          "Nothing — AI should never assist with work"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]
