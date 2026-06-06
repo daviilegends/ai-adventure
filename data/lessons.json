@@ -2,10 +2,11 @@
   {
     "id": "w1-l1",
     "worldId": 1,
+    "stageId": 1,
     "order": 1,
     "title": "What is Artificial Intelligence?",
-    "xpReward": 20,
     "type": "lesson",
+    "xpReward": 20,
     "steps": [
       {
         "type": "text",
@@ -33,10 +34,11 @@
   {
     "id": "w1-l2",
     "worldId": 1,
+    "stageId": 1,
     "order": 2,
     "title": "What is a Large Language Model?",
-    "xpReward": 20,
     "type": "lesson",
+    "xpReward": 20,
     "steps": [
       {
         "type": "text",
@@ -64,10 +66,11 @@
   {
     "id": "w1-l3",
     "worldId": 1,
+    "stageId": 1,
     "order": 3,
     "title": "Understanding Prompts",
-    "xpReward": 20,
     "type": "lesson",
+    "xpReward": 20,
     "steps": [
       {
         "type": "text",
@@ -95,10 +98,11 @@
   {
     "id": "w1-l4",
     "worldId": 1,
+    "stageId": 1,
     "order": 4,
     "title": "Prompt Structure",
-    "xpReward": 20,
     "type": "lesson",
+    "xpReward": 20,
     "steps": [
       {
         "type": "text",
@@ -126,10 +130,11 @@
   {
     "id": "w1-l5",
     "worldId": 1,
+    "stageId": 1,
     "order": 5,
     "title": "Prompt Examples",
-    "xpReward": 20,
     "type": "lesson",
+    "xpReward": 20,
     "steps": [
       {
         "type": "text",
@@ -153,5 +158,15 @@
         "correct": 2
       }
     ]
+  },
+  {
+    "id": "w1-boss",
+    "worldId": 1,
+    "stageId": 1,
+    "order": 6,
+    "title": "Boss Battle",
+    "type": "boss",
+    "quizId": "q-w1",
+    "xpReward": 0
   }
 ]

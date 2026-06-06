@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "AI Foundations",
+    "description": "Learn the basics of AI and Large Language Models",
+    "unlockRequirement": null
+  },
+  {
+    "id": 2,
+    "title": "Prompt Engineering",
+    "description": "Master the art of crafting effective prompts",
+    "unlockRequirement": { "worldId": 1 }
+  },
+  {
+    "id": 3,
+    "title": "Automation Basics",
+    "description": "Introduction to test automation concepts",
+    "unlockRequirement": { "worldId": 2 }
+  },
+  {
+    "id": 4,
+    "title": "Playwright Fundamentals",
+    "description": "Browser automation with Playwright",
+    "unlockRequirement": { "worldId": 3 }
+  }
+]
