@@ -1,0 +1,180 @@
+[
+  {
+    "id": "w1-s1",
+    "worldId": 1,
+    "order": 1,
+    "title": "The Birth of AI",
+    "nodes": [
+      { "nodeId": "w1-s1-l1", "nodeType": "lesson" },
+      { "nodeId": "w1-s1-l2", "nodeType": "lesson" },
+      { "nodeId": "w1-s1-l3", "nodeType": "lesson" },
+      { "nodeId": "w1-s1-c1", "nodeType": "challenge" }
+    ]
+  },
+  {
+    "id": "w1-s2",
+    "worldId": 1,
+    "order": 2,
+    "title": "Understanding LLMs",
+    "nodes": [
+      { "nodeId": "w1-s2-l1", "nodeType": "lesson" },
+      { "nodeId": "w1-s2-l2", "nodeType": "lesson" },
+      { "nodeId": "w1-s2-l3", "nodeType": "lesson" },
+      { "nodeId": "w1-s2-p1", "nodeType": "puzzle" }
+    ]
+  },
+  {
+    "id": "w1-s3",
+    "worldId": 1,
+    "order": 3,
+    "title": "ChatGPT Fundamentals",
+    "nodes": [
+      { "nodeId": "w1-s3-l1", "nodeType": "lesson" },
+      { "nodeId": "w1-s3-l2", "nodeType": "lesson" },
+      { "nodeId": "w1-s3-l3", "nodeType": "lesson" },
+      { "nodeId": "w1-s3-c1", "nodeType": "challenge" }
+    ]
+  },
+  {
+    "id": "w1-s4",
+    "worldId": 1,
+    "order": 4,
+    "title": "AI Limitations",
+    "nodes": [
+      { "nodeId": "w1-s4-l1", "nodeType": "lesson" },
+      { "nodeId": "w1-s4-l2", "nodeType": "lesson" },
+      { "nodeId": "w1-s4-l3", "nodeType": "lesson" },
+      { "nodeId": "w1-s4-p1", "nodeType": "puzzle" },
+      { "nodeId": "mb-w1", "nodeType": "miniboss" }
+    ]
+  },
+  {
+    "id": "w1-s5",
+    "worldId": 1,
+    "order": 5,
+    "title": "The AI Ecosystem",
+    "nodes": [
+      { "nodeId": "w1-s5-l1", "nodeType": "lesson" },
+      { "nodeId": "w1-s5-l2", "nodeType": "lesson" },
+      { "nodeId": "w1-s5-l3", "nodeType": "lesson" },
+      { "nodeId": "w1-s5-c1", "nodeType": "challenge" },
+      { "nodeId": "b-w1", "nodeType": "boss" }
+    ]
+  },
+  {
+    "id": "w2-s1",
+    "worldId": 2,
+    "order": 1,
+    "title": "Prompt Anatomy",
+    "nodes": [
+      { "nodeId": "w2-s1-l1", "nodeType": "lesson" },
+      { "nodeId": "w2-s1-l2", "nodeType": "lesson" },
+      { "nodeId": "w2-s1-l3", "nodeType": "lesson" },
+      { "nodeId": "w2-s1-c1", "nodeType": "challenge" }
+    ]
+  },
+  {
+    "id": "w2-s2",
+    "worldId": 2,
+    "order": 2,
+    "title": "Giving Better Instructions",
+    "nodes": [
+      { "nodeId": "w2-s2-l1", "nodeType": "lesson" },
+      { "nodeId": "w2-s2-l2", "nodeType": "lesson" },
+      { "nodeId": "w2-s2-p1", "nodeType": "puzzle" }
+    ]
+  },
+  {
+    "id": "w2-s3",
+    "worldId": 2,
+    "order": 3,
+    "title": "Context Engineering",
+    "nodes": [
+      { "nodeId": "w2-s3-l1", "nodeType": "lesson" },
+      { "nodeId": "w2-s3-l2", "nodeType": "lesson" },
+      { "nodeId": "w2-s3-c1", "nodeType": "challenge" }
+    ]
+  },
+  {
+    "id": "w2-s4",
+    "worldId": 2,
+    "order": 4,
+    "title": "Output Control",
+    "nodes": [
+      { "nodeId": "w2-s4-l1", "nodeType": "lesson" },
+      { "nodeId": "w2-s4-l2", "nodeType": "lesson" },
+      { "nodeId": "w2-s4-p1", "nodeType": "puzzle" },
+      { "nodeId": "mb-w2", "nodeType": "miniboss" }
+    ]
+  },
+  {
+    "id": "w2-s5",
+    "worldId": 2,
+    "order": 5,
+    "title": "Advanced Prompting",
+    "nodes": [
+      { "nodeId": "w2-s5-l1", "nodeType": "lesson" },
+      { "nodeId": "w2-s5-l2", "nodeType": "lesson" },
+      { "nodeId": "w2-s5-c1", "nodeType": "challenge" },
+      { "nodeId": "b-w2", "nodeType": "boss" }
+    ]
+  },
+  {
+    "id": "w3-s1",
+    "worldId": 3,
+    "order": 1,
+    "title": "What is Automation?",
+    "nodes": [
+      { "nodeId": "w3-s1-l1", "nodeType": "lesson" },
+      { "nodeId": "w3-s1-l2", "nodeType": "lesson" },
+      { "nodeId": "w3-s1-l3", "nodeType": "lesson" },
+      { "nodeId": "w3-s1-c1", "nodeType": "challenge" }
+    ]
+  },
+  {
+    "id": "w3-s2",
+    "worldId": 3,
+    "order": 2,
+    "title": "Automation Thinking",
+    "nodes": [
+      { "nodeId": "w3-s2-l1", "nodeType": "lesson" },
+      { "nodeId": "w3-s2-l2", "nodeType": "lesson" },
+      { "nodeId": "w3-s2-p1", "nodeType": "puzzle" },
+      { "nodeId": "b-w3", "nodeType": "boss" }
+    ]
+  },
+  {
+    "id": "w4-s1",
+    "worldId": 4,
+    "order": 1,
+    "title": "Playwright Setup",
+    "nodes": [
+      { "nodeId": "w4-s1-l1", "nodeType": "lesson" },
+      { "nodeId": "w4-s1-l2", "nodeType": "lesson" },
+      { "nodeId": "w4-s1-c1", "nodeType": "challenge" }
+    ]
+  },
+  {
+    "id": "w4-s2",
+    "worldId": 4,
+    "order": 2,
+    "title": "Locators and Actions",
+    "nodes": [
+      { "nodeId": "w4-s2-l1", "nodeType": "lesson" },
+      { "nodeId": "w4-s2-l2", "nodeType": "lesson" },
+      { "nodeId": "w4-s2-p1", "nodeType": "puzzle" }
+    ]
+  },
+  {
+    "id": "w4-s3",
+    "worldId": 4,
+    "order": 3,
+    "title": "Assertions and Debugging",
+    "nodes": [
+      { "nodeId": "w4-s3-l1", "nodeType": "lesson" },
+      { "nodeId": "w4-s3-l2", "nodeType": "lesson" },
+      { "nodeId": "w4-s3-c1", "nodeType": "challenge" },
+      { "nodeId": "b-w4", "nodeType": "boss" }
+    ]
+  }
+]

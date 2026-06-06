@@ -62,8 +62,8 @@ const Home = {
   _findCurrentWorld(player, worlds) {
     const unlocked = worlds.filter(w => player.unlockedWorlds.includes(w.id));
     for (const world of unlocked) {
-      const lessons = LessonEngine.getForWorld(world.id);
-      if (lessons.some(l => !player.completedLessons.includes(l.id))) return world;
+      const nodes = LessonEngine.getForWorld(world.id);
+      if (nodes.some(n => !player.completedLessons.includes(n.id))) return world;
     }
     return unlocked[unlocked.length - 1] || null;
   },
@@ -77,8 +77,8 @@ const Home = {
     const isUnlocked = player.unlockedWorlds.includes(world.id);
     const num = String(world.id).padStart(2, '0');
     const accentRgb = world.accentRgb || '79,142,240';
-    const lessons = LessonEngine.getForWorld(world.id);
-    const completedCount = lessons.filter(l => player.completedLessons.includes(l.id)).length;
+    const allNodes = LessonEngine.getForWorld(world.id);
+    const completedCount = allNodes.filter(n => player.completedLessons.includes(n.id)).length;
     const worldClass = `world world--w${world.id}${isUnlocked ? '' : ' world--locked'}`;
     const inlineStyle = `style="--world-accent-rgb: ${accentRgb}"`;
 
@@ -111,7 +111,7 @@ const Home = {
         <div class="world-header" data-world="${num}">
           <div class="world-header__row">
             <span class="world-badge">World ${world.id}</span>
-            <span class="world-progress">${completedCount} / ${lessons.length}</span>
+            <span class="world-progress">${completedCount} / ${allNodes.length}</span>
           </div>
           <h2 class="world-title">${world.title}</h2>
           <p class="world-desc">${world.description}</p>
@@ -127,14 +127,14 @@ const Home = {
     const showHeader = allStages.length > 1;
 
     if (!isAvailable) {
-      const prevStage = allStages.find(s => s.id === stage.id - 1);
+      const prevStage = allStages.find(s => s.order === stage.order - 1);
       const lockMsg = prevStage
-        ? `Complete Stage ${prevStage.id}: ${prevStage.title} to unlock`
+        ? `Complete Stage ${prevStage.order}: ${prevStage.title} to unlock`
         : 'Locked';
 
       return `
         <div class="world-stage world-stage--locked">
-          <div class="stage-header">Stage ${stage.id}: ${stage.title}</div>
+          <div class="stage-header">Stage ${stage.order}: ${stage.title}</div>
           <p class="stage-locked-msg">
             ${this._svgLock()}
             ${lockMsg}
@@ -142,32 +142,39 @@ const Home = {
         </div>`;
     }
 
-    const lessons = LessonEngine.getForStage(world.id, stage.id);
+    const nodes = LessonEngine.getNodesForStage(world.id, stage.order);
     return `
       <div class="world-stage">
-        ${showHeader ? `<div class="stage-header">Stage ${stage.id}: ${stage.title}</div>` : ''}
+        ${showHeader ? `<div class="stage-header">Stage ${stage.order}: ${stage.title}</div>` : ''}
         <div class="stage-nodes">
-          ${this._renderNodes(lessons, player.completedLessons)}
+          ${this._renderNodes(nodes, player.completedLessons)}
         </div>
       </div>`;
   },
 
   _isStageAvailable(worldId, stage, allStages, player) {
-    if (stage.id === 1) return true;
-    const priorStages = allStages.filter(s => s.id < stage.id);
+    if (stage.order === 1) return true;
+    const priorStages = allStages.filter(s => s.order < stage.order);
     return priorStages.every(ps => {
-      const psLessons = LessonEngine.getForStage(worldId, ps.id);
-      return psLessons.every(l => player.completedLessons.includes(l.id));
+      const psNodes = LessonEngine.getNodesForStage(worldId, ps.order);
+      return psNodes.every(n => player.completedLessons.includes(n.id));
     });
   },
 
-  _renderNodes(lessons, completedLessons) {
-    const sorted = [...lessons].sort((a, b) => a.order - b.order);
+  _renderNodes(nodes, completedLessons) {
     let foundActive = false;
 
-    return sorted.map(lesson => {
+    const badgeLabels = {
+      lesson:    { active: 'learn',      completed: 'done',    locked: 'locked' },
+      challenge: { active: 'try',        completed: 'done',    locked: 'locked' },
+      puzzle:    { active: 'solve',      completed: 'done',    locked: 'locked' },
+      miniboss:  { active: 'checkpoint', completed: 'cleared', locked: 'locked' },
+      boss:      { active: 'battle',     completed: 'cleared', locked: 'locked' },
+    };
+
+    return nodes.map(node => {
       let state;
-      if (completedLessons.includes(lesson.id)) {
+      if (completedLessons.includes(node.id)) {
         state = 'completed';
       } else if (!foundActive) {
         foundActive = true;
@@ -176,14 +183,11 @@ const Home = {
         state = 'locked';
       }
 
-      const isBoss = lesson.type === 'boss';
-      const rowClass = `lesson-row lesson-row--${state}${isBoss ? ' lesson-row--boss' : ''}`;
+      const type = node.type || 'lesson';
+      const labels = badgeLabels[type] || badgeLabels.lesson;
+      const rowClass = `lesson-row lesson-row--${state} lesson-row--${type}`;
       const disabled = state === 'locked' ? 'disabled' : '';
-
-      let badge;
-      if (state === 'completed') badge = isBoss ? 'cleared' : 'done';
-      else if (state === 'active') badge = isBoss ? 'battle' : 'start';
-      else badge = 'locked';
+      const badge = labels[state];
 
       const dot = state === 'completed'
         ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`
@@ -192,8 +196,8 @@ const Home = {
       return `
         <div class="${rowClass}">
           <div class="lesson-row__dot">${dot}</div>
-          <button class="lesson-row__btn" data-lesson-id="${lesson.id}" ${disabled}>
-            <span class="lesson-row__title">${lesson.title}</span>
+          <button class="lesson-row__btn" data-node-id="${node.id}" ${disabled}>
+            <span class="lesson-row__title">${node.title}</span>
             <span class="lesson-row__badge">${badge}</span>
           </button>
         </div>`;
@@ -205,8 +209,14 @@ const Home = {
   },
 
   _wireNodes() {
-    document.querySelectorAll('.lesson-row__btn[data-lesson-id]').forEach(btn => {
-      btn.addEventListener('click', () => LessonEngine.start(btn.dataset.lessonId));
+    document.querySelectorAll('.lesson-row__btn[data-node-id]').forEach(btn => {
+      btn.addEventListener('click', () => LessonEngine.start(btn.dataset.nodeId));
     });
+    this._scrollToActive();
+  },
+
+  _scrollToActive() {
+    const active = document.querySelector('.lesson-row--active');
+    if (active) active.scrollIntoView({ behavior: 'smooth', block: 'center' });
   },
 };

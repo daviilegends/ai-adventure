@@ -93,12 +93,22 @@ const LessonScreen = {
   },
 
   _renderComplete({ lesson }) {
+    const typeConfig = {
+      lesson:    { icon: '🎓', title: 'Lesson Complete!' },
+      challenge: { icon: '⚡', title: 'Challenge Complete!' },
+      puzzle:    { icon: '🧩', title: 'Puzzle Solved!' },
+      miniboss:  { icon: '🥈', title: 'Checkpoint Cleared!' },
+      boss:      { icon: '👑', title: 'Boss Defeated!' },
+    };
+    const config = typeConfig[lesson.type] || typeConfig.lesson;
+    const xpLine = lesson.xpReward ? `<div class="xp-reward">⚡ +${lesson.xpReward} XP</div>` : '';
+
     this._el.innerHTML = `
       <div class="lesson-complete">
-        <div class="lesson-complete__icon">🎉</div>
-        <h2>Lesson Complete!</h2>
+        <div class="lesson-complete__icon">${config.icon}</div>
+        <h2>${config.title}</h2>
         <p>Great work — keep it up!</p>
-        <div class="xp-reward">⚡ +${lesson.xpReward} XP</div>
+        ${xpLine}
         <button class="btn btn--primary" id="lesson-done">Back to Map →</button>
       </div>
     `;

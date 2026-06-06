@@ -1,11 +1,8 @@
 [
   {
-    "id": "w1-l1",
-    "worldId": 1,
-    "stageId": 1,
-    "order": 1,
-    "title": "What is Artificial Intelligence?",
+    "id": "w1-s1-l1",
     "type": "lesson",
+    "title": "What is Artificial Intelligence?",
     "xpReward": 20,
     "steps": [
       {
@@ -32,23 +29,78 @@
     ]
   },
   {
-    "id": "w1-l2",
-    "worldId": 1,
-    "stageId": 1,
-    "order": 2,
-    "title": "What is a Large Language Model?",
+    "id": "w1-s1-l2",
     "type": "lesson",
+    "title": "Narrow AI vs General AI",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Narrow AI: Built for one thing",
+        "body": "Almost all AI today is Narrow AI — systems designed to excel at a single task. Chess engines, image classifiers, and spam detectors are all narrow AI. They are superhuman at their specific task but useless outside it."
+      },
+      {
+        "type": "text",
+        "heading": "General AI: Still a goal",
+        "body": "Artificial General Intelligence (AGI) would match or exceed human intelligence across any task. It doesn't exist yet — despite what headlines suggest. Today's LLMs are impressive but remain narrow tools, not general reasoners."
+      },
+      {
+        "type": "quiz",
+        "question": "Which best describes today's AI systems like ChatGPT?",
+        "options": [
+          "Artificial General Intelligence",
+          "Narrow AI with broad language capabilities",
+          "Conscious machines",
+          "Traditional rule-based software"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w1-s1-l3",
+    "type": "lesson",
+    "title": "AI Myths and Misconceptions",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "AI is not magic",
+        "body": "AI is pattern recognition at scale. It doesn't understand the world the way humans do — it finds statistical relationships in data. When an AI writes a poem, it's not feeling creative; it's generating text that resembles poetry it was trained on."
+      },
+      {
+        "type": "text",
+        "heading": "Common myths debunked",
+        "body": "Myth: AI is always right. Fact: AI confidently makes mistakes. Myth: AI thinks like humans. Fact: AI processes tokens, not concepts. Myth: AI will replace all jobs. Fact: AI augments work — it changes how work gets done, not whether it gets done."
+      },
+      {
+        "type": "quiz",
+        "question": "Why do AI systems sometimes produce confident but wrong answers?",
+        "options": [
+          "They are programmed to lie",
+          "They generate statistically likely text, not verified facts",
+          "They have too much data",
+          "They don't have enough processing power"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w1-s2-l1",
+    "type": "lesson",
+    "title": "What is a Large Language Model?",
     "xpReward": 20,
     "steps": [
       {
         "type": "text",
         "heading": "What is a Large Language Model?",
-        "body": "A Large Language Model (LLM) is a type of AI trained on massive amounts of text. It learns to predict what words come next in a sentence — and through that process it develops a deep understanding of language, facts, and reasoning."
+        "body": "A Large Language Model (LLM) is a type of AI trained on massive amounts of text. It learns to predict what words come next in a sentence — and through that process develops a deep understanding of language, facts, and reasoning."
       },
       {
         "type": "text",
         "heading": "How does it generate text?",
-        "body": "When you send a message to an LLM like ChatGPT, it reads your input and generates a response one token (word fragment) at a time — always choosing the most likely next token based on everything it has learned."
+        "body": "When you send a message to an LLM like ChatGPT, it reads your input and generates a response one token at a time — always choosing the most likely next token based on everything it has learned during training."
       },
       {
         "type": "quiz",
@@ -64,108 +116,960 @@
     ]
   },
   {
-    "id": "w1-l3",
-    "worldId": 1,
-    "stageId": 1,
-    "order": 3,
-    "title": "Understanding Prompts",
+    "id": "w1-s2-l2",
     "type": "lesson",
+    "title": "Tokens Explained",
     "xpReward": 20,
     "steps": [
       {
         "type": "text",
-        "heading": "What is a prompt?",
-        "body": "A prompt is the text you send to an AI model. It's your way of communicating what you want. The quality of the output depends heavily on the quality of the input — this is where prompt engineering comes in."
+        "heading": "What is a token?",
+        "body": "LLMs don't process words — they process tokens. A token is roughly 3-4 characters or about 0.75 words. The word 'unhappy' might be one token, while 'unbelievable' could be split into 'un', 'believ', 'able'. Tokenization is how models break text into manageable pieces."
       },
       {
         "type": "text",
-        "heading": "Garbage in, garbage out",
-        "body": "Vague prompts produce vague results. Specific, well-structured prompts produce specific, useful results. Learning to write good prompts is one of the most valuable skills in the AI era."
+        "heading": "Why tokens matter",
+        "body": "Every LLM has a context window — the maximum number of tokens it can process at once. GPT-4 supports ~128,000 tokens. Longer conversations cost more tokens and can hit the limit. Understanding tokens helps you write efficient prompts and know when context is getting cut off."
       },
       {
         "type": "quiz",
-        "question": "What is a 'prompt' when working with an AI model?",
+        "question": "Approximately how many words is 1,000 tokens?",
         "options": [
-          "A reminder notification from an app",
-          "The text input you send to the model",
-          "A predefined answer stored in the model",
-          "A setting in the model configuration"
+          "About 100 words",
+          "About 750 words",
+          "About 2,000 words",
+          "Exactly 1,000 words"
         ],
         "correct": 1
       }
     ]
   },
   {
-    "id": "w1-l4",
-    "worldId": 1,
-    "stageId": 2,
-    "order": 1,
-    "title": "Prompt Structure",
+    "id": "w1-s2-l3",
     "type": "lesson",
+    "title": "Training vs Inference",
     "xpReward": 20,
     "steps": [
       {
         "type": "text",
-        "heading": "The anatomy of a good prompt",
-        "body": "A well-structured prompt usually contains three parts: a role or context ('You are a senior developer...'), clear instructions ('Review this code and identify bugs'), and the input ('Here is the code: ...'). Together they guide the model precisely."
+        "heading": "Training: building the model",
+        "body": "Training is the expensive, one-time process where an LLM learns from billions of text examples. The model adjusts its internal parameters to get better at predicting the next token. This requires massive compute and takes weeks or months."
       },
       {
         "type": "text",
-        "heading": "Context is everything",
-        "body": "The more relevant context you provide, the better the output. Telling the model who it is, what format you want, and what constraints apply will dramatically improve your results."
+        "heading": "Inference: using the model",
+        "body": "Inference is what happens every time you send a message to ChatGPT. The trained model uses its fixed parameters to generate a response. Inference is much cheaper than training but still requires significant compute — which is why API calls cost money."
       },
       {
         "type": "quiz",
-        "question": "Which prompt is likely to produce the best result?",
+        "question": "What happens during 'inference' in an LLM?",
         "options": [
-          "Fix my code",
-          "You are a senior JavaScript developer. Review the following function for bugs and explain each issue: [code]",
-          "Help me",
-          "JavaScript function review needed"
+          "The model updates its parameters from new data",
+          "The model uses its trained parameters to generate a response",
+          "The model searches a database for answers",
+          "The model is retrained on your conversation"
         ],
         "correct": 1
       }
     ]
   },
   {
-    "id": "w1-l5",
-    "worldId": 1,
-    "stageId": 2,
-    "order": 2,
-    "title": "Prompt Examples",
+    "id": "w1-s3-l1",
     "type": "lesson",
+    "title": "How ChatGPT Works",
     "xpReward": 20,
     "steps": [
       {
         "type": "text",
-        "heading": "Prompts in practice",
-        "body": "Good prompts are direct, specific, and give the model a role. Example: 'You are a technical writer. Summarize the following documentation in 3 bullet points for a junior developer.' This sets expectations for tone, format, and audience."
+        "heading": "Under the hood",
+        "body": "ChatGPT is built on GPT-4, a large language model from OpenAI. When you send a message, it's encoded into tokens, passed through the model's neural network layers, and the output tokens are decoded back into text — all in seconds."
       },
       {
         "type": "text",
-        "heading": "Iteration is key",
-        "body": "Don't expect perfection on the first try. Prompting is iterative — you send a prompt, evaluate the response, and refine. Each iteration teaches you what the model responds to best."
+        "heading": "RLHF: Making it helpful",
+        "body": "Raw LLMs predict text without caring if it's helpful or safe. ChatGPT uses Reinforcement Learning from Human Feedback (RLHF) — human raters score outputs, and the model is fine-tuned to produce responses humans prefer. This is why it feels like a conversation, not a text predictor."
       },
       {
         "type": "quiz",
-        "question": "What is the recommended approach when a prompt doesn't give the result you want?",
+        "question": "What technique makes ChatGPT feel conversational and helpful?",
         "options": [
-          "Switch to a different AI tool",
-          "Accept the result as-is",
-          "Refine and iterate on the prompt",
-          "Report it as a bug"
+          "It has access to the internet",
+          "Reinforcement Learning from Human Feedback (RLHF)",
+          "It stores your previous conversations forever",
+          "It uses a different AI for each response"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w1-s3-l2",
+    "type": "lesson",
+    "title": "Context Windows",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "What is a context window?",
+        "body": "A context window is everything the model can 'see' at once — your entire conversation history, the system prompt, and your current message. Think of it as the model's working memory. When the window fills up, older messages get dropped."
+      },
+      {
+        "type": "text",
+        "heading": "Practical implications",
+        "body": "In a long conversation, ChatGPT may 'forget' what you said at the start. To work around this, summarize earlier context, start a new thread for a new topic, or explicitly re-state important facts. Context management is a key prompt engineering skill."
+      },
+      {
+        "type": "quiz",
+        "question": "What happens when a conversation exceeds the context window limit?",
+        "options": [
+          "The model crashes",
+          "The model starts ignoring all new messages",
+          "The oldest messages are dropped from the context",
+          "The model automatically summarizes the conversation"
         ],
         "correct": 2
       }
     ]
   },
   {
-    "id": "w1-boss",
-    "worldId": 1,
-    "stageId": 2,
-    "order": 3,
-    "title": "Boss Battle",
-    "type": "boss",
-    "bossId": "b-w1"
+    "id": "w1-s3-l3",
+    "type": "lesson",
+    "title": "System vs User Messages",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The three message types",
+        "body": "Most LLM APIs use three message roles: System, User, and Assistant. The System message sets the model's behavior and persona before the conversation starts. User messages are what you send. Assistant messages are the model's responses."
+      },
+      {
+        "type": "text",
+        "heading": "System prompts are powerful",
+        "body": "The system prompt is your opportunity to define how the model behaves throughout the conversation. You can set its persona ('You are a senior engineer'), restrict its scope ('Only answer coding questions'), or define its output format ('Always respond in JSON'). Great products are built on great system prompts."
+      },
+      {
+        "type": "quiz",
+        "question": "Where would you define 'You are a helpful customer support agent' in the OpenAI API?",
+        "options": [
+          "In every user message",
+          "In the system message",
+          "In the assistant message",
+          "In the API key header"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w1-s4-l1",
+    "type": "lesson",
+    "title": "What AI Can Do",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "AI's genuine strengths",
+        "body": "Modern AI excels at: summarizing and transforming text, drafting content, writing and explaining code, translating languages, answering questions from provided context, brainstorming ideas, and pattern recognition in large datasets. These are tasks where speed and breadth matter more than guaranteed accuracy."
+      },
+      {
+        "type": "text",
+        "heading": "The power of scale",
+        "body": "What makes AI powerful is not that it does things humans can't — it's that it does things instantly at massive scale. A task that takes a human an hour (summarizing a report, translating a document) takes an LLM seconds. This changes how we allocate our time and attention."
+      },
+      {
+        "type": "quiz",
+        "question": "Which task is AI best suited for?",
+        "options": [
+          "Verifying real-time financial data",
+          "Providing legal advice with guaranteed accuracy",
+          "Summarizing a long document instantly",
+          "Replacing licensed medical professionals"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w1-s4-l2",
+    "type": "lesson",
+    "title": "What AI Cannot Do",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The real limitations",
+        "body": "AI has well-known failure modes: it hallucinate facts with false confidence, it has a training knowledge cutoff, it cannot access real-time information without tools, it has no memory across sessions by default, and it cannot take actions in the world unless given specific tools."
+      },
+      {
+        "type": "text",
+        "heading": "Accuracy vs confidence",
+        "body": "The most dangerous AI behavior is confident wrongness. An LLM will state false information in the same tone as true information. Never use AI as a sole source for facts that matter — always verify important claims, especially in legal, medical, financial, or technical contexts."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is AI's 'hallucination' problem particularly dangerous?",
+        "options": [
+          "It makes the model slow",
+          "It causes the model to refuse questions",
+          "False information is presented with the same confidence as true information",
+          "It only happens with math questions"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w1-s4-l3",
+    "type": "lesson",
+    "title": "AI Safety Basics",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Why AI safety matters",
+        "body": "AI safety covers alignment (making AI do what we intend), robustness (making AI behave well in unexpected situations), and oversight (keeping humans in control). As AI systems become more capable and are given more autonomy, these concerns become increasingly important."
+      },
+      {
+        "type": "text",
+        "heading": "Practical safety today",
+        "body": "Right now, AI safety is mostly about responsible use: don't over-trust AI outputs, maintain human review for high-stakes decisions, be aware of bias in training data, and understand that AI systems can be manipulated via prompt injection. Responsible AI use is everyone's job."
+      },
+      {
+        "type": "quiz",
+        "question": "What is 'AI alignment'?",
+        "options": [
+          "Making sure AI text is formatted correctly",
+          "Ensuring AI systems behave according to human intentions and values",
+          "Aligning AI training data alphabetically",
+          "A feature that improves AI response speed"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w1-s5-l1",
+    "type": "lesson",
+    "title": "ChatGPT and OpenAI",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "OpenAI and the GPT family",
+        "body": "OpenAI built the GPT (Generative Pre-trained Transformer) series. ChatGPT, launched in November 2022, became the fastest-growing consumer app in history. The underlying model (GPT-4) is also available via API, powering thousands of AI products and tools."
+      },
+      {
+        "type": "text",
+        "heading": "Strengths and use cases",
+        "body": "ChatGPT excels at general-purpose tasks: writing, coding assistance, data analysis, and image understanding (with GPT-4V). It integrates with plugins and tools, making it a versatile platform. The free tier uses GPT-3.5; paid tiers access GPT-4."
+      },
+      {
+        "type": "quiz",
+        "question": "What model powers the paid version of ChatGPT?",
+        "options": [
+          "BERT",
+          "GPT-3.5",
+          "GPT-4",
+          "LLaMA"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w1-s5-l2",
+    "type": "lesson",
+    "title": "Claude by Anthropic",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Constitutional AI",
+        "body": "Claude is Anthropic's AI assistant, built with a focus on safety and helpfulness. Anthropic developed 'Constitutional AI' — a technique where the model is trained to critique and revise its own outputs against a set of principles. This makes Claude less likely to produce harmful content."
+      },
+      {
+        "type": "text",
+        "heading": "Claude's strengths",
+        "body": "Claude has a large context window (200K tokens), making it excellent for analyzing long documents. It tends to be careful with nuance, good at following complex instructions, and excels at tasks requiring structured reasoning. Claude is a strong choice for technical writing, code review, and document analysis."
+      },
+      {
+        "type": "quiz",
+        "question": "What makes Claude's training approach distinct?",
+        "options": [
+          "It was trained only on code",
+          "It uses Constitutional AI to guide safety",
+          "It has no safety restrictions",
+          "It was built by the same team as ChatGPT"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w1-s5-l3",
+    "type": "lesson",
+    "title": "Open-Source Models",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The open-source movement",
+        "body": "Not all powerful AI is closed and proprietary. Meta's LLaMA family, Mistral, and Phi (from Microsoft) are open-weight models that anyone can download and run. This enables private deployments, fine-tuning for specific domains, and AI without sending data to third-party servers."
+      },
+      {
+        "type": "text",
+        "heading": "Trade-offs",
+        "body": "Open models are generally less capable than frontier proprietary models, but the gap is closing fast. Tools like Ollama let you run LLaMA locally on a laptop. For many use cases — particularly those with privacy requirements or specific domain expertise — open-source models are the right choice."
+      },
+      {
+        "type": "quiz",
+        "question": "What is a key advantage of open-weight AI models over proprietary ones?",
+        "options": [
+          "They are always more accurate",
+          "They can be run locally without sending data to third parties",
+          "They are cheaper to develop",
+          "They require no hardware"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w2-s1-l1",
+    "type": "lesson",
+    "title": "The Goal: What Do You Want?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Start with the output",
+        "body": "Every great prompt starts with a clear goal. Before writing anything, ask: what exactly do I want the model to produce? A summary? A list? A piece of code? An email? Being vague about your goal produces vague results. Specificity is the foundation of prompt engineering."
+      },
+      {
+        "type": "text",
+        "heading": "Examples of clear goals",
+        "body": "Weak: 'Help me with my email.' Strong: 'Write a 3-sentence follow-up email to a client who hasn't responded in 5 days, professional but friendly in tone.' The strong version specifies the type, length, audience, and tone — leaving nothing for the model to guess."
+      },
+      {
+        "type": "quiz",
+        "question": "Which prompt has the clearest goal?",
+        "options": [
+          "Tell me about Python",
+          "Help me code",
+          "Write a Python function that takes a list of integers and returns the top 3 largest values",
+          "I need some code help"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w2-s1-l2",
+    "type": "lesson",
+    "title": "Context: Setting the Scene",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Why context matters",
+        "body": "Context tells the model who you are, what situation you're in, and what background is relevant. Without it, the model makes assumptions — and those assumptions may be completely wrong for your use case. More relevant context = better outputs."
+      },
+      {
+        "type": "text",
+        "heading": "Types of context",
+        "body": "Context includes: your role ('I'm a senior DevOps engineer'), your audience ('explaining this to a non-technical manager'), the situation ('we're migrating a monolith to microservices'), and relevant constraints ('the system uses Python 3.8, no third-party libraries'). Each piece guides the model toward a more useful response."
+      },
+      {
+        "type": "quiz",
+        "question": "What does providing context in a prompt primarily achieve?",
+        "options": [
+          "Makes the prompt shorter",
+          "Reduces the token count",
+          "Guides the model to produce more relevant and tailored output",
+          "Prevents the model from making up information"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w2-s1-l3",
+    "type": "lesson",
+    "title": "Constraints and Output Format",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Define what you don't want",
+        "body": "Constraints are as important as goals. They narrow the solution space and prevent wasted output. Common constraints: length ('in under 100 words'), format ('as a bulleted list'), style ('no jargon'), scope ('only cover X, not Y'), and audience ('suitable for a 10-year-old')."
+      },
+      {
+        "type": "text",
+        "heading": "Specify the output format",
+        "body": "Telling the model what format to use eliminates guessing. 'Respond as a JSON object with keys: summary, action_items, priority' produces machine-parseable output. 'Write a numbered list' produces scannable content. Format instructions are one of the most effective ways to make AI output immediately useful."
+      },
+      {
+        "type": "quiz",
+        "question": "Why should you specify an output format in your prompt?",
+        "options": [
+          "The model cannot produce output without a format instruction",
+          "It prevents the model from making up data",
+          "It ensures the output is immediately usable without reformatting",
+          "It makes the prompt shorter"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w2-s2-l1",
+    "type": "lesson",
+    "title": "Be Clear and Direct",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Clarity beats cleverness",
+        "body": "The best prompts are straightforward. Don't try to be indirect or 'trick' the model — just say what you want. Use active voice, imperative sentences, and specific verbs. 'List the top 5 security risks for a Node.js app' is better than 'Could you perhaps tell me something about security in Node.js applications?'"
+      },
+      {
+        "type": "text",
+        "heading": "Precision in language",
+        "body": "Words like 'improve', 'fix', 'make better' are ambiguous. Replace them with precise instructions: 'Fix the type errors', 'Refactor to reduce duplication', 'Improve readability by extracting this logic into a named function'. The more specific your verbs and nouns, the better the output."
+      },
+      {
+        "type": "quiz",
+        "question": "Which prompt uses the clearest and most direct language?",
+        "options": [
+          "Maybe you could improve this somehow",
+          "Make this better if possible",
+          "Refactor this function to use early returns instead of nested if statements",
+          "I think there might be a way to clean this up"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w2-s2-l2",
+    "type": "lesson",
+    "title": "Step-by-Step Prompting",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Chain of thought",
+        "body": "For complex problems, tell the model to think step by step before giving an answer. Phrases like 'Think through this carefully before responding' or 'Let's work through this step by step' activate chain-of-thought reasoning — the model externalizes its reasoning, which significantly improves accuracy on hard problems."
+      },
+      {
+        "type": "text",
+        "heading": "Breaking down tasks",
+        "body": "Complex tasks should be broken into smaller prompts rather than one massive request. Instead of 'Build me a full authentication system', try: first 'Design the data model for user authentication', then 'Write the registration endpoint', then 'Write the login endpoint'. Each focused prompt produces better output."
+      },
+      {
+        "type": "quiz",
+        "question": "Why does asking an LLM to 'think step by step' improve accuracy?",
+        "options": [
+          "It makes the model slower and more careful",
+          "It uses more tokens",
+          "It externalizes the reasoning process, reducing logical errors",
+          "It forces the model to search the internet"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w2-s3-l1",
+    "type": "lesson",
+    "title": "Why Context Matters",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The model knows nothing about you",
+        "body": "Every new conversation starts from zero. The model doesn't know your tech stack, your team's conventions, your past decisions, or your constraints. Whatever context you don't provide, the model fills in from its training data — which may be completely wrong for your situation."
+      },
+      {
+        "type": "text",
+        "heading": "Context as a force multiplier",
+        "body": "Adding the right context to a prompt can be the difference between a useless answer and a perfect one. 'Review this code' produces generic advice. 'Review this code — it runs on AWS Lambda, must be under 200ms cold start, and uses our company's custom error handling pattern' produces actionable, specific feedback."
+      },
+      {
+        "type": "quiz",
+        "question": "What does the LLM use to fill in information you don't provide in a prompt?",
+        "options": [
+          "Your previous conversations",
+          "Statistical patterns from its training data",
+          "A database lookup",
+          "The internet"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w2-s3-l2",
+    "type": "lesson",
+    "title": "Adding Examples to Prompts",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Few-shot prompting",
+        "body": "Few-shot prompting means showing the model 1-3 examples of the input-output pattern you want before asking it to process your actual input. Instead of describing the format, you demonstrate it. This is one of the most reliable techniques for getting consistent, formatted output."
+      },
+      {
+        "type": "text",
+        "heading": "When to use examples",
+        "body": "Use examples when: the output format is unusual, the task is ambiguous, you need a specific tone or style, or you're transforming data. A single example of input → output is often worth a paragraph of description. The model pattern-matches from your example and applies it reliably."
+      },
+      {
+        "type": "quiz",
+        "question": "What is 'few-shot prompting'?",
+        "options": [
+          "Using very short prompts",
+          "Sending multiple messages quickly",
+          "Providing examples of the desired input-output pattern in the prompt",
+          "Using the model for only a few tasks"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w2-s4-l1",
+    "type": "lesson",
+    "title": "Requesting Structured Output",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "JSON output from LLMs",
+        "body": "Modern LLMs can produce valid JSON reliably when asked. This is powerful — it bridges natural language and code. You can prompt: 'Extract the key information from this text and return a JSON object with fields: name, date, location, summary.' The output is immediately usable by code."
+      },
+      {
+        "type": "text",
+        "heading": "Defining the schema",
+        "body": "The more precisely you define the JSON schema, the better. Specify field names, types, and what each should contain. 'Return a JSON object with: { \"severity\": \"low|medium|high\", \"category\": string, \"description\": string, \"remediation\": string }' leaves no room for inconsistency."
+      },
+      {
+        "type": "quiz",
+        "question": "When is requesting JSON output from an LLM most useful?",
+        "options": [
+          "When you want more creative responses",
+          "When the output needs to be processed programmatically",
+          "When you want the model to think harder",
+          "When you need shorter responses"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w2-s4-l2",
+    "type": "lesson",
+    "title": "Tables, Lists, and Formatting",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Formatting as a feature",
+        "body": "LLMs support Markdown formatting. Asking for a table, numbered list, or headers significantly affects how the output is structured and consumed. A comparison prompt like 'Compare X and Y' produces better output when you add 'present as a Markdown table with columns: Feature, X, Y'."
+      },
+      {
+        "type": "text",
+        "heading": "Match format to use case",
+        "body": "Use bullet points for quick-scan lists. Use numbered lists for steps or priority-ordered items. Use tables for comparisons or structured data. Use headers for long-form output you'll need to navigate. Use plain prose for human-readable narrative. Choosing the right format doubles the usefulness of the output."
+      },
+      {
+        "type": "quiz",
+        "question": "Which format is best for presenting a step-by-step setup process?",
+        "options": [
+          "A Markdown table",
+          "A numbered list",
+          "A paragraph of prose",
+          "Bullet points without numbers"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w2-s5-l1",
+    "type": "lesson",
+    "title": "Role and Persona Prompting",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Setting a role",
+        "body": "Assigning a role to the model ('You are a senior security engineer', 'Act as a Socratic tutor') shifts its response style, vocabulary, and reasoning focus. Roles activate different 'modes' of the model's knowledge, making responses more targeted and expert in the assigned domain."
+      },
+      {
+        "type": "text",
+        "heading": "Persona prompting",
+        "body": "A persona goes beyond role — it defines personality, communication style, and constraints. 'You are Alex, a no-nonsense staff engineer who gives brutally honest code reviews. You prioritize correctness, maintainability, and performance in that order. You never sugarcoat feedback.' This creates consistent, predictable behavior across a long session."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the primary benefit of role prompting?",
+        "options": [
+          "It makes the model faster",
+          "It prevents the model from making errors",
+          "It activates relevant domain knowledge and adjusts response style",
+          "It gives the model access to real-time data"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w2-s5-l2",
+    "type": "lesson",
+    "title": "Chain and Multi-Step Prompting",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Chaining prompts",
+        "body": "Chain prompting means using the output of one prompt as the input to the next. Step 1: 'Analyze this bug report and identify the root cause.' Step 2: 'Given this root cause, suggest 3 possible fixes.' Step 3: 'Write the code for fix #2.' Chains break complex tasks into reliable stages."
+      },
+      {
+        "type": "text",
+        "heading": "Multi-step in a single prompt",
+        "body": "You can also instruct the model to perform multiple steps within one prompt. 'First, summarize the document in 3 bullet points. Second, identify any risks. Third, suggest next actions.' This is efficient but works best when steps are independent. If step 3 depends on complex reasoning from step 2, a separate prompt gives better results."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the main advantage of chain prompting over a single large prompt?",
+        "options": [
+          "It uses fewer tokens overall",
+          "It avoids the context window limit",
+          "Each step is focused, producing more reliable output at each stage",
+          "The model remembers previous chains automatically"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w3-s1-l1",
+    "type": "lesson",
+    "title": "Manual Work vs Automation",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "What manual work costs you",
+        "body": "Manual work is anything a human does repeatedly that follows a predictable pattern: filling forms, running the same test suite, copying data between systems, clicking through deployment steps. Each repetition costs time, introduces human error, and scales poorly with team growth."
+      },
+      {
+        "type": "text",
+        "heading": "What automation gives you",
+        "body": "Automation replaces repetition with code. A script that takes 30 minutes to write can save 1 hour of manual work per week. Over a year that's 52 hours — more than a full work week. Automation also eliminates human error, produces consistent results, and frees engineers for higher-value work."
+      },
+      {
+        "type": "quiz",
+        "question": "Which scenario is most suitable for automation?",
+        "options": [
+          "A creative brainstorming session",
+          "Running the same 50-step regression test every release",
+          "A one-time data migration",
+          "Debugging a novel production issue"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w3-s1-l2",
+    "type": "lesson",
+    "title": "Automation Concepts",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Types of automation",
+        "body": "Automation spans many domains: test automation (verifying software works), process automation (replacing manual business workflows), infrastructure automation (provisioning servers with code), and browser automation (controlling web browsers programmatically). Each has specialized tools, but the underlying principles are the same."
+      },
+      {
+        "type": "text",
+        "heading": "Triggers, actions, and assertions",
+        "body": "All automation follows a core pattern: Trigger (what starts the automation), Action (what it does), and Assertion (how it verifies success). A test triggers on code push, clicks a button, and asserts the result is visible. A workflow triggers on a calendar event, sends an email, and asserts delivery. This mental model applies everywhere."
+      },
+      {
+        "type": "quiz",
+        "question": "What are the three core components of any automation?",
+        "options": [
+          "Input, Process, Output",
+          "Trigger, Action, Assertion",
+          "Start, Run, Stop",
+          "Test, Deploy, Monitor"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w3-s1-l3",
+    "type": "lesson",
+    "title": "ROI of Automation",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Calculating return on investment",
+        "body": "Before automating, calculate the ROI. How long does the manual task take? How often does it run? Multiply to get the weekly cost. If automation takes 4 hours to build and saves 2 hours/week, it pays for itself in 2 weeks. Everything after that is pure savings."
+      },
+      {
+        "type": "text",
+        "heading": "What not to automate",
+        "body": "Not everything is worth automating. One-off tasks, tasks that change frequently before they're stable, and tasks with complex human judgment are poor automation candidates. The XKCD 'Is It Worth the Time?' chart captures it perfectly: the more frequent and longer the task, the higher the ROI for automation."
+      },
+      {
+        "type": "quiz",
+        "question": "A manual task takes 10 minutes and runs daily. Building automation takes 8 hours. When does it break even?",
+        "options": [
+          "After 8 days",
+          "After 48 days",
+          "After 8 weeks",
+          "Never — manual is always faster to start"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w3-s2-l1",
+    "type": "lesson",
+    "title": "Mapping Processes",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Before you automate, map it",
+        "body": "The first step in automating a process is documenting it exactly as it currently works — every step, every decision point, every input and output. You cannot automate what you haven't clearly understood. Process mapping reveals hidden complexity, exceptions, and dependencies that break naive automation attempts."
+      },
+      {
+        "type": "text",
+        "heading": "Decision points are automation risk",
+        "body": "Decision points — places where a human chooses between paths based on judgment — are the hardest to automate. 'If the error looks weird, escalate' is not automatable without defining 'weird'. Map every decision point and decide: can this be rule-based? Does it need AI? Or does it need a human?"
+      },
+      {
+        "type": "quiz",
+        "question": "Why is process mapping important before automation?",
+        "options": [
+          "It satisfies compliance requirements",
+          "It makes the automation run faster",
+          "It reveals hidden complexity and decision points that affect the automation design",
+          "It is required by all automation frameworks"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w3-s2-l2",
+    "type": "lesson",
+    "title": "Inputs, Outputs, and Dependencies",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Defining inputs and outputs",
+        "body": "Every automation has inputs (what it receives) and outputs (what it produces). Clearly defining these is essential. Ambiguous inputs lead to fragile automation that breaks on edge cases. Undefined outputs make it impossible to verify success. Treat input/output contracts the same way you treat function signatures in code."
+      },
+      {
+        "type": "text",
+        "heading": "Managing dependencies",
+        "body": "Automation depends on external systems: databases, APIs, browsers, file systems. Each dependency is a failure point. Good automation handles dependency failures gracefully — it retries, falls back, or alerts a human. Ignoring dependencies is the #1 reason automation works in testing but fails in production."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the primary risk of having unhandled dependencies in automation?",
+        "options": [
+          "The automation runs slower",
+          "External failures silently break the automation with no alert",
+          "The automation produces duplicate outputs",
+          "The automation uses more memory"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w4-s1-l1",
+    "type": "lesson",
+    "title": "What is Playwright?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Browser automation built for the modern web",
+        "body": "Playwright is an open-source framework from Microsoft for automating modern web browsers — Chromium, Firefox, and WebKit. Unlike older tools like Selenium, Playwright was built with the modern web in mind: it handles async operations natively, has built-in waiting, and supports all modern browser features."
+      },
+      {
+        "type": "text",
+        "heading": "What you can do with Playwright",
+        "body": "With Playwright you can: write end-to-end tests that run in real browsers, scrape web data, automate repetitive browser tasks, capture screenshots and videos, test across multiple browsers with one API, and run tests in parallel at scale. It's the leading tool for browser automation in 2024."
+      },
+      {
+        "type": "quiz",
+        "question": "Which browsers does Playwright support?",
+        "options": [
+          "Only Chrome",
+          "Chrome and Firefox only",
+          "Chromium, Firefox, and WebKit",
+          "All browsers including Internet Explorer"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w4-s1-l2",
+    "type": "lesson",
+    "title": "Setting Up a Playwright Project",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Installation",
+        "body": "Install Playwright with: npm init playwright@latest. This sets up the project, installs browser binaries, and creates a sample test. The key files: playwright.config.ts (configuration), tests/ (your test files). Run tests with npx playwright test. View the HTML report with npx playwright show-report."
+      },
+      {
+        "type": "text",
+        "heading": "Project structure",
+        "body": "A typical Playwright project: tests/ for test files, fixtures/ for reusable setup, pages/ for Page Object Models, and playwright.config.ts at the root. The config controls browsers, base URL, timeouts, and parallelism. Start simple — one config, one tests/ folder — and expand as needed."
+      },
+      {
+        "type": "quiz",
+        "question": "What command runs all Playwright tests in a project?",
+        "options": [
+          "playwright run",
+          "npx playwright test",
+          "npm test playwright",
+          "node playwright.js"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w4-s2-l1",
+    "type": "lesson",
+    "title": "Finding Elements with Locators",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Locators: the key to reliable tests",
+        "body": "A locator is how Playwright finds elements on the page. The best locators are user-facing: page.getByRole('button', { name: 'Submit' }) finds a button labeled 'Submit'. page.getByLabel('Email') finds the input for an email label. These are resilient to UI changes — they describe what the user sees, not implementation details."
+      },
+      {
+        "type": "text",
+        "heading": "Locator priority",
+        "body": "Use locators in this priority order: getByRole (most resilient), getByLabel, getByPlaceholder, getByText, getByTestId. Avoid CSS selectors like .btn-primary or XPath — these break when the UI is restyled. If a developer adds data-testid='submit-btn', use getByTestId. Never rely on position-based selectors like nth-child(3)."
+      },
+      {
+        "type": "quiz",
+        "question": "Which is the most resilient way to locate a 'Login' button in Playwright?",
+        "options": [
+          "page.locator('.btn-login')",
+          "page.locator('button:nth-child(2)')",
+          "page.getByRole('button', { name: 'Login' })",
+          "page.locator('#login-btn')"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w4-s2-l2",
+    "type": "lesson",
+    "title": "Performing Actions",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Core actions",
+        "body": "Playwright actions mirror what a user does: click(), fill(), type(), check(), uncheck(), selectOption(), hover(), focus(), press(). Each action automatically waits for the element to be visible and interactive before proceeding — no manual waits or sleep() calls needed."
+      },
+      {
+        "type": "text",
+        "heading": "Navigation and waiting",
+        "body": "Navigate with await page.goto(url). Wait for a page load with await page.waitForLoadState('networkidle'). Wait for an element with await expect(locator).toBeVisible(). Playwright's auto-wait handles most cases, but you'll occasionally need explicit waits for complex async behavior."
+      },
+      {
+        "type": "quiz",
+        "question": "Why don't you typically need sleep() calls between Playwright actions?",
+        "options": [
+          "Playwright runs too fast to need waits",
+          "Playwright automatically waits for elements to be ready before acting",
+          "You must disable async mode for waits to work",
+          "Sleep is not supported in Playwright"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w4-s3-l1",
+    "type": "lesson",
+    "title": "Writing Assertions",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "expect() is everything",
+        "body": "Assertions verify that the page state matches expectations. Use await expect(locator).toBeVisible() to assert an element is shown. Use await expect(page).toHaveURL('/dashboard') to assert navigation succeeded. Use await expect(locator).toHaveText('Welcome, David') to assert content. All expect() assertions automatically wait and retry."
+      },
+      {
+        "type": "text",
+        "heading": "Common assertion patterns",
+        "body": "Key assertions: toBeVisible/toBeHidden, toHaveText/toContainText, toHaveValue (for inputs), toBeChecked, toHaveURL, toHaveTitle, toHaveCount (for lists). Negative assertions use .not: await expect(locator).not.toBeVisible(). Assertions that fail show clear, readable error messages pointing to the failing expectation."
+      },
+      {
+        "type": "quiz",
+        "question": "What does await expect(locator).toBeVisible() do if the element is not yet visible?",
+        "options": [
+          "Immediately fails the test",
+          "Throws a JavaScript error",
+          "Retries the assertion until it passes or the timeout expires",
+          "Skips the assertion"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w4-s3-l2",
+    "type": "lesson",
+    "title": "Debugging with Playwright Inspector",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The Playwright Inspector",
+        "body": "Run PWDEBUG=1 npx playwright test to open the Playwright Inspector. It pauses execution and lets you step through your test action by action, see what the browser is doing at each step, and inspect element locators live. It's the fastest way to diagnose why a test is failing."
+      },
+      {
+        "type": "text",
+        "heading": "Trace Viewer",
+        "body": "The Trace Viewer records a full trace of a test run — every action, screenshot, network request, and console log — as a visual timeline you can replay. Enable traces in config: trace: 'on-first-retry'. After a test failure, run npx playwright show-report to open the trace. It shows you exactly what the browser saw at the moment of failure."
+      },
+      {
+        "type": "quiz",
+        "question": "What environment variable do you set to open the Playwright Inspector when running tests?",
+        "options": [
+          "DEBUG=playwright",
+          "PLAYWRIGHT_DEBUG=true",
+          "PWDEBUG=1",
+          "INSPECTOR=on"
+        ],
+        "correct": 2
+      }
+    ]
   }
 ]

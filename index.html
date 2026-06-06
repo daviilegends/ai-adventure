@@ -95,20 +95,21 @@
         </span>
         <span class="nav-label">Map</span>
       </button>
-      <button class="nav-btn" aria-label="Profile">
+      <button class="nav-btn" data-nav="achievements" aria-label="Achievements">
         <span class="nav-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
+            <circle cx="12" cy="8" r="6"/>
+            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
           </svg>
         </span>
-        <span class="nav-label">Profile</span>
+        <span class="nav-label">Achievements</span>
       </button>
     </nav>
 
     <div id="lesson-screen" class="lesson-screen hidden"></div>
     <div id="quiz-screen" class="lesson-screen hidden"></div>
     <div id="boss-screen" class="lesson-screen hidden"></div>
+    <div id="achievements-screen" class="achievements-screen hidden"></div>
 
   </div>
 
@@ -117,11 +118,16 @@
   <script src="js/LessonEngine.js"></script>
   <script src="js/QuizEngine.js"></script>
   <script src="js/BossEngine.js"></script>
+  <script src="js/achievements/AchievementStorage.js"></script>
+  <script src="js/achievements/AchievementEvents.js"></script>
+  <script src="js/achievements/AchievementConditions.js"></script>
+  <script src="js/achievements/AchievementService.js"></script>
   <script src="js/screens/home.js"></script>
   <script src="js/screens/lesson.js"></script>
   <script src="js/screens/quiz.js"></script>
   <script src="js/screens/boss.js"></script>
   <script src="js/screens/profile.js"></script>
+  <script src="js/screens/achievements.js"></script>
   <script src="js/Animations.js"></script>
   <script src="js/app.js"></script>
 </body>

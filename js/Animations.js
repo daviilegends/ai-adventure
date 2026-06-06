@@ -14,6 +14,9 @@ const Animations = {
         sub: 'New world available on the map',
       });
     });
+    document.addEventListener(AchievementEvents.UNLOCKED, (e) => {
+      this.achievementBanner(e.detail.achievement);
+    });
   },
 
   completionFlash(isBoss = false) {
@@ -72,6 +75,28 @@ const Animations = {
         setTimeout(() => el.remove(), 260);
       }, 3000);
     }, delay);
+  },
+
+  achievementBanner(achievement) {
+    const existing = document.querySelector('.achievement-banner');
+    if (existing) existing.remove();
+
+    const el = document.createElement('div');
+    el.className = 'achievement-banner';
+    el.innerHTML = `
+      <div class="achievement-banner__icon">${achievement.icon}</div>
+      <div class="achievement-banner__body">
+        <div class="achievement-banner__label">Achievement Unlocked</div>
+        <div class="achievement-banner__title">${achievement.title}</div>
+        ${achievement.xpReward ? `<div class="achievement-banner__xp">+${achievement.xpReward} XP</div>` : ''}
+      </div>
+    `;
+    document.getElementById('app').appendChild(el);
+
+    setTimeout(() => {
+      el.classList.add('achievement-banner--exiting');
+      setTimeout(() => el.remove(), 300);
+    }, 3500);
   },
 
   screenEnter(el) {

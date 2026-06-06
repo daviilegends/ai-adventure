@@ -27,9 +27,9 @@ The player gains:
 
 World
 → Stage
-→ Lesson
-→ Quiz
-→ Reward
+→ Node (lesson | challenge | puzzle | miniboss | boss)
+→ Steps (text / quiz)
+→ Reward (XP, Coins)
 
 ## Boss Battles
 

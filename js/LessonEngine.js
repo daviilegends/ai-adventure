@@ -1,32 +1,44 @@
 const LessonEngine = {
-  _lessons: [],
+  _stages: [],
   _worlds: [],
+  _nodeMap: {},
   _current: null,
   _stepIndex: 0,
+  _currentStageRef: null,
   _pendingBossHandler: null,
 
   async load() {
-    const [lessons, worlds] = await Promise.all([
+    const [lessons, challenges, puzzles, stages, worlds] = await Promise.all([
       fetch('data/lessons.json').then(r => r.json()),
+      fetch('data/challenges.json').then(r => r.json()),
+      fetch('data/puzzles.json').then(r => r.json()),
+      fetch('data/stages.json').then(r => r.json()),
       fetch('data/worlds.json').then(r => r.json()),
     ]);
-    this._lessons = lessons;
+    this._stages = stages;
     this._worlds = worlds;
+    [...lessons, ...challenges, ...puzzles].forEach(node => {
+      this._nodeMap[node.id] = node;
+    });
     this._syncWorldUnlocks();
   },
 
-  start(lessonId) {
-    const lesson = this._lessons.find(l => l.id === lessonId);
-    if (!lesson) return;
+  start(nodeId) {
+    const stageRef = this._findStageForNode(nodeId);
 
-    if (lesson.type === 'boss') {
-      this._startBoss(lesson);
+    const bossNode = BossEngine.getById(nodeId);
+    if (bossNode) {
+      this._startBoss(nodeId, bossNode, stageRef);
       return;
     }
 
-    this._current = lesson;
+    const node = this._nodeMap[nodeId];
+    if (!node) return;
+
+    this._current = node;
+    this._currentStageRef = stageRef;
     this._stepIndex = 0;
-    document.dispatchEvent(new CustomEvent('lesson:started', { detail: { lesson } }));
+    document.dispatchEvent(new CustomEvent('lesson:started', { detail: { lesson: node } }));
     this._dispatchStep();
   },
 
@@ -41,52 +53,81 @@ const LessonEngine = {
     }
   },
 
-  isCompleted(lessonId) {
-    return State.get().completedLessons.includes(lessonId);
+  isCompleted(nodeId) {
+    return State.get().completedLessons.includes(nodeId);
   },
 
   getWorlds() {
     return this._worlds;
   },
 
-  getForWorld(worldId) {
-    return this._lessons.filter(l => l.worldId === worldId);
-  },
-
   getStagesForWorld(worldId) {
-    const world = this._worlds.find(w => w.id === worldId);
-    return world ? (world.stages || []) : [];
+    return this._stages
+      .filter(s => s.worldId === worldId)
+      .sort((a, b) => a.order - b.order);
   },
 
-  getForStage(worldId, stageId) {
-    return this._lessons.filter(l => l.worldId === worldId && l.stageId === stageId);
+  getNodesForStage(worldId, stageOrder) {
+    const stage = this._stages.find(s => s.worldId === worldId && s.order === stageOrder);
+    if (!stage) return [];
+    return stage.nodes.map(n => {
+      const node = this._nodeMap[n.nodeId] || BossEngine.getById(n.nodeId);
+      if (!node) return null;
+      return { id: n.nodeId, type: n.nodeType, title: node.title };
+    }).filter(Boolean);
   },
 
-  _startBoss(lesson) {
-    if (!lesson.bossId) return;
+  getNodeType(nodeId) {
+    for (const stage of this._stages) {
+      const node = stage.nodes.find(n => n.nodeId === nodeId);
+      if (node) return node.nodeType;
+    }
+    return null;
+  },
 
-    // Remove any stale handler from a previously abandoned boss attempt
+  getForWorld(worldId) {
+    const worldStages = this._stages.filter(s => s.worldId === worldId);
+    return worldStages.flatMap(s => s.nodes).map(n => {
+      const node = this._nodeMap[n.nodeId] || BossEngine.getById(n.nodeId);
+      return node ? { id: n.nodeId, type: n.nodeType } : null;
+    }).filter(Boolean);
+  },
+
+  _findStageForNode(nodeId) {
+    for (const stage of this._stages) {
+      if (stage.nodes.some(n => n.nodeId === nodeId)) {
+        return { worldId: stage.worldId, stageOrder: stage.order };
+      }
+    }
+    return null;
+  },
+
+  _startBoss(nodeId, bossData, stageRef) {
     if (this._pendingBossHandler) {
       document.removeEventListener('boss:completed', this._pendingBossHandler);
     }
 
     const handler = (e) => {
-      if (e.detail.boss.id !== lesson.bossId) return;
+      if (e.detail.boss.id !== nodeId) return;
       document.removeEventListener('boss:completed', handler);
       this._pendingBossHandler = null;
 
       const player = State.get();
-      if (!player.completedLessons.includes(lesson.id)) {
-        State.set({ completedLessons: [...player.completedLessons, lesson.id] });
-        this._checkStageComplete(lesson.worldId, lesson.stageId);
-        this._checkWorldUnlock(lesson.worldId);
+      if (!player.completedLessons.includes(nodeId)) {
+        State.set({ completedLessons: [...player.completedLessons, nodeId] });
+        if (stageRef) {
+          this._checkStageComplete(stageRef.worldId, stageRef.stageOrder);
+          this._checkWorldUnlock(stageRef.worldId);
+        }
       }
-      document.dispatchEvent(new CustomEvent('lesson:completed', { detail: { lesson } }));
+      document.dispatchEvent(new CustomEvent('lesson:completed', {
+        detail: { lesson: { id: nodeId, type: bossData.type || 'boss', title: bossData.title, xpReward: bossData.xpReward } },
+      }));
     };
 
     this._pendingBossHandler = handler;
     document.addEventListener('boss:completed', handler);
-    BossEngine.start(lesson.bossId);
+    BossEngine.start(nodeId);
   },
 
   _dispatchStep() {
@@ -100,32 +141,39 @@ const LessonEngine = {
 
   _complete() {
     const lesson = this._current;
+    const stageRef = this._currentStageRef;
     const player = State.get();
 
     if (!player.completedLessons.includes(lesson.id)) {
       XP.gainXp(lesson.xpReward);
       State.set({ completedLessons: [...player.completedLessons, lesson.id] });
-      this._checkStageComplete(lesson.worldId, lesson.stageId);
-      this._checkWorldUnlock(lesson.worldId);
+      if (stageRef) {
+        this._checkStageComplete(stageRef.worldId, stageRef.stageOrder);
+        this._checkWorldUnlock(stageRef.worldId);
+      }
     }
 
     this._current = null;
     this._stepIndex = 0;
+    this._currentStageRef = null;
     document.dispatchEvent(new CustomEvent('lesson:completed', { detail: { lesson } }));
   },
 
-  _checkStageComplete(worldId, stageId) {
+  _checkStageComplete(worldId, stageOrder) {
+    const stage = this._stages.find(s => s.worldId === worldId && s.order === stageOrder);
+    if (!stage) return;
     const player = State.get();
-    const stageLessons = this._lessons.filter(l => l.worldId === worldId && l.stageId === stageId);
-    const allDone = stageLessons.length > 0 && stageLessons.every(l => player.completedLessons.includes(l.id));
+    const allDone = stage.nodes.every(n => player.completedLessons.includes(n.nodeId));
     if (!allDone) return;
-    document.dispatchEvent(new CustomEvent('stage:completed', { detail: { worldId, stageId } }));
+    document.dispatchEvent(new CustomEvent('stage:completed', { detail: { worldId, stageId: stageOrder } }));
   },
 
   _checkWorldUnlock(worldId) {
     const player = State.get();
-    const worldLessons = this._lessons.filter(l => l.worldId === worldId);
-    const allDone = worldLessons.length > 0 && worldLessons.every(l => player.completedLessons.includes(l.id));
+    const worldStages = this._stages.filter(s => s.worldId === worldId);
+    const allNodeIds = worldStages.flatMap(s => s.nodes.map(n => n.nodeId));
+    if (allNodeIds.length === 0) return;
+    const allDone = allNodeIds.every(id => player.completedLessons.includes(id));
     if (!allDone) return;
 
     const nextWorld = this._worlds.find(w => w.unlockRequirement && w.unlockRequirement.worldId === worldId);
@@ -135,7 +183,6 @@ const LessonEngine = {
     document.dispatchEvent(new CustomEvent('world:unlocked', { detail: { world: nextWorld } }));
   },
 
-  // Fixes unlockedWorlds for saves that predate the unlock system.
   _syncWorldUnlocks() {
     const player = State.get();
     const toUnlock = [];
@@ -145,8 +192,9 @@ const LessonEngine = {
       if (player.unlockedWorlds.includes(world.id)) return;
 
       const req = world.unlockRequirement;
-      const srcLessons = this._lessons.filter(l => l.worldId === req.worldId);
-      const allDone = srcLessons.length > 0 && srcLessons.every(l => player.completedLessons.includes(l.id));
+      const worldStages = this._stages.filter(s => s.worldId === req.worldId);
+      const allNodeIds = worldStages.flatMap(s => s.nodes.map(n => n.nodeId));
+      const allDone = allNodeIds.length > 0 && allNodeIds.every(id => player.completedLessons.includes(id));
       if (allDone) toUnlock.push(world.id);
     });
 

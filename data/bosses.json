@@ -1,9 +1,9 @@
 [
   {
     "id": "b-w1",
-    "worldId": 1,
+    "type": "boss",
     "title": "The AI Guardian",
-    "subtitle": "Final Challenge · AI Foundations",
+    "subtitle": "Final Boss · AI Foundations",
     "description": "You have studied the fundamentals. Now face the Guardian — an ancient intelligence that tests only those ready to advance. Prove your knowledge to unlock the next world.",
     "objective": "Answer at least 3 of 5 challenges correctly to defeat the Guardian.",
     "passThreshold": 0.6,
@@ -12,12 +12,12 @@
     "challenges": [
       {
         "type": "multiple-choice",
-        "question": "What does AI stand for?",
+        "question": "What does LLM stand for?",
         "options": [
-          "Automated Integration",
-          "Artificial Intelligence",
-          "Advanced Interface",
-          "Autonomous Interaction"
+          "Logical Language Machine",
+          "Large Language Model",
+          "Linear Learning Module",
+          "Low-Latency Model"
         ],
         "correct": 1
       },
@@ -28,18 +28,18 @@
       },
       {
         "type": "multiple-choice",
-        "question": "What is the main thing an LLM learns to do during training?",
+        "question": "What is the primary thing an LLM learns during training?",
         "options": [
-          "Memorize facts from Wikipedia",
-          "Translate languages",
-          "Predict the next token in a sequence",
-          "Execute code"
+          "How to memorize facts from Wikipedia",
+          "How to translate between languages",
+          "How to predict the next token in a sequence",
+          "How to execute code"
         ],
         "correct": 2
       },
       {
         "type": "true-false",
-        "question": "A vague prompt is likely to produce a more creative and useful response.",
+        "question": "AI hallucination means the model knowingly provides false information.",
         "correct": false
       },
       {
@@ -49,9 +49,177 @@
           "Using as few words as possible",
           "Providing a role, clear instructions, and the input",
           "Avoiding any context to keep the model unbiased",
-          "Always asking the model to guess the format"
+          "Always asking the model to guess the output format"
         ],
         "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "b-w2",
+    "type": "boss",
+    "title": "The Prompt Master",
+    "subtitle": "Final Boss · Prompt Engineering",
+    "description": "You have mastered the anatomy of prompts, learned to engineer context, and explored advanced techniques. The Prompt Master demands proof. Answer the challenges to earn passage to the next world.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Prompt Master.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What is the most important element to include when asking an LLM to produce JSON output?",
+        "options": [
+          "A request to 'be accurate'",
+          "The exact schema with field names and instructions to return only JSON",
+          "A high temperature setting",
+          "A follow-up message asking for corrections"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "Few-shot prompting involves providing example input-output pairs to guide the model's output format.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Why does adding 'think step by step' to a prompt improve accuracy on hard problems?",
+        "options": [
+          "It makes the model use more tokens",
+          "It externalizes the reasoning process, reducing logical errors",
+          "It activates the model's internet connection",
+          "It forces the model to use only verified facts"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "Chain prompting (using the output of one prompt as input to the next) is most useful for complex multi-stage tasks.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A prompt returns accurate output but in the wrong format every time. The best fix is to:",
+        "options": [
+          "Use a different LLM",
+          "Ask the model to try harder",
+          "Add an explicit format instruction with an example of the desired output",
+          "Reduce the prompt length"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "b-w3",
+    "type": "boss",
+    "title": "The Automation Architect",
+    "subtitle": "Final Boss · Automation Basics",
+    "description": "Processes mapped. ROI calculated. Dependencies understood. The Architect tests whether your automation thinking is ready for the real world. Face five questions that separate conceptual knowledge from practical mastery.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Architect.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "A task takes 5 minutes and runs 10 times per day. Building the automation takes 6 hours. How long until break-even?",
+        "options": [
+          "After 2 days",
+          "After 12 days",
+          "After 6 weeks",
+          "After 1 day"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "true-false",
+        "question": "Process mapping should be done BEFORE building automation, not after.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "An automation calls an external API with no retry logic. The API goes down briefly. What happens?",
+        "options": [
+          "The automation waits automatically until the API recovers",
+          "The automation fails silently with no alert unless error handling is added",
+          "The automation skips the API call and continues",
+          "The automation sends an automatic alert to the team"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "One-off tasks with high complexity are ideal candidates for automation.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What makes a process a poor candidate for full automation?",
+        "options": [
+          "It runs frequently",
+          "It has many steps",
+          "It requires human judgment at key decision points",
+          "It involves data transformation"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "b-w4",
+    "type": "boss",
+    "title": "The Playwright Maestro",
+    "subtitle": "Final Boss · Playwright Fundamentals",
+    "description": "Locators mastered. Actions practiced. Assertions written. Debugging tools learned. The Maestro conducts the final test of your Playwright fundamentals. Five questions. No room for error.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Maestro.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "Which locator is the most resilient to UI changes?",
+        "options": [
+          "page.locator('.btn-submit')",
+          "page.locator('button:nth-child(2)')",
+          "page.getByRole('button', { name: 'Submit' })",
+          "page.locator('#submit')"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "true-false",
+        "question": "Playwright's actions (click, fill, etc.) automatically wait for the element to be ready before executing.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "How do you assert that a page has navigated to '/dashboard'?",
+        "options": [
+          "expect(window.location.href).toBe('/dashboard')",
+          "await expect(page).toHaveURL('/dashboard')",
+          "await page.assertURL('/dashboard')",
+          "assert(page.url() === '/dashboard')"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "The Playwright Trace Viewer can replay every action, screenshot, and network request from a test run.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What environment variable opens the Playwright Inspector when running tests?",
+        "options": [
+          "DEBUG=1",
+          "PLAYWRIGHT_INSPECT=true",
+          "PWDEBUG=1",
+          "HEADLESS=false"
+        ],
+        "correct": 2
       }
     ]
   }

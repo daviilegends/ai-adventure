@@ -1,0 +1,371 @@
+[
+  {
+    "id": "w1-s1-c1",
+    "type": "challenge",
+    "title": "AI Basics Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "Which of the following is NOT a form of AI?",
+        "options": [
+          "A spam filter that learns from flagged emails",
+          "A recommendation system on Spotify",
+          "A calculator that adds two numbers",
+          "A face recognition system"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "What is Artificial General Intelligence (AGI)?",
+        "options": [
+          "A type of AI that is very good at one specific task",
+          "A hypothetical AI that matches human-level intelligence across any domain",
+          "The AI that powers ChatGPT",
+          "A government body that regulates AI"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "An AI model correctly identifies 95% of cat photos. What type of AI is this?",
+        "options": [
+          "Artificial General Intelligence",
+          "Strong AI",
+          "Narrow AI",
+          "Conscious AI"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w1-s3-c1",
+    "type": "challenge",
+    "title": "ChatGPT Concepts Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What does RLHF stand for?",
+        "options": [
+          "Recursive Learning from Human Files",
+          "Reinforcement Learning from Human Feedback",
+          "Rapid Language Hyperparameter Fine-tuning",
+          "Reliable Large-scale Human Feedback"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "In the OpenAI API, which message role sets the AI's behavior before the conversation starts?",
+        "options": [
+          "user",
+          "assistant",
+          "system",
+          "context"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "What happens to old messages when a conversation exceeds ChatGPT's context window?",
+        "options": [
+          "The conversation is automatically saved and a new one starts",
+          "The model crashes and requires a restart",
+          "The oldest messages are removed from the active context",
+          "All messages are kept but with lower priority"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w1-s5-c1",
+    "type": "challenge",
+    "title": "AI Ecosystem Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "Which company created the LLaMA family of open-weight models?",
+        "options": [
+          "Google",
+          "OpenAI",
+          "Meta",
+          "Anthropic"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "Which technique does Anthropic use to make Claude safer?",
+        "options": [
+          "Prompt filtering only",
+          "Constitutional AI",
+          "Manual response review",
+          "Knowledge graph verification"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is a key advantage of running an open-weight model locally?",
+        "options": [
+          "It is always more accurate than cloud models",
+          "It requires no hardware",
+          "Data never leaves your machine",
+          "It is free to train"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w2-s1-c1",
+    "type": "challenge",
+    "title": "Prompt Anatomy Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "Which element of a prompt defines the target audience for the output?",
+        "options": [
+          "The goal",
+          "The context",
+          "The constraint",
+          "The format"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "A prompt says 'respond in under 50 words'. What type of instruction is this?",
+        "options": [
+          "A goal",
+          "A role",
+          "A constraint",
+          "An example"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "Which prompt is most likely to produce useful, consistent output from an LLM?",
+        "options": [
+          "Write something about dogs",
+          "Write a 2-sentence summary of the given text suitable for a tweet",
+          "Tell me about dogs in an interesting way",
+          "Dogs"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w2-s3-c1",
+    "type": "challenge",
+    "title": "Context Engineering Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "You're asking an LLM to review code. Which context is most valuable to include?",
+        "options": [
+          "The current date",
+          "The language, framework, and performance requirements",
+          "Your name and company",
+          "The number of lines of code"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is few-shot prompting?",
+        "options": [
+          "Using very short prompts to save tokens",
+          "Sending rapid-fire messages to the model",
+          "Including example input-output pairs in your prompt",
+          "Using the model only a few times per day"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "Without any context, what does an LLM use to fill in assumptions about your request?",
+        "options": [
+          "Your account information",
+          "Previous conversations you had",
+          "Statistical patterns from its training data",
+          "A database of common requests"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w2-s5-c1",
+    "type": "challenge",
+    "title": "Advanced Prompting Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "You need the LLM to debug complex code. What technique should you use first?",
+        "options": [
+          "Ask it to fix everything in one prompt",
+          "Tell it to 'think step by step' before giving an answer",
+          "Ask it to use a different programming language",
+          "Provide the error message only"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Chain prompting is best used when:",
+        "options": [
+          "You want the fastest possible answer",
+          "Your task has multiple distinct stages that build on each other",
+          "The context window is very large",
+          "You need plain text output"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "A persona prompt defines:",
+        "options": [
+          "Only the model's name",
+          "The personality, communication style, and behavioral constraints of the model",
+          "The maximum number of tokens in responses",
+          "The model's training data sources"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w3-s1-c1",
+    "type": "challenge",
+    "title": "Automation Fundamentals Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "Which type of task has the highest ROI for automation?",
+        "options": [
+          "A one-time complex data migration",
+          "A creative design task done occasionally",
+          "A 10-minute task repeated 5 times per day",
+          "A judgment-heavy task done once a month"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "What are the three core components of any automation?",
+        "options": [
+          "Setup, Execute, Cleanup",
+          "Trigger, Action, Assertion",
+          "Input, Transform, Output",
+          "Plan, Build, Deploy"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "A manual task takes 20 minutes daily. Automation takes 10 hours to build. When does it break even?",
+        "options": [
+          "After 30 days",
+          "After 6 months",
+          "After 3 weeks",
+          "After 5 working weeks"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  {
+    "id": "w4-s1-c1",
+    "type": "challenge",
+    "title": "Playwright Setup Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What command initializes a new Playwright project?",
+        "options": [
+          "npx playwright init",
+          "npm install playwright",
+          "npm init playwright@latest",
+          "npx create-playwright"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "Where does Playwright's main configuration live?",
+        "options": [
+          "package.json",
+          "playwright.config.ts",
+          ".playwrightrc",
+          "tests/setup.ts"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What command runs all tests and opens the HTML report?",
+        "options": [
+          "npx playwright test --report",
+          "npx playwright test && npx playwright show-report",
+          "npm run test:e2e",
+          "npx playwright run --html"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w4-s3-c1",
+    "type": "challenge",
+    "title": "Assertions and Debugging Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "Which assertion verifies that a button is NOT visible on the page?",
+        "options": [
+          "await expect(btn).toBeHidden()",
+          "await expect(btn).not.toBeVisible()",
+          "Both of the above are correct",
+          "Neither — you must use a conditional check"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "The Playwright Trace Viewer is most useful for:",
+        "options": [
+          "Writing new locators",
+          "Replaying exactly what the browser did during a failed test",
+          "Running tests in parallel",
+          "Generating test code automatically"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What does await expect(locator).toHaveText('Submit') do when the element shows a different text?",
+        "options": [
+          "Silently passes",
+          "Logs a warning but continues",
+          "Retries until the text matches or the timeout expires, then fails the test",
+          "Updates the element's text to 'Submit'"
+        ],
+        "correct": 2
+      }
+    ]
+  }
+]

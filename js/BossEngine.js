@@ -1,15 +1,21 @@
 const BossEngine = {
   _bosses: [],
+  _minibosses: [],
   _current: null,
   _challengeIndex: 0,
   _answers: [],
 
   async load() {
-    this._bosses = await fetch('data/bosses.json').then(r => r.json());
+    const [bosses, minibosses] = await Promise.all([
+      fetch('data/bosses.json').then(r => r.json()),
+      fetch('data/minibosses.json').then(r => r.json()),
+    ]);
+    this._bosses = bosses;
+    this._minibosses = minibosses;
   },
 
-  getById(bossId) {
-    return this._bosses.find(b => b.id === bossId);
+  getById(id) {
+    return this._bosses.find(b => b.id === id) || this._minibosses.find(b => b.id === id) || null;
   },
 
   start(bossId) {

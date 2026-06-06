@@ -1,0 +1,82 @@
+[
+  {
+    "id": "mb-w1",
+    "type": "miniboss",
+    "title": "The AI Apprentice Test",
+    "subtitle": "Stage Checkpoint · AI Foundations",
+    "description": "You've learned what AI can and cannot do. Now prove it. The Apprentice Test challenges you to apply your knowledge of AI limitations, safety, and real-world behavior. Three questions stand between you and the final stage.",
+    "objective": "Answer at least 2 of 3 questions correctly to pass the checkpoint.",
+    "passThreshold": 0.67,
+    "xpReward": 60,
+    "coinsReward": 25,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "Which statement about AI hallucinations is correct?",
+        "options": [
+          "Hallucinations only occur when the model is asked about the future",
+          "The model is aware when it hallucinates and marks those answers",
+          "The model presents false information with the same confidence as true information",
+          "Hallucinations are a sign of a broken model and should be reported"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "true-false",
+        "question": "An AI system can currently access the internet and fetch real-time data without any special tools or integrations.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is AI alignment?",
+        "options": [
+          "Ensuring the AI's text is properly formatted",
+          "Making AI systems behave in accordance with human intentions and values",
+          "Aligning multiple AI models to work together",
+          "A technique for making AI faster"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "mb-w2",
+    "type": "miniboss",
+    "title": "The Prompt Critic",
+    "subtitle": "Stage Checkpoint · Prompt Engineering",
+    "description": "Four stages of prompting knowledge tested and proven. Now face the Prompt Critic — a harsh judge who accepts only precise, well-structured thinking. Three questions remain. Show that you understand not just what to do, but why.",
+    "objective": "Answer at least 2 of 3 questions correctly to pass the checkpoint.",
+    "passThreshold": 0.67,
+    "xpReward": 60,
+    "coinsReward": 25,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "A developer asks: 'Fix my code'. What critical element is missing from this prompt?",
+        "options": [
+          "A polite tone",
+          "A goal, context, and the actual code",
+          "The developer's name",
+          "The programming language only"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "Providing examples of the desired input-output format in a prompt (few-shot prompting) reliably improves consistency of structured output.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "You need an LLM to always return the same JSON structure across hundreds of API calls. What is the most important thing to include?",
+        "options": [
+          "A request to 'be consistent'",
+          "The exact JSON schema with field names and types in the system prompt",
+          "A higher temperature setting",
+          "A larger context window"
+        ],
+        "correct": 1
+      }
+    ]
+  }
+]

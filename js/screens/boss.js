@@ -25,6 +25,8 @@ const BossScreen = {
 
   _renderIntro(boss) {
     this._show();
+    const isMiniboss = boss.type === 'miniboss';
+    const badgeText = boss.subtitle || (isMiniboss ? 'Stage Checkpoint' : 'Final Boss');
 
     this._el.innerHTML = `
       <div class="boss-intro">
@@ -35,14 +37,14 @@ const BossScreen = {
           <div class="boss-intro__emblem">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l5 7.5 5-5.5 5 5.5 5-7.5v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4z"/></svg>
           </div>
-          <span class="boss-intro__badge">World ${boss.worldId} &middot; Final Boss</span>
+          <span class="boss-intro__badge">${badgeText}</span>
           <h1 class="boss-intro__title">${boss.title}</h1>
           <p class="boss-intro__desc">${boss.description}</p>
           <div class="boss-objective">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
             ${boss.objective}
           </div>
-          <button class="btn btn--boss" id="boss-begin">Begin Battle</button>
+          <button class="btn btn--boss" id="boss-begin">${isMiniboss ? 'Begin Checkpoint' : 'Begin Battle'}</button>
         </div>
       </div>
     `;
@@ -157,14 +159,16 @@ const BossScreen = {
   },
 
   _renderVictory({ boss, correct, total, stars }) {
+    const isMiniboss = boss.type === 'miniboss';
+    const headline = isMiniboss ? 'Checkpoint Cleared!' : 'Boss Defeated!';
     const starsHtml = [1, 2, 3]
       .map(n => `<span class="score-star${n <= stars ? ' score-star--lit' : ''}">★</span>`)
       .join('');
 
     this._el.innerHTML = `
       <div class="boss-results boss-results--victory">
-        <div class="boss-results__icon">🏆</div>
-        <h2>Guardian Defeated!</h2>
+        <div class="boss-results__icon">${isMiniboss ? '🥈' : '🏆'}</div>
+        <h2>${headline}</h2>
         <p class="boss-results__name">${boss.title}</p>
         <div class="score-stars">${starsHtml}</div>
         <p class="quiz-score">${correct} / ${total}</p>
@@ -180,12 +184,13 @@ const BossScreen = {
   },
 
   _renderFailure({ boss, correct, total }) {
+    const isMiniboss = boss.type === 'miniboss';
     const needed = Math.ceil(total * boss.passThreshold);
 
     this._el.innerHTML = `
       <div class="boss-results boss-results--failure">
         <div class="boss-results__icon">💀</div>
-        <h2>Not Enough!</h2>
+        <h2>${isMiniboss ? 'Checkpoint Failed' : 'Not Enough!'}</h2>
         <p class="boss-results__name">${boss.title}</p>
         <p class="quiz-score">${correct} / ${total}</p>
         <p class="boss-results__hint">You need at least ${needed} correct answers to pass.</p>

@@ -1,0 +1,197 @@
+[
+  {
+    "id": "first-lesson",
+    "title": "First Step",
+    "description": "Complete your first lesson.",
+    "icon": "🎓",
+    "category": "Learning",
+    "xpReward": 25,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "lesson", "threshold": 1 }
+  },
+  {
+    "id": "lessons-10",
+    "title": "Getting Serious",
+    "description": "Complete 10 lessons.",
+    "icon": "📚",
+    "category": "Learning",
+    "xpReward": 50,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "lesson", "threshold": 10 }
+  },
+  {
+    "id": "lessons-25",
+    "title": "Knowledge Seeker",
+    "description": "Complete 25 lessons.",
+    "icon": "🔭",
+    "category": "Learning",
+    "xpReward": 100,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "lesson", "threshold": 25 }
+  },
+  {
+    "id": "lessons-50",
+    "title": "Scholar",
+    "description": "Complete 50 lessons.",
+    "icon": "🎖️",
+    "category": "Learning",
+    "xpReward": 200,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "lesson", "threshold": 50 }
+  },
+  {
+    "id": "lessons-100",
+    "title": "AI Scholar",
+    "description": "Complete 100 lessons.",
+    "icon": "🏅",
+    "category": "Learning",
+    "xpReward": 500,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "lesson", "threshold": 100 }
+  },
+  {
+    "id": "first-challenge",
+    "title": "Challenger",
+    "description": "Complete your first challenge.",
+    "icon": "⚡",
+    "category": "Challenges",
+    "xpReward": 30,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "challenge", "threshold": 1 }
+  },
+  {
+    "id": "challenges-5",
+    "title": "Challenge Accepted",
+    "description": "Complete 5 challenges.",
+    "icon": "🌩️",
+    "category": "Challenges",
+    "xpReward": 75,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "challenge", "threshold": 5 }
+  },
+  {
+    "id": "first-puzzle",
+    "title": "Puzzle Solver",
+    "description": "Solve your first puzzle.",
+    "icon": "🧩",
+    "category": "Challenges",
+    "xpReward": 30,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "puzzle", "threshold": 1 }
+  },
+  {
+    "id": "puzzles-all",
+    "title": "Problem Solver",
+    "description": "Solve all available puzzles.",
+    "icon": "🔑",
+    "category": "Challenges",
+    "xpReward": 100,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "puzzle", "threshold": 6 }
+  },
+  {
+    "id": "first-miniboss",
+    "title": "Checkpoint Cleared",
+    "description": "Clear your first stage checkpoint.",
+    "icon": "🥈",
+    "category": "Boss Battles",
+    "xpReward": 50,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "miniboss", "threshold": 1 }
+  },
+  {
+    "id": "first-boss",
+    "title": "Boss Slayer",
+    "description": "Defeat your first world boss.",
+    "icon": "👑",
+    "category": "Boss Battles",
+    "xpReward": 100,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "boss", "threshold": 1 }
+  },
+  {
+    "id": "bosses-all",
+    "title": "Guardian Breaker",
+    "description": "Defeat all 4 world bosses.",
+    "icon": "🏆",
+    "category": "Boss Battles",
+    "xpReward": 300,
+    "unlockCondition": { "type": "nodeCountAtLeast", "nodeType": "boss", "threshold": 4 }
+  },
+  {
+    "id": "first-world",
+    "title": "World Explorer",
+    "description": "Complete your first world.",
+    "icon": "🌎",
+    "category": "Progress",
+    "xpReward": 150,
+    "unlockCondition": { "type": "worldsCompleted", "threshold": 1 }
+  },
+  {
+    "id": "worlds-2",
+    "title": "Pathfinder",
+    "description": "Complete 2 worlds.",
+    "icon": "🗺️",
+    "category": "Progress",
+    "xpReward": 300,
+    "unlockCondition": { "type": "worldsCompleted", "threshold": 2 }
+  },
+  {
+    "id": "worlds-4",
+    "title": "World Conqueror",
+    "description": "Complete all 4 available worlds.",
+    "icon": "🌟",
+    "category": "Progress",
+    "xpReward": 750,
+    "unlockCondition": { "type": "worldsCompleted", "threshold": 4 }
+  },
+  {
+    "id": "xp-1000",
+    "title": "XP Collector",
+    "description": "Earn 1,000 total XP.",
+    "icon": "⚡",
+    "category": "Progress",
+    "xpReward": 0,
+    "unlockCondition": { "type": "xpAtLeast", "threshold": 1000 }
+  },
+  {
+    "id": "xp-5000",
+    "title": "Power Leveler",
+    "description": "Earn 5,000 total XP.",
+    "icon": "💥",
+    "category": "Progress",
+    "xpReward": 0,
+    "unlockCondition": { "type": "xpAtLeast", "threshold": 5000 }
+  },
+  {
+    "id": "level-5",
+    "title": "Rising Star",
+    "description": "Reach level 5.",
+    "icon": "⭐",
+    "category": "Progress",
+    "xpReward": 50,
+    "unlockCondition": { "type": "levelAtLeast", "threshold": 5 }
+  },
+  {
+    "id": "streak-7",
+    "title": "Week Warrior",
+    "description": "Maintain a 7-day learning streak.",
+    "icon": "🔥",
+    "category": "Streaks",
+    "xpReward": 100,
+    "unlockCondition": { "type": "streakAtLeast", "threshold": 7 }
+  },
+  {
+    "id": "streak-30",
+    "title": "Unstoppable",
+    "description": "Maintain a 30-day learning streak.",
+    "icon": "🔥",
+    "category": "Streaks",
+    "xpReward": 500,
+    "unlockCondition": { "type": "streakAtLeast", "threshold": 30 }
+  },
+  {
+    "id": "ai-master",
+    "title": "AI Adventure Master",
+    "description": "Complete all 4 worlds and reach level 10.",
+    "icon": "🎯",
+    "category": "Special",
+    "xpReward": 1000,
+    "unlockCondition": {
+      "type": "and",
+      "conditions": [
+        { "type": "worldsCompleted", "threshold": 4 },
+        { "type": "levelAtLeast", "threshold": 10 }
+      ]
+    }
+  }
+]

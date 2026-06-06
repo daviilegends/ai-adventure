@@ -1,0 +1,242 @@
+[
+  {
+    "id": "w1-s2-p1",
+    "type": "puzzle",
+    "title": "Token Counter Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The puzzle",
+        "body": "You're working with an LLM that has a 4,000 token context window. Your conversation so far uses 3,200 tokens. You want to add a document for analysis. The document is 1,200 words long. Approximately how many tokens is the document, and will it fit?"
+      },
+      {
+        "type": "text",
+        "heading": "The math",
+        "body": "Rule of thumb: 1 token ≈ 0.75 words, so 1,200 words ≈ 1,600 tokens. Adding 1,600 tokens to your 3,200 token conversation = 4,800 tokens total. The 4,000 token limit would be exceeded by 800 tokens. The document won't fit — you need to summarize it first or start a new conversation."
+      },
+      {
+        "type": "quiz",
+        "question": "A document is 750 words long. Approximately how many tokens is it?",
+        "options": [
+          "About 250 tokens",
+          "About 500 tokens",
+          "About 1,000 tokens",
+          "Exactly 750 tokens"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "Your context window is 8,000 tokens. You've used 7,500. A document is 600 words (~800 tokens). What should you do?",
+        "options": [
+          "Send it — it will fit exactly",
+          "It won't fit; summarize the document or start a new conversation",
+          "Double the context window size",
+          "The model will automatically compress the conversation"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w1-s4-p1",
+    "type": "puzzle",
+    "title": "Spot the Hallucination",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The scenario",
+        "body": "You ask an LLM: 'What were the main findings of the Smith & Johnson (2023) study on LLM accuracy?' The model responds with a detailed, confident 3-paragraph summary with specific statistics and quotes. The problem: you made up this study. It doesn't exist."
+      },
+      {
+        "type": "text",
+        "heading": "Why this happens",
+        "body": "LLMs generate plausible-sounding text based on patterns, not verified facts. When asked about a non-existent study, the model fabricates details that sound academic — realistic journal names, plausible author names, believable statistics. It doesn't know it's wrong; it's doing exactly what it was trained to do: predict the most likely next token."
+      },
+      {
+        "type": "quiz",
+        "question": "An LLM confidently cites a study that doesn't exist. What should you do?",
+        "options": [
+          "Trust it — the model wouldn't cite something fake",
+          "Verify the source independently before using or referencing it",
+          "Ask the model to double-check its answer",
+          "Switch to a different AI model"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Which technique best reduces hallucination risk for factual questions?",
+        "options": [
+          "Using shorter prompts",
+          "Providing the source document in the prompt and asking the model to answer from it",
+          "Asking the model to be confident",
+          "Using a lower temperature setting"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w2-s2-p1",
+    "type": "puzzle",
+    "title": "Prompt Clarity Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Diagnose the problem",
+        "body": "A developer sends this prompt: 'Explain async/await'. The model returns a 500-word explanation covering JavaScript history, promises, callback hell, and modern async patterns — far more than needed. The developer wanted a one-line explanation for a comment in their code. What went wrong?"
+      },
+      {
+        "type": "text",
+        "heading": "The fix",
+        "body": "The prompt was missing: the audience (a one-line code comment), the length constraint (one sentence), and the context (going into code, not documentation). The improved prompt: 'Explain async/await in one sentence suitable for a code comment aimed at a junior developer.' This version has a clear goal, constraint, and audience."
+      },
+      {
+        "type": "quiz",
+        "question": "Which revised prompt would best produce a short, code-comment-friendly explanation?",
+        "options": [
+          "Explain async/await simply",
+          "What is async/await? Be brief.",
+          "Explain async/await in exactly one sentence for a code comment read by junior developers",
+          "Tell me about async/await in JavaScript"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "A prompt gets a response that is accurate but 10x longer than needed. The most likely cause is:",
+        "options": [
+          "The model is broken",
+          "The prompt lacked a length constraint",
+          "The topic is too complex for the model",
+          "The API has a minimum response length"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w2-s4-p1",
+    "type": "puzzle",
+    "title": "Output Format Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The scenario",
+        "body": "You're building a tool that extracts bug information from user reports. You send this prompt: 'Extract the bug details from this report: [report text]'. The model returns a readable paragraph. Your code tries to parse it as JSON and crashes. How do you fix the prompt?"
+      },
+      {
+        "type": "text",
+        "heading": "The fix",
+        "body": "Specify the exact JSON schema in the prompt: 'Extract bug details from this report and return ONLY valid JSON with this structure: { \"title\": string, \"severity\": \"low|medium|high\", \"steps_to_reproduce\": string[], \"expected\": string, \"actual\": string }. Return only the JSON with no surrounding text.' The model will follow the schema reliably."
+      },
+      {
+        "type": "quiz",
+        "question": "What should you add to a prompt to ensure the model returns parseable JSON?",
+        "options": [
+          "Ask the model to be precise",
+          "Specify the exact JSON schema and instruct it to return ONLY JSON",
+          "Tell the model you are a developer",
+          "Use a shorter prompt"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Your code parses LLM output as JSON but sometimes fails. The most likely cause is:",
+        "options": [
+          "The model is down",
+          "The model occasionally adds text outside the JSON despite instructions",
+          "JSON parsing is buggy in your language",
+          "The model uses a non-standard JSON format"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w3-s2-p1",
+    "type": "puzzle",
+    "title": "Process Mapping Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The scenario",
+        "body": "You're automating a daily report: fetch data from a database, filter for the past 24 hours, generate a summary, send it to Slack. Simple — until you map it fully. The database sometimes returns null for missing values. The Slack webhook occasionally fails. The summary format changes monthly. Which parts are automation risks?"
+      },
+      {
+        "type": "text",
+        "heading": "The analysis",
+        "body": "Three risks emerge: (1) Null values — the filter step needs null handling. (2) Slack failures — the send step needs retry logic and failure alerting. (3) Format changes — the summary step is fragile if hardcoded. Good automation handles each: validate nulls, retry Slack with exponential backoff, and make the format configurable."
+      },
+      {
+        "type": "quiz",
+        "question": "An automation step that calls an external API has no error handling. What is the risk?",
+        "options": [
+          "The automation will run slower",
+          "A transient API failure will silently break the automation with no alert",
+          "The API will block your requests",
+          "The step will be skipped automatically"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Which part of an automation should be made configurable rather than hardcoded?",
+        "options": [
+          "The language the automation is written in",
+          "The number of steps",
+          "Output formats that change over time",
+          "The automation name"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w4-s2-p1",
+    "type": "puzzle",
+    "title": "Locator Selection Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The scenario",
+        "body": "A test was written 6 months ago and now fails every deployment. The locator: page.locator('.btn-primary.submit-action:nth-child(3)'). The developer redesigned the UI — the button is still there, still visible, still labeled 'Submit', but in a different position and with different CSS classes. How do you fix the locator?"
+      },
+      {
+        "type": "text",
+        "heading": "The fix",
+        "body": "Replace the fragile CSS selector with a role-based locator: page.getByRole('button', { name: 'Submit' }). This locator doesn't care about CSS classes or position — it finds the button by what it does (button role) and what it says (Submit). If the button's label never changes, this locator will survive any UI redesign."
+      },
+      {
+        "type": "quiz",
+        "question": "A test breaks every time the UI is restyled. The most likely cause is:",
+        "options": [
+          "The test logic is wrong",
+          "Locators depend on CSS classes or element position",
+          "The browser has changed",
+          "The test runs too fast"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Which locator is most resilient to UI changes for a 'Confirm' button?",
+        "options": [
+          "page.locator('#btn-23')",
+          "page.locator('button.confirm-btn')",
+          "page.locator('div > button:first-child')",
+          "page.getByRole('button', { name: 'Confirm' })"
+        ],
+        "correct": 3
+      }
+    ]
+  }
+]

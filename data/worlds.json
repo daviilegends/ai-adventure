@@ -5,11 +5,7 @@
     "description": "Learn the basics of AI and Large Language Models",
     "accent": "#7E8C54",
     "accentRgb": "126,140,84",
-    "unlockRequirement": null,
-    "stages": [
-      { "id": 1, "title": "Introduction" },
-      { "id": 2, "title": "Prompts" }
-    ]
+    "unlockRequirement": null
   },
   {
     "id": 2,
@@ -17,10 +13,7 @@
     "description": "Master the art of crafting effective prompts",
     "accent": "#5B7FA6",
     "accentRgb": "91,127,166",
-    "unlockRequirement": { "worldId": 1 },
-    "stages": [
-      { "id": 1, "title": "Foundations" }
-    ]
+    "unlockRequirement": { "worldId": 1 }
   },
   {
     "id": 3,
@@ -28,10 +21,7 @@
     "description": "Introduction to test automation concepts",
     "accent": "#4D8A78",
     "accentRgb": "77,138,120",
-    "unlockRequirement": { "worldId": 2 },
-    "stages": [
-      { "id": 1, "title": "Concepts" }
-    ]
+    "unlockRequirement": { "worldId": 2 }
   },
   {
     "id": 4,
@@ -39,9 +29,70 @@
     "description": "Browser automation with Playwright",
     "accent": "#9E5B5B",
     "accentRgb": "158,91,91",
-    "unlockRequirement": { "worldId": 3 },
-    "stages": [
-      { "id": 1, "title": "Getting Started" }
-    ]
+    "unlockRequirement": { "worldId": 3 }
+  },
+  {
+    "id": 5,
+    "title": "JavaScript Essentials",
+    "description": "Core JavaScript for automation engineers",
+    "accent": "#C4922A",
+    "accentRgb": "196,146,42",
+    "unlockRequirement": { "worldId": 4 }
+  },
+  {
+    "id": 6,
+    "title": "Advanced Playwright",
+    "description": "Professional patterns for scalable test suites",
+    "accent": "#7B5EA7",
+    "accentRgb": "123,94,167",
+    "unlockRequirement": { "worldId": 5 }
+  },
+  {
+    "id": 7,
+    "title": "API Testing",
+    "description": "Test REST APIs with Playwright and code",
+    "accent": "#4A8A9C",
+    "accentRgb": "74,138,156",
+    "unlockRequirement": { "worldId": 6 }
+  },
+  {
+    "id": 8,
+    "title": "AI Agents",
+    "description": "Build intelligent autonomous agents",
+    "accent": "#5F8A6B",
+    "accentRgb": "95,138,107",
+    "unlockRequirement": { "worldId": 7 }
+  },
+  {
+    "id": 9,
+    "title": "MCP Mastery",
+    "description": "Connect AI to the world with Model Context Protocol",
+    "accent": "#8C6B4A",
+    "accentRgb": "140,107,74",
+    "unlockRequirement": { "worldId": 8 }
+  },
+  {
+    "id": 10,
+    "title": "Software Architecture",
+    "description": "Design scalable, maintainable systems",
+    "accent": "#4A6B8C",
+    "accentRgb": "74,107,140",
+    "unlockRequirement": { "worldId": 9 }
+  },
+  {
+    "id": 11,
+    "title": "AI Productivity",
+    "description": "Supercharge your workflow with AI tools",
+    "accent": "#8C7A5E",
+    "accentRgb": "140,122,94",
+    "unlockRequirement": { "worldId": 10 }
+  },
+  {
+    "id": 12,
+    "title": "AI Adventure Master Path",
+    "description": "The ultimate challenge for AI Adventure graduates",
+    "accent": "#C4922A",
+    "accentRgb": "196,146,42",
+    "unlockRequirement": { "worldId": 11 }
   }
 ]
