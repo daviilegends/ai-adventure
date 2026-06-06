@@ -950,5 +950,125 @@
         "nodeType": "boss"
       }
     ]
+  },
+  {
+    "id": "w10-s1",
+    "worldId": 10,
+    "order": 1,
+    "title": "Monoliths",
+    "nodes": [
+      {
+        "nodeId": "w10-s1-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s1-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s1-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s1-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w10-s2",
+    "worldId": 10,
+    "order": 2,
+    "title": "Layered Architecture",
+    "nodes": [
+      {
+        "nodeId": "w10-s2-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s2-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s2-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s2-p1",
+        "nodeType": "puzzle"
+      }
+    ]
+  },
+  {
+    "id": "w10-s3",
+    "worldId": 10,
+    "order": 3,
+    "title": "Design Patterns",
+    "nodes": [
+      {
+        "nodeId": "w10-s3-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s3-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s3-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w10-s4",
+    "worldId": 10,
+    "order": 4,
+    "title": "Scalability",
+    "nodes": [
+      {
+        "nodeId": "w10-s4-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s4-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s4-p1",
+        "nodeType": "puzzle"
+      },
+      {
+        "nodeId": "mb-w10",
+        "nodeType": "miniboss"
+      }
+    ]
+  },
+  {
+    "id": "w10-s5",
+    "worldId": 10,
+    "order": 5,
+    "title": "System Design Basics",
+    "nodes": [
+      {
+        "nodeId": "w10-s5-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s5-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s5-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w10-s5-c1",
+        "nodeType": "challenge"
+      },
+      {
+        "nodeId": "b-w10",
+        "nodeType": "boss"
+      }
+    ]
   }
 ]

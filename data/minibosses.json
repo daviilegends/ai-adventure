@@ -278,5 +278,45 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "mb-w10",
+    "type": "miniboss",
+    "title": "The Architecture Sentinel",
+    "subtitle": "Stage Checkpoint · Software Architecture",
+    "description": "The Sentinel has watched countless systems grow, fracture, and scale — and it tests whether you can reason clearly about monoliths, layers, and the forces that push a system to grow beyond its original shape.",
+    "objective": "Answer at least 2 of 3 questions correctly to pass the checkpoint.",
+    "passThreshold": 0.67,
+    "xpReward": 60,
+    "coinsReward": 25,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What is a key characteristic of a monolithic application?",
+        "options": [
+          "It splits every feature into its own deployable service",
+          "All of its functionality lives in a single deployable codebase and process",
+          "It cannot have a user interface",
+          "It must run across many servers"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "In a layered architecture, the data layer should typically depend on and know about the presentation layer.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What does 'horizontal scaling' mean?",
+        "options": [
+          "Making a single machine more powerful",
+          "Adding more machines that share the load",
+          "Reducing the number of features in a system",
+          "Rewriting the system in a different language"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

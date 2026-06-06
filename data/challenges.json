@@ -982,5 +982,128 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w10-s1-c1",
+    "type": "challenge",
+    "title": "Monoliths Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What is the main characteristic of a monolithic architecture?",
+        "options": [
+          "It splits every feature into a separate service",
+          "All functionality lives in a single deployable codebase and process",
+          "It only works for very large companies",
+          "It cannot be deployed to a server"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is one advantage of a monolith for a small or early-stage project?",
+        "options": [
+          "It guarantees the project will never need to change",
+          "Simplicity — one codebase, one deployment, no internal network calls to manage",
+          "It automatically scales to millions of users",
+          "It removes the need for testing"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is a common sign that a growing monolith is becoming difficult to work with?",
+        "options": [
+          "The team finishes features faster than ever",
+          "Small changes start requiring full redeployments and risk affecting unrelated areas",
+          "The codebase becomes smaller over time",
+          "Build times get faster as the codebase grows"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s3-c1",
+    "type": "challenge",
+    "title": "Design Patterns Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What is the main idea behind a design pattern?",
+        "options": [
+          "A piece of code that only works in one specific project",
+          "A general, reusable approach to a problem that comes up repeatedly in software design",
+          "A rule that a compiler enforces automatically",
+          "A way to make code run faster on any computer"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Which pattern centralizes the logic for creating objects, so the rest of the code doesn't need to know how they're built?",
+        "options": [
+          "Singleton",
+          "Factory",
+          "Observer",
+          "Strategy"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What does an Observer pattern typically allow?",
+        "options": [
+          "Only one instance of an object to exist",
+          "One part of a system to notify others when something changes, without tight coupling",
+          "Code to run faster automatically",
+          "A database to store more data"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s5-c1",
+    "type": "challenge",
+    "title": "System Design Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What do non-functional requirements describe?",
+        "options": [
+          "Exactly what features a system must have",
+          "Qualities like speed, reliability, and security that shape how well a system performs",
+          "The programming language a system must use",
+          "The names of the system's database tables"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why is sketching a system's components and connections useful before building it?",
+        "options": [
+          "It guarantees success",
+          "It helps you reason about the design and its tradeoffs early, before implementation details take over",
+          "It is the only step needed to build a system",
+          "It removes the need for any requirements"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What does it mean to design 'with growth in mind' without overengineering?",
+        "options": [
+          "Building every conceivable feature from day one",
+          "Keeping things simple now while avoiding choices that would make reasonable future growth painfully difficult",
+          "Ignoring how the system might need to change later",
+          "Always splitting every system into many services immediately"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

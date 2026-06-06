@@ -502,5 +502,61 @@
         "correct": true
       }
     ]
+  },
+  {
+    "id": "b-w10",
+    "type": "boss",
+    "title": "The System Overseer",
+    "subtitle": "Final Boss · Software Architecture",
+    "description": "The Overseer has designed and dismantled more systems than it can count, and it puts every challenger through the same test: monoliths, layers, patterns, scaling, and the judgment to design something that can actually grow.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Overseer.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What best describes a monolithic application?",
+        "options": [
+          "A system split across many independent services",
+          "An application where all functionality is bundled into a single deployable unit",
+          "A type of database",
+          "A design pattern for testing"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "In a well-organized layered architecture, each layer typically only depends on the layer directly below it, keeping the dependency direction consistent.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is a design pattern, in the sense used in software architecture?",
+        "options": [
+          "A specific snippet of code copied exactly between projects",
+          "A general, reusable solution to a recurring design problem",
+          "A rule the compiler enforces",
+          "A type of user interface color scheme"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Why is identifying the actual bottleneck important before trying to scale a system?",
+        "options": [
+          "Because every part of a system limits it equally",
+          "Because improving a part that isn't the true limiting factor won't relieve the real pressure",
+          "Because bottlenecks never really exist",
+          "Because only the user interface can ever be a bottleneck"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "Good system design balances keeping things simple now with avoiding choices that would make reasonable future growth painfully difficult.",
+        "correct": true
+      }
+    ]
   }
 ]

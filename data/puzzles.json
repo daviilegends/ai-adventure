@@ -638,5 +638,85 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w10-s2-p1",
+    "type": "puzzle",
+    "title": "Layering Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Tracing a request downward",
+        "body": "A user submits a form to update their profile name. The presentation layer receives the new name and hands it to the business logic layer, which checks that it's valid — not empty, not too long — then asks the data layer to save it to the database. Each layer does its own job and trusts the layer below to do its part correctly."
+      },
+      {
+        "type": "text",
+        "heading": "Spotting a layering violation",
+        "body": "Now imagine the presentation layer directly opens a database connection to save the name, skipping the business logic layer entirely. The validation rules never run, so an empty or invalid name could be saved straight to the database. This is a classic layering violation — a shortcut that breaks the very separation the architecture was meant to provide."
+      },
+      {
+        "type": "quiz",
+        "question": "In the profile update example, which layer is responsible for checking that the new name is valid before it's saved?",
+        "options": [
+          "The presentation layer",
+          "The business logic layer",
+          "The data layer",
+          "No layer — validation isn't needed"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What goes wrong if the presentation layer saves data directly to the database, skipping the business logic layer?",
+        "options": [
+          "Nothing — it's a faster, equally safe shortcut",
+          "Validation rules never run, so invalid data could reach the database unchecked",
+          "The database will reject the connection automatically",
+          "The data layer will fix the problem on its own"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s4-p1",
+    "type": "puzzle",
+    "title": "Scalability Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Spotting the bottleneck",
+        "body": "A photo-sharing app is slow during peak hours. Investigation shows the web servers are mostly idle, but every request waits on the same single database to respond — it's overwhelmed by the volume of reads and writes. Adding more web servers wouldn't help; the database is the part actually limiting how much the system can handle."
+      },
+      {
+        "type": "text",
+        "heading": "Choosing a fix that targets the real problem",
+        "body": "Possible fixes that target the database bottleneck include adding a cache in front of it for frequently-read data, splitting reads and writes across different database instances, or optimizing the slowest queries. Each of these directly relieves pressure on the actual limiting factor — unlike adding more web servers, which would leave the bottleneck untouched."
+      },
+      {
+        "type": "quiz",
+        "question": "In the photo-sharing app example, why wouldn't adding more web servers fix the slowdown?",
+        "options": [
+          "Web servers cannot be added to a running system",
+          "The actual bottleneck is the database, not the web servers, so adding more web servers wouldn't relieve the real pressure",
+          "More web servers always make a system slower",
+          "The app does not use a database"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Which of these would most directly help relieve pressure on an overwhelmed database?",
+        "options": [
+          "Adding more web servers that all query it the same way",
+          "Adding a cache for frequently-read data so fewer requests reach the database directly",
+          "Changing the color scheme of the app",
+          "Renaming the database's tables"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

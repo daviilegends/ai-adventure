@@ -2956,5 +2956,382 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w10-s1-l1",
+    "type": "lesson",
+    "title": "What is Software Architecture?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The big-picture shape of a system",
+        "body": "Software architecture is the high-level structure of a system — how its major parts are organized, how they communicate, and what decisions are hard to change later. Just as a building's architecture shapes what's possible to build on top of it, a system's architecture shapes how easily it can grow, change, and stay reliable."
+      },
+      {
+        "type": "text",
+        "heading": "Why it's worth learning deliberately",
+        "body": "Early architecture decisions tend to stick around — rewriting how a system's pieces fit together is far more expensive than changing a single function. Understanding common architectural patterns helps you recognize tradeoffs early, before a choice becomes baked into thousands of lines of code."
+      },
+      {
+        "type": "quiz",
+        "question": "What does 'software architecture' refer to?",
+        "options": [
+          "The exact wording of variable names",
+          "The high-level structure of a system and how its parts are organized and communicate",
+          "The color scheme of a user interface",
+          "The speed of the internet connection"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s1-l2",
+    "type": "lesson",
+    "title": "What is a Monolith?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Everything in one place",
+        "body": "A monolithic application bundles all of its functionality — user interface, business logic, data access — into a single deployable unit. Adding a feature, fixing a bug, and deploying an update typically all happen within that same one codebase and one running process."
+      },
+      {
+        "type": "text",
+        "heading": "Strengths of starting simple",
+        "body": "Monoliths are often the right starting point: there's one codebase to understand, one thing to deploy, and no network calls between internal pieces to worry about. For many small-to-medium projects, this simplicity outweighs the benefits of splitting things up too early."
+      },
+      {
+        "type": "quiz",
+        "question": "What defines a monolithic application?",
+        "options": [
+          "It can only run on one type of computer",
+          "All of its functionality is bundled into a single deployable unit",
+          "It cannot have a user interface",
+          "It is always written in one specific programming language"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s1-l3",
+    "type": "lesson",
+    "title": "When Monoliths Get Difficult",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Growing pains",
+        "body": "As a monolith grows, its parts become more tangled — a change in one area can unexpectedly break another, the codebase becomes harder for new developers to learn, and every deployment carries the risk of affecting the entire system at once, even for a small change."
+      },
+      {
+        "type": "text",
+        "heading": "Recognizing the signals",
+        "body": "Common signs that a monolith is becoming difficult include slow build and test times, teams stepping on each other's changes, and the need to redeploy everything just to ship one small fix. These pressures are often what motivate a team to consider splitting a system into more independent parts."
+      },
+      {
+        "type": "quiz",
+        "question": "What is a common downside that emerges as a monolith grows large?",
+        "options": [
+          "It becomes impossible to add new features",
+          "Changes in one area can unexpectedly affect others, and deployments risk the whole system",
+          "It stops working on modern computers",
+          "It can no longer store any data"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s2-l1",
+    "type": "lesson",
+    "title": "Organizing Code into Layers",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Separating concerns",
+        "body": "Layered architecture organizes a system into horizontal layers, each responsible for a distinct concern — commonly a presentation layer (what the user sees), a business logic layer (the rules and processes), and a data layer (storage and retrieval). Each layer typically only talks to the one directly below it."
+      },
+      {
+        "type": "text",
+        "heading": "Why separation helps",
+        "body": "Keeping concerns separate means a change to how data is displayed shouldn't require touching how it's stored, and vice versa. This makes each layer easier to reason about, test, and modify on its own — a theme that echoes the Page Object Model's separation between tests and page details."
+      },
+      {
+        "type": "quiz",
+        "question": "In a layered architecture, what is the main idea behind separating presentation, business logic, and data layers?",
+        "options": [
+          "To make the application run on more servers",
+          "To keep distinct concerns isolated so each can be understood, tested, and changed independently",
+          "To make the code harder to read on purpose",
+          "To remove the need for a database"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s2-l2",
+    "type": "lesson",
+    "title": "How Layers Communicate",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Calling downward through the stack",
+        "body": "A typical request flows downward: the presentation layer receives user input and passes it to the business logic layer, which applies the relevant rules and asks the data layer to fetch or store information — then the result flows back up to be displayed."
+      },
+      {
+        "type": "text",
+        "heading": "Keeping the direction consistent",
+        "body": "A well-maintained layered system keeps this flow consistent — the data layer shouldn't need to know about the presentation layer, for instance. When layers start reaching upward or sideways in unexpected ways, the clean separation that made the architecture useful starts to break down."
+      },
+      {
+        "type": "quiz",
+        "question": "In a well-organized layered architecture, why shouldn't the data layer need to know about the presentation layer?",
+        "options": [
+          "Because data layers cannot store any information",
+          "Because keeping the dependency direction consistent preserves the clean separation between concerns",
+          "Because the presentation layer runs on a different computer",
+          "Because only the business logic layer is allowed to exist"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s2-l3",
+    "type": "lesson",
+    "title": "Tradeoffs of Layering",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "What you gain",
+        "body": "Layering brings clarity — new developers can often understand one layer without fully understanding the others — and makes it easier to swap out a piece, like replacing one database technology with another, without rewriting the rest of the system."
+      },
+      {
+        "type": "text",
+        "heading": "What it can cost",
+        "body": "Strict layering can also add overhead: a simple request might pass through several layers just to fetch one piece of data, and rigid boundaries can sometimes make small, cross-cutting changes more cumbersome than they'd be in a less structured design. Like most architectural choices, layering is a tradeoff, not a guaranteed win."
+      },
+      {
+        "type": "quiz",
+        "question": "What is one potential downside of strict layering?",
+        "options": [
+          "It makes the system impossible to test",
+          "A simple request may need to pass through several layers, adding overhead for small tasks",
+          "It prevents the system from ever changing",
+          "It removes the need for a presentation layer entirely"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s3-l1",
+    "type": "lesson",
+    "title": "What is a Design Pattern?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Reusable solutions to common problems",
+        "body": "A design pattern is a general, reusable solution to a problem that comes up again and again in software design — not a finished piece of code, but a proven shape for solving a certain kind of challenge. You've already met one: the Page Object Model is a design pattern for organizing browser automation code."
+      },
+      {
+        "type": "text",
+        "heading": "Why patterns are worth knowing",
+        "body": "Recognizing a familiar pattern lets you bring proven, well-understood solutions to a new problem instead of reinventing one from scratch — and it gives you a shared vocabulary with other developers, so you can describe a design in a sentence instead of pages of explanation."
+      },
+      {
+        "type": "quiz",
+        "question": "What is a design pattern?",
+        "options": [
+          "A specific block of code you copy and paste exactly",
+          "A general, reusable solution to a recurring kind of design problem",
+          "A rule enforced by the programming language",
+          "A type of database"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s3-l2",
+    "type": "lesson",
+    "title": "A Few Common Patterns",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Singleton and Factory",
+        "body": "A Singleton ensures that only one instance of something exists throughout an application — useful for things like a single shared configuration object. A Factory centralizes the logic for creating objects, so the rest of the code doesn't need to know the details of how or which kind of object gets built."
+      },
+      {
+        "type": "text",
+        "heading": "Observer and Strategy",
+        "body": "An Observer lets one part of a system notify others when something changes — like updating a display whenever new data arrives — without those parts being tightly coupled. A Strategy lets you swap out an algorithm or behavior at runtime, such as choosing between different sorting methods depending on the situation."
+      },
+      {
+        "type": "quiz",
+        "question": "Which pattern is designed to ensure that only one instance of something exists throughout an application?",
+        "options": [
+          "Factory",
+          "Observer",
+          "Singleton",
+          "Strategy"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w10-s4-l1",
+    "type": "lesson",
+    "title": "What Does It Mean to Scale?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Handling more without breaking",
+        "body": "Scalability is a system's ability to handle growth — more users, more data, more requests — without its performance collapsing or its architecture falling apart. A system that works smoothly for a hundred users but grinds to a halt at a thousand has a scalability problem."
+      },
+      {
+        "type": "text",
+        "heading": "Vertical vs. horizontal scaling",
+        "body": "Vertical scaling means making a single machine more powerful — more memory, a faster processor. Horizontal scaling means adding more machines that share the load. Vertical scaling is often simpler at first, but horizontal scaling tends to handle larger growth better, since there's a ceiling on how powerful one machine can get."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the difference between vertical and horizontal scaling?",
+        "options": [
+          "They are two names for the same thing",
+          "Vertical scaling makes one machine more powerful; horizontal scaling adds more machines to share the load",
+          "Vertical scaling only works for databases; horizontal scaling only works for websites",
+          "Horizontal scaling means writing faster code"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s4-l2",
+    "type": "lesson",
+    "title": "Bottlenecks and Caching",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Finding what slows things down",
+        "body": "A bottleneck is the part of a system that limits how much it can handle overall — often a single database, a slow calculation, or a service that can't keep up with demand. Identifying the bottleneck matters because improving the wrong part of the system won't relieve the actual pressure point."
+      },
+      {
+        "type": "text",
+        "heading": "Caching: remembering instead of recomputing",
+        "body": "Caching stores the result of an expensive operation so it can be reused later without redoing the work — like keeping a frequently-requested page's content ready to serve instantly instead of rebuilding it from scratch every time. Used well, caching can dramatically reduce load on the parts of a system that would otherwise become bottlenecks."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is it important to identify the actual bottleneck in a system before trying to improve its scalability?",
+        "options": [
+          "Because every part of a system always limits it equally",
+          "Because improving a part that isn't the limiting factor won't relieve the real pressure point",
+          "Because bottlenecks cannot be found in practice",
+          "Because only databases can ever be bottlenecks"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s5-l1",
+    "type": "lesson",
+    "title": "Thinking in Terms of Requirements",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Starting with what the system needs to do",
+        "body": "Designing a system well starts with understanding its requirements: who will use it, roughly how many, what they need to be able to do, and which qualities — speed, reliability, security — matter most for this particular system. Skipping this step often leads to over-building some parts and under-building others."
+      },
+      {
+        "type": "text",
+        "heading": "Functional vs. non-functional requirements",
+        "body": "Functional requirements describe what a system should do — \"users can upload photos,\" \"admins can ban accounts.\" Non-functional requirements describe how well it should do it — how fast, how reliable, how secure. Both shape the architecture, but it's easy to focus only on the first and overlook the second."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the difference between functional and non-functional requirements?",
+        "options": [
+          "They mean the same thing",
+          "Functional requirements describe what a system should do; non-functional requirements describe qualities like speed, reliability, and security",
+          "Functional requirements only apply to databases",
+          "Non-functional requirements are always optional and can be ignored"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s5-l2",
+    "type": "lesson",
+    "title": "Drawing the Big Picture",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Sketching components and connections",
+        "body": "A simple system design sketch might show the major components — a web server, a database, a cache, an external service — and the connections between them, with arrows showing which direction requests and data flow. This high-level view helps you reason about a system before getting lost in implementation details."
+      },
+      {
+        "type": "text",
+        "heading": "Talking through tradeoffs",
+        "body": "Every design choice trades something for something else: a cache speeds up reads but can serve outdated data; splitting a monolith into services adds flexibility but also adds network calls and complexity. Being able to name these tradeoffs — not just pick an option — is at the heart of good system design thinking."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is it useful to sketch a system's major components and the connections between them before building it?",
+        "options": [
+          "It guarantees the system will never have bugs",
+          "It helps you reason about the overall design and its tradeoffs before getting lost in implementation details",
+          "It replaces the need for writing any code",
+          "It is required by every programming language"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w10-s5-l3",
+    "type": "lesson",
+    "title": "Designing with Growth in Mind",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Building room to grow",
+        "body": "A thoughtful design doesn't try to solve every possible future problem upfront — that's overengineering — but it does avoid decisions that would make reasonable growth painfully difficult later, like tightly coupling pieces that will likely need to scale independently or evolve at different speeds."
+      },
+      {
+        "type": "text",
+        "heading": "Balancing simplicity and foresight",
+        "body": "The art of system design is balancing \"keep it simple for now\" against \"don't paint yourself into a corner.\" A small startup's first version might reasonably be a simple monolith — as long as the team understands which seams could later be split apart if and when growth demands it."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the balance that good system design tries to strike?",
+        "options": [
+          "Building every possible feature immediately, regardless of need",
+          "Keeping the design simple for now while avoiding decisions that would make reasonable future growth painfully difficult",
+          "Always choosing the most complex possible architecture",
+          "Ignoring future growth entirely"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]
