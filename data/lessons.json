@@ -98,8 +98,8 @@
   {
     "id": "w1-l4",
     "worldId": 1,
-    "stageId": 1,
-    "order": 4,
+    "stageId": 2,
+    "order": 1,
     "title": "Prompt Structure",
     "type": "lesson",
     "xpReward": 20,
@@ -130,8 +130,8 @@
   {
     "id": "w1-l5",
     "worldId": 1,
-    "stageId": 1,
-    "order": 5,
+    "stageId": 2,
+    "order": 2,
     "title": "Prompt Examples",
     "type": "lesson",
     "xpReward": 20,
@@ -162,8 +162,8 @@
   {
     "id": "w1-boss",
     "worldId": 1,
-    "stageId": 1,
-    "order": 6,
+    "stageId": 2,
+    "order": 3,
     "title": "Boss Battle",
     "type": "boss",
     "quizId": "q-w1",

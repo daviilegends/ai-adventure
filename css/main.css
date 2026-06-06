@@ -41,11 +41,14 @@
   --red:           #f06b6b;
   --red-shadow:    #8b1a1a;
 
-  /* World colors */
+  /* World colors (kept as named tokens for use elsewhere) */
   --w1: #4f8ef0;
   --w2: #9b71f5;
   --w3: #2dcf9e;
   --w4: #f06b6b;
+
+  /* Dynamic world accent — set per-element via inline style from worlds.json */
+  --world-accent-rgb: 79,142,240;
 
   /* Radii */
   --r-xs: 8px;
@@ -381,14 +384,9 @@ body {
   border-radius: var(--r-xl);
   overflow: hidden;
   border: 1px solid var(--border);
+  border-left: 3px solid rgba(var(--world-accent-rgb), 0.5);
   transition: opacity 0.3s, filter 0.3s;
 }
-
-/* Per-world left accent border */
-.world--w1 { border-left: 3px solid rgba(79,142,240,0.55); }
-.world--w2 { border-left: 3px solid rgba(155,113,245,0.5); }
-.world--w3 { border-left: 3px solid rgba(45,207,158,0.5); }
-.world--w4 { border-left: 3px solid rgba(240,107,107,0.5); }
 
 .world--locked {
   opacity: 0.42;
@@ -417,12 +415,8 @@ body {
   pointer-events: none;
   font-family: var(--font);
   opacity: 0.045;
+  color: rgba(var(--world-accent-rgb), 1);
 }
-
-.world--w1 .world-header::after { color: var(--w1); }
-.world--w2 .world-header::after { color: var(--w2); }
-.world--w3 .world-header::after { color: var(--w3); }
-.world--w4 .world-header::after { color: var(--w4); }
 
 /* Badge + progress row */
 .world-header__row {
@@ -442,12 +436,10 @@ body {
   padding: 3px 10px;
   border-radius: 20px;
   border: 1px solid;
+  color: rgba(var(--world-accent-rgb), 1);
+  background: rgba(var(--world-accent-rgb), 0.1);
+  border-color: rgba(var(--world-accent-rgb), 0.3);
 }
-
-.world--w1 .world-badge { color: var(--w1); background: rgba(79,142,240,0.1);  border-color: rgba(79,142,240,0.3); }
-.world--w2 .world-badge { color: var(--w2); background: rgba(155,113,245,0.1); border-color: rgba(155,113,245,0.3); }
-.world--w3 .world-badge { color: var(--w3); background: rgba(45,207,158,0.1);  border-color: rgba(45,207,158,0.3); }
-.world--w4 .world-badge { color: var(--w4); background: rgba(240,107,107,0.1); border-color: rgba(240,107,107,0.3); }
 
 .world-progress {
   font-size: 11px;
@@ -503,14 +495,72 @@ body {
 .world-path {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 32px 28px;
+  gap: 20px;
+  padding: 28px 28px;
   background: var(--bg);
   border-top: 1px solid var(--border);
   position: relative;
   background-image:
     radial-gradient(circle at 15% 50%, rgba(79,142,240,0.025) 0%, transparent 55%),
     radial-gradient(circle at 85% 50%, rgba(155,113,245,0.025) 0%, transparent 55%);
+}
+
+/* ---- Stage Groups ---- */
+
+.world-stage {
+  display: flex;
+  flex-direction: column;
+}
+
+.stage-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  padding-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.stage-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.stage-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 8px;
+}
+
+.stage-locked-msg {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 9px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  letter-spacing: 0.1px;
+  position: relative;
+  z-index: 1;
+}
+
+.stage-locked-msg svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  opacity: 0.7;
 }
 
 /* Dashed centre-line path */

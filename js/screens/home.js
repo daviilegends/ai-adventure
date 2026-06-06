@@ -41,9 +41,11 @@ const Home = {
   _renderWorld(world, player, worlds) {
     const isUnlocked = player.unlockedWorlds.includes(world.id);
     const num = String(world.id).padStart(2, '0');
+    const accentRgb = world.accentRgb || '79,142,240';
     const lessons = LessonEngine.getForWorld(world.id);
     const completedCount = lessons.filter(l => player.completedLessons.includes(l.id)).length;
     const worldClass = `world world--w${world.id}${isUnlocked ? '' : ' world--locked'}`;
+    const inlineStyle = `style="--world-accent-rgb: ${accentRgb}"`;
 
     if (!isUnlocked) {
       const req = world.unlockRequirement;
@@ -51,7 +53,7 @@ const Home = {
       const lockMsg = prevWorld ? `Complete ${prevWorld.title} to unlock` : 'Locked';
 
       return `
-        <section class="${worldClass}">
+        <section class="${worldClass}" ${inlineStyle}>
           <div class="world-header" data-world="${num}">
             <div class="world-header__row">
               <span class="world-badge">World ${world.id}</span>
@@ -66,8 +68,11 @@ const Home = {
         </section>`;
     }
 
+    const stages = LessonEngine.getStagesForWorld(world.id);
+    const stagesHtml = stages.map(stage => this._renderStage(world, stage, stages, player)).join('');
+
     return `
-      <section class="${worldClass}">
+      <section class="${worldClass}" ${inlineStyle}>
         <div class="world-header" data-world="${num}">
           <div class="world-header__row">
             <span class="world-badge">World ${world.id}</span>
@@ -77,9 +82,48 @@ const Home = {
           <p class="world-desc">${world.description}</p>
         </div>
         <div class="world-path">
-          ${this._renderNodes(lessons, player.completedLessons)}
+          ${stagesHtml}
         </div>
       </section>`;
+  },
+
+  _renderStage(world, stage, allStages, player) {
+    const isAvailable = this._isStageAvailable(world.id, stage, allStages, player);
+    const showHeader = allStages.length > 1;
+
+    if (!isAvailable) {
+      const prevStage = allStages.find(s => s.id === stage.id - 1);
+      const lockMsg = prevStage
+        ? `Complete Stage ${prevStage.id}: ${prevStage.title} to unlock`
+        : 'Locked';
+
+      return `
+        <div class="world-stage world-stage--locked">
+          <div class="stage-header">Stage ${stage.id}: ${stage.title}</div>
+          <p class="stage-locked-msg">
+            ${this._svgLock()}
+            ${lockMsg}
+          </p>
+        </div>`;
+    }
+
+    const lessons = LessonEngine.getForStage(world.id, stage.id);
+    return `
+      <div class="world-stage">
+        ${showHeader ? `<div class="stage-header">Stage ${stage.id}: ${stage.title}</div>` : ''}
+        <div class="stage-nodes">
+          ${this._renderNodes(lessons, player.completedLessons)}
+        </div>
+      </div>`;
+  },
+
+  _isStageAvailable(worldId, stage, allStages, player) {
+    if (stage.id === 1) return true;
+    const priorStages = allStages.filter(s => s.id < stage.id);
+    return priorStages.every(ps => {
+      const psLessons = LessonEngine.getForStage(worldId, ps.id);
+      return psLessons.every(l => player.completedLessons.includes(l.id));
+    });
   },
 
   _renderNodes(lessons, completedLessons) {

@@ -55,6 +55,15 @@ const LessonEngine = {
     return this._lessons.filter(l => l.worldId === worldId);
   },
 
+  getStagesForWorld(worldId) {
+    const world = this._worlds.find(w => w.id === worldId);
+    return world ? (world.stages || []) : [];
+  },
+
+  getForStage(worldId, stageId) {
+    return this._lessons.filter(l => l.worldId === worldId && l.stageId === stageId);
+  },
+
   _startBoss(lesson) {
     const quiz = this._quizzes.find(q => q.id === lesson.quizId);
     if (!quiz) return;
@@ -63,6 +72,7 @@ const LessonEngine = {
       const player = State.get();
       if (!player.completedLessons.includes(lesson.id)) {
         State.set({ completedLessons: [...player.completedLessons, lesson.id] });
+        this._checkStageComplete(lesson.worldId, lesson.stageId);
         this._checkWorldUnlock(lesson.worldId);
       }
       document.dispatchEvent(new CustomEvent('lesson:completed', { detail: { lesson } }));
@@ -87,12 +97,21 @@ const LessonEngine = {
     if (!player.completedLessons.includes(lesson.id)) {
       XP.gainXp(lesson.xpReward);
       State.set({ completedLessons: [...player.completedLessons, lesson.id] });
+      this._checkStageComplete(lesson.worldId, lesson.stageId);
       this._checkWorldUnlock(lesson.worldId);
     }
 
     this._current = null;
     this._stepIndex = 0;
     document.dispatchEvent(new CustomEvent('lesson:completed', { detail: { lesson } }));
+  },
+
+  _checkStageComplete(worldId, stageId) {
+    const player = State.get();
+    const stageLessons = this._lessons.filter(l => l.worldId === worldId && l.stageId === stageId);
+    const allDone = stageLessons.length > 0 && stageLessons.every(l => player.completedLessons.includes(l.id));
+    if (!allDone) return;
+    document.dispatchEvent(new CustomEvent('stage:completed', { detail: { worldId, stageId } }));
   },
 
   _checkWorldUnlock(worldId) {
