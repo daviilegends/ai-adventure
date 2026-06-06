@@ -859,5 +859,128 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w9-s1-c1",
+    "type": "challenge",
+    "title": "MCP Basics Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What does MCP stand for?",
+        "options": [
+          "Model Context Protocol",
+          "Machine Connection Process",
+          "Modular Code Platform",
+          "Multi-Client Pipeline"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "quiz",
+        "question": "Which MCP role is the AI application that a person directly interacts with?",
+        "options": [
+          "Server",
+          "Client",
+          "Host",
+          "Resource"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "What is an MCP 'resource' typically used for?",
+        "options": [
+          "Performing an action like sending an email",
+          "Exposing data the AI can read, like a file or record",
+          "Storing a user's login password",
+          "Replacing the need for a language model"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s3-c1",
+    "type": "challenge",
+    "title": "MCP Servers Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What is the main job of an MCP server?",
+        "options": [
+          "To chat directly with the user",
+          "To expose specific tools, resources, or prompts and carry out requests for them",
+          "To train the AI model",
+          "To store the user's browsing history"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why is it generally a good idea for an MCP server to focus on one system or domain?",
+        "options": [
+          "MCP technically forbids multi-purpose servers",
+          "A focused server is easier to build, understand, and maintain",
+          "It makes the server run on more computers",
+          "It is required for the handshake to succeed"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What should a well-designed server do when it receives a request with invalid arguments?",
+        "options": [
+          "Run the action anyway and hope for the best",
+          "Reject it and return a clear, specific error explaining what went wrong",
+          "Shut down permanently",
+          "Silently ignore the request with no response"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s5-c1",
+    "type": "challenge",
+    "title": "Real-World Integrations Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What does MCP make easier when an agent needs a brand-new capability, like access to a code repository?",
+        "options": [
+          "Rewriting the agent's reasoning from scratch",
+          "Connecting to a server for that system without changing how the agent fundamentally works",
+          "Replacing the language model entirely",
+          "Avoiding the need for any tools"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is the 'confirm-before-commit' pattern designed to protect against?",
+        "options": [
+          "Slow network connections",
+          "An agent taking a consequential action, like deleting something, without a check",
+          "The model running out of context",
+          "Servers connecting to each other directly"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "When an MCP server becomes unreachable, what does a resilient system do?",
+        "options": [
+          "Crash permanently with no explanation",
+          "Handle it gracefully — for example, by retrying, falling back, or explaining the issue clearly",
+          "Pretend the server is still working",
+          "Disconnect from every other server as well"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

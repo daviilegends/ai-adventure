@@ -238,5 +238,45 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "mb-w9",
+    "type": "miniboss",
+    "title": "The Protocol Phantom",
+    "subtitle": "Stage Checkpoint · MCP Mastery",
+    "description": "The Phantom slips between servers and clients, testing whether you really understand how MCP's pieces fit together — roles, structure, and the discipline a good server needs before it acts.",
+    "objective": "Answer at least 2 of 3 questions correctly to pass the checkpoint.",
+    "passThreshold": 0.67,
+    "xpReward": 60,
+    "coinsReward": 25,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "In MCP, which role manages a connection to a single server from inside the host?",
+        "options": [
+          "The resource",
+          "The client",
+          "The prompt",
+          "The model"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "MCP lets any compliant client communicate with any compliant server because they share a common protocol structure.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What should an MCP server do before carrying out a request with the arguments it received?",
+        "options": [
+          "Run it immediately without checks",
+          "Validate that the arguments are present, well-formed, and within expected bounds",
+          "Forward it to a different server",
+          "Ignore it"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

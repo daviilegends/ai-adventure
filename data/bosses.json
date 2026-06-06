@@ -446,5 +446,61 @@
         "correct": true
       }
     ]
+  },
+  {
+    "id": "b-w9",
+    "type": "boss",
+    "title": "The Integration Construct",
+    "subtitle": "Final Boss · MCP Mastery",
+    "description": "The Construct links together every server, client, and capability you've encountered, daring you to connect an agent to the outside world the way a real integration engineer would — cleanly, safely, and with the whole protocol in mind.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Construct.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What is the main purpose of MCP?",
+        "options": [
+          "To make AI models generate longer text",
+          "To provide a standard way for AI applications to connect to external tools and data sources",
+          "To replace human developers",
+          "To compress images for faster loading"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "In MCP, a host can run multiple clients, each managing a connection to a different server.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which MCP capability is best suited to exposing live, readable data like a file's contents?",
+        "options": [
+          "A tool",
+          "A resource",
+          "A prompt",
+          "A handshake"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Why should an MCP server validate the arguments in a request before acting on them?",
+        "options": [
+          "To slow down the response on purpose",
+          "To avoid carrying out incorrect or unsafe actions based on bad input",
+          "Because validation is required to start the handshake",
+          "Because the protocol forbids any checks"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "A resilient integration handles a failed connection gracefully — for example, by retrying or clearly explaining what went wrong — rather than crashing silently.",
+        "correct": true
+      }
+    ]
   }
 ]

@@ -2579,5 +2579,382 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w9-s1-l1",
+    "type": "lesson",
+    "title": "What is MCP?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "A common language for tools",
+        "body": "MCP (Model Context Protocol) is an open standard that lets AI applications connect to external tools, data sources, and systems in a consistent way. Instead of building a custom integration every time an AI assistant needs to read a file, query a database, or call an API, MCP gives both sides a shared protocol to speak."
+      },
+      {
+        "type": "text",
+        "heading": "Why standards matter here",
+        "body": "Before a shared standard, every AI tool that wanted to connect to, say, a calendar or a code host had to build its own custom connector — and every data source had to support each tool individually. MCP turns that tangle of one-off integrations into a single protocol both sides can implement once and reuse everywhere."
+      },
+      {
+        "type": "quiz",
+        "question": "What problem does MCP primarily solve?",
+        "options": [
+          "It makes AI models generate text faster",
+          "It provides a standard way for AI applications to connect to external tools and data sources",
+          "It replaces the need for AI models entirely",
+          "It encrypts conversations between users"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s1-l2",
+    "type": "lesson",
+    "title": "Servers, Clients, and Hosts",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Three roles in the protocol",
+        "body": "MCP defines three key roles: a host is the AI application a person interacts with, like a chat assistant; a client lives inside the host and manages a connection to one server; and a server exposes specific capabilities — tools, data, or resources — that the AI can use."
+      },
+      {
+        "type": "text",
+        "heading": "How they fit together",
+        "body": "A single host can run multiple clients, each connected to a different server — one for file access, one for a calendar, one for a project tracker. The host coordinates everything, while each server focuses narrowly on the capability it provides."
+      },
+      {
+        "type": "quiz",
+        "question": "In MCP, what is the role of a 'server'?",
+        "options": [
+          "It is the AI application a person talks to directly",
+          "It exposes specific tools, data, or resources that the AI can use",
+          "It generates the AI's responses",
+          "It stores the user's password"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s1-l3",
+    "type": "lesson",
+    "title": "Tools, Resources, and Prompts",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "What a server can offer",
+        "body": "An MCP server can expose three kinds of capabilities: tools (actions the AI can perform, like sending a message or running a search), resources (data the AI can read, like files or database records), and prompts (reusable templates that help shape how the AI approaches a task)."
+      },
+      {
+        "type": "text",
+        "heading": "Choosing the right capability",
+        "body": "Whether something should be a tool, a resource, or a prompt depends on its purpose — fetching live data calls for a tool, exposing a stable document calls for a resource, and guiding a recurring kind of task calls for a prompt. Recognizing which is which helps you read and design MCP integrations confidently."
+      },
+      {
+        "type": "quiz",
+        "question": "Which MCP capability would best fit 'a function the AI can call to send a Slack message'?",
+        "options": [
+          "A resource",
+          "A prompt",
+          "A tool",
+          "A host"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w9-s2-l1",
+    "type": "lesson",
+    "title": "How a Connection Gets Established",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Starting the conversation",
+        "body": "When a host wants to use a server's capabilities, its client first connects and exchanges basic information — what each side supports, what version of the protocol they speak. This handshake ensures both sides agree on how to communicate before any real work begins."
+      },
+      {
+        "type": "text",
+        "heading": "Discovering what's available",
+        "body": "Once connected, the client can ask the server what it offers — which tools, resources, and prompts are available, along with descriptions of each. The host uses this list to decide what it can do and to describe those options to the AI model guiding the conversation."
+      },
+      {
+        "type": "quiz",
+        "question": "What happens during the initial handshake between an MCP client and server?",
+        "options": [
+          "The server deletes old data",
+          "Both sides exchange information about what they support so they can communicate correctly",
+          "The AI model is retrained",
+          "The user's password is verified"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s2-l2",
+    "type": "lesson",
+    "title": "Requests and Responses",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Asking and answering",
+        "body": "Once connected, a client sends requests to a server — \"call this tool with these arguments\" or \"give me this resource\" — and the server replies with a response containing the result or an error. This request-response pattern repeats throughout a session as the AI works toward its goal."
+      },
+      {
+        "type": "text",
+        "heading": "Structured, predictable exchanges",
+        "body": "Because MCP defines the structure of these messages precisely, any compliant client can talk to any compliant server without custom translation code — much like how any web browser can talk to any web server because they share the HTTP standard."
+      },
+      {
+        "type": "quiz",
+        "question": "Why can any MCP-compliant client communicate with any MCP-compliant server without custom translation code?",
+        "options": [
+          "Because all servers are built by the same company",
+          "Because MCP defines a shared, predictable structure for requests and responses",
+          "Because clients and servers run on the same computer",
+          "Because MCP only supports one type of tool"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s2-l3",
+    "type": "lesson",
+    "title": "Where MCP Fits in an Agent's Loop",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Connecting the loop to the outside world",
+        "body": "Recall the agent loop — think, act, observe. MCP slots into the \"act\" step: when an agent decides it needs to do something external, like reading a file or querying a calendar, it can do so through an MCP tool call rather than a custom one-off integration."
+      },
+      {
+        "type": "text",
+        "heading": "One protocol, many capabilities",
+        "body": "As an agent's needs grow — more data sources, more actions — MCP lets you add new servers without rewriting the agent itself. The agent simply discovers and uses whatever capabilities the connected servers expose, keeping the system flexible as it scales."
+      },
+      {
+        "type": "quiz",
+        "question": "How does MCP fit into an AI agent's 'think, act, observe' loop?",
+        "options": [
+          "It replaces the 'think' step entirely",
+          "It provides a standard way to carry out the 'act' step by connecting to external tools and data",
+          "It only affects how the agent observes results, never how it acts",
+          "It removes the need for a loop altogether"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s3-l1",
+    "type": "lesson",
+    "title": "What Goes Into a Server",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Defining what you expose",
+        "body": "Building an MCP server means deciding what capabilities to expose and describing them clearly — a tool's name, what it does, and what arguments it expects, like `searchDocs(query: string)`. The server is responsible for actually carrying out the action when it's called and returning a useful result."
+      },
+      {
+        "type": "text",
+        "heading": "Keeping a narrow focus",
+        "body": "A well-designed server usually centers on one system or domain — a single server for a project tracker, another for a file system, another for a calendar — rather than trying to do everything. This mirrors the same \"do one thing well\" idea you've seen with well-designed tools and functions."
+      },
+      {
+        "type": "quiz",
+        "question": "Why might you build separate MCP servers for a project tracker, a file system, and a calendar, rather than one server that does everything?",
+        "options": [
+          "Because MCP only allows one tool per server",
+          "Because a focused server is easier to build, understand, and maintain",
+          "Because servers cannot share a protocol",
+          "Because hosts can only connect to one server"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s3-l2",
+    "type": "lesson",
+    "title": "Handling Requests Safely",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Validating before acting",
+        "body": "When a server receives a request, it shouldn't blindly trust the input — checking that arguments are present, correctly formatted, and within expected bounds before carrying out the action. A `deleteFile(path)` tool that runs on any string it's given, without checks, is an invitation for trouble."
+      },
+      {
+        "type": "text",
+        "heading": "Returning clear results and errors",
+        "body": "A good server response is just as important as a good request: returning structured data the AI can easily use on success, and a clear, specific error message on failure — \"file not found at that path\" rather than a vague \"something went wrong.\" Clear feedback helps the agent decide what to do next."
+      },
+      {
+        "type": "quiz",
+        "question": "Why should an MCP server validate its incoming arguments before acting on them?",
+        "options": [
+          "Validation is optional and rarely useful",
+          "To avoid carrying out incorrect or unsafe actions based on bad input",
+          "Because MCP requires every server to reject all requests",
+          "To make the server slower on purpose"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s4-l1",
+    "type": "lesson",
+    "title": "What a Client Does",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The bridge inside the host",
+        "body": "An MCP client lives inside the host application and manages the connection to a single server — establishing it, sending requests, and handling responses. If a host needs to talk to three different servers, it typically runs three clients, one per connection."
+      },
+      {
+        "type": "text",
+        "heading": "Translating between host and server",
+        "body": "The client takes what the host (and the AI model inside it) wants to do — \"call this tool,\" \"fetch this resource\" — and turns it into properly formatted MCP messages, then translates the server's responses back into a form the host can use. It's the part of the system that speaks MCP fluently on the host's behalf."
+      },
+      {
+        "type": "quiz",
+        "question": "If a host application needs to connect to three different MCP servers, how many clients does it typically run?",
+        "options": [
+          "One client shared across all three",
+          "Three — one client per server connection",
+          "Zero — servers connect directly to the model",
+          "It depends on the user's preferences"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s4-l2",
+    "type": "lesson",
+    "title": "Choosing What to Use",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Not every capability is relevant every time",
+        "body": "A connected server might expose a dozen tools, but a given task might only need one or two of them. Part of a client's (and host's) job is helping the AI model see only what's relevant — too many options at once can make it harder for the model to choose well."
+      },
+      {
+        "type": "text",
+        "heading": "Permissions and trust",
+        "body": "Connecting to a server means trusting it with some level of access — to your files, your calendar, your accounts. Thoughtful hosts let users see what a server can do and decide whether to allow it, rather than silently granting every connected server unlimited access."
+      },
+      {
+        "type": "quiz",
+        "question": "Why might it matter that a user can see what an MCP server is able to do before allowing a connection?",
+        "options": [
+          "It has no real importance",
+          "Because connecting means trusting the server with some level of access, and users should be able to make an informed choice",
+          "Because servers cannot function without explicit permission screens",
+          "Because MCP requires a fee for each connection"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s5-l1",
+    "type": "lesson",
+    "title": "Connecting an Agent to Real Tools",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "From concept to capability",
+        "body": "With MCP, connecting an agent to a new capability — a project tracker, a code repository, a documentation site — usually means finding or building a server for that system, then configuring the host to connect to it. The agent gains a new ability without anyone rewriting its core reasoning."
+      },
+      {
+        "type": "text",
+        "heading": "Composing capabilities",
+        "body": "Real tasks often draw on several integrations at once: an agent might read an issue from a project tracker (one server), look up related code (another server), and post a summary to a chat tool (a third). MCP makes it natural to combine capabilities from entirely different systems into a single coherent task."
+      },
+      {
+        "type": "quiz",
+        "question": "What is a key advantage of using MCP to connect an agent to a new system, like a project tracker?",
+        "options": [
+          "It requires rewriting the agent's core reasoning each time",
+          "The agent gains a new capability without changes to how it fundamentally reasons and plans",
+          "It only works with one system at a time",
+          "It removes the need for the agent to have a goal"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s5-l2",
+    "type": "lesson",
+    "title": "Common Integration Patterns",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Reading before acting",
+        "body": "A frequent pattern is read-then-act: an agent first gathers information through a resource or read-only tool — current file contents, existing records — before making a change, so its action is grounded in up-to-date reality rather than guesswork."
+      },
+      {
+        "type": "text",
+        "heading": "Confirm-before-commit",
+        "body": "For actions with real consequences — sending a message, modifying a record, deleting something — a common pattern is to have the agent propose the action and pause for confirmation before it actually happens. This blends an agent's helpfulness with the guardrails that keep it trustworthy."
+      },
+      {
+        "type": "quiz",
+        "question": "Why might an agent be designed to read a file's current contents before editing it through an MCP tool?",
+        "options": [
+          "Reading is required by the protocol's handshake",
+          "So its edit is grounded in the file's actual current state rather than a guess",
+          "Because writing tools do not exist in MCP",
+          "To make the operation slower on purpose"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s5-l3",
+    "type": "lesson",
+    "title": "Troubleshooting Integrations",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "When a connection misbehaves",
+        "body": "Integrations sometimes fail in ordinary ways: a server might be unreachable, a tool call might return an error, or a response might not match what the agent expected. Recognizing these as normal operating conditions — not catastrophes — is the first step to handling them gracefully."
+      },
+      {
+        "type": "text",
+        "heading": "Designing for resilience",
+        "body": "Resilient integrations might retry a failed connection, fall back to an alternate approach, or clearly explain to the user what went wrong and why. The goal isn't to prevent every possible failure — that's impossible — but to make sure failures are handled in ways that keep the system trustworthy and understandable."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the best way to think about a server connection failing or returning an error?",
+        "options": [
+          "As a catastrophic event that should never be planned for",
+          "As a normal operating condition that a well-designed system should handle gracefully",
+          "As a sign that MCP is broken and unusable",
+          "As something only the user can fix"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

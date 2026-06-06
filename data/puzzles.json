@@ -558,5 +558,85 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w9-s2-p1",
+    "type": "puzzle",
+    "title": "Architecture Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Tracing a request through the system",
+        "body": "A user asks an assistant, \"What's on my calendar tomorrow?\" The host passes this to its AI model, which decides a calendar tool is needed. The client sends a request to the connected calendar server: \"call `getEvents` for tomorrow's date.\" The server looks up the events and sends a response back with the results."
+      },
+      {
+        "type": "text",
+        "heading": "From response to answer",
+        "body": "The client hands that response to the host, which feeds it back to the AI model. The model turns the raw event data into a friendly summary — \"You have a 10am meeting and a 2pm dentist appointment\" — and the host displays it to the user. Each piece played a narrow, well-defined role in getting from question to answer."
+      },
+      {
+        "type": "quiz",
+        "question": "In the calendar example, which piece actually looks up the events and sends back the result?",
+        "options": [
+          "The host",
+          "The AI model",
+          "The MCP server",
+          "The user"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "After the server responds with the raw event data, what turns it into a friendly summary for the user?",
+        "options": [
+          "The MCP client, by formatting the JSON",
+          "The AI model, by reasoning over the data and generating a response",
+          "The server, by sending a second message",
+          "The protocol handshake"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w9-s4-p1",
+    "type": "puzzle",
+    "title": "Client Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Spotting an overloaded model",
+        "body": "A host connects to five MCP servers, each exposing 8-10 tools — nearly 50 tools in total. When the AI model is handed all 50 tool descriptions for a simple question like \"what's the weather today,\" it has to wade through dozens of irrelevant options before finding the one it actually needs."
+      },
+      {
+        "type": "text",
+        "heading": "Filtering down to what's relevant",
+        "body": "A smarter approach narrows the list before it reaches the model — perhaps based on the kind of question being asked, recently used tools, or explicit categories. For \"what's the weather today,\" surfacing just the weather-related tool, and a couple of close neighbors, lets the model decide quickly and correctly instead of getting lost in the noise."
+      },
+      {
+        "type": "quiz",
+        "question": "What problem does handing the AI model all 50 tool descriptions for a simple weather question create?",
+        "options": [
+          "The model will run out of memory permanently",
+          "The model has to sift through many irrelevant options, making a good choice harder",
+          "MCP does not allow more than 10 tools",
+          "The servers will disconnect automatically"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is one way to help the model choose well when many tools are available?",
+        "options": [
+          "Always show every tool from every server, every time",
+          "Filter the list down to what's likely relevant to the current question",
+          "Disable all tools except one permanently",
+          "Remove tool descriptions entirely"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

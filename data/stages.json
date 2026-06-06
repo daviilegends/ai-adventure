@@ -830,5 +830,125 @@
         "nodeType": "boss"
       }
     ]
+  },
+  {
+    "id": "w9-s1",
+    "worldId": 9,
+    "order": 1,
+    "title": "What is MCP?",
+    "nodes": [
+      {
+        "nodeId": "w9-s1-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s1-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s1-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s1-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w9-s2",
+    "worldId": 9,
+    "order": 2,
+    "title": "MCP Architecture",
+    "nodes": [
+      {
+        "nodeId": "w9-s2-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s2-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s2-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s2-p1",
+        "nodeType": "puzzle"
+      }
+    ]
+  },
+  {
+    "id": "w9-s3",
+    "worldId": 9,
+    "order": 3,
+    "title": "MCP Servers",
+    "nodes": [
+      {
+        "nodeId": "w9-s3-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s3-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s3-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w9-s4",
+    "worldId": 9,
+    "order": 4,
+    "title": "MCP Clients",
+    "nodes": [
+      {
+        "nodeId": "w9-s4-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s4-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s4-p1",
+        "nodeType": "puzzle"
+      },
+      {
+        "nodeId": "mb-w9",
+        "nodeType": "miniboss"
+      }
+    ]
+  },
+  {
+    "id": "w9-s5",
+    "worldId": 9,
+    "order": 5,
+    "title": "Real-World Integrations",
+    "nodes": [
+      {
+        "nodeId": "w9-s5-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s5-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s5-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w9-s5-c1",
+        "nodeType": "challenge"
+      },
+      {
+        "nodeId": "b-w9",
+        "nodeType": "boss"
+      }
+    ]
   }
 ]
