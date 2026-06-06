@@ -1,1 +1,53 @@
-[]
+[
+  {
+    "id": "q-w1",
+    "title": "AI Foundations Quiz",
+    "worldId": 1,
+    "xpReward": 50,
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "What does AI stand for?",
+        "options": [
+          "Automated Integration",
+          "Artificial Intelligence",
+          "Advanced Interface",
+          "Autonomous Interaction"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "An LLM generates responses by searching the internet in real time.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the main thing an LLM learns to do during training?",
+        "options": [
+          "Memorize facts from Wikipedia",
+          "Translate languages",
+          "Predict the next token in a sequence",
+          "Execute code"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "true-false",
+        "question": "A vague prompt is likely to produce a more creative and useful response.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which of these is a key element of a well-structured prompt?",
+        "options": [
+          "Using as few words as possible",
+          "Providing a role, clear instructions, and the input",
+          "Avoiding any context to keep the model unbiased",
+          "Always asking the model to guess the format"
+        ],
+        "correct": 1
+      }
+    ]
+  }
+]

@@ -1,7 +1,14 @@
 const Home = {
   init() {
     this.render();
+    this._wireNodes();
     document.addEventListener('xp:gained', () => this.render());
+  },
+
+  _wireNodes() {
+    document.querySelectorAll('.node-btn[data-lesson-id]').forEach(btn => {
+      btn.addEventListener('click', () => LessonEngine.start(btn.dataset.lessonId));
+    });
   },
 
   render() {

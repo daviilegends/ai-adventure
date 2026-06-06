@@ -26,7 +26,7 @@
       </div>
     </header>
 
-    <div class="scroll-area">
+    <div id="home-screen" class="scroll-area">
 
       <div class="player-card">
         <div class="player-avatar">🤖</div>
@@ -52,27 +52,27 @@
           </div>
           <div class="world-path">
             <div class="path-node node--completed">
-              <button class="node-btn">✓</button>
+              <button class="node-btn" data-lesson-id="w1-l1">✓</button>
               <span class="node-label">What is AI?</span>
             </div>
             <div class="path-node node--active">
-              <button class="node-btn">★</button>
+              <button class="node-btn" data-lesson-id="w1-l2">★</button>
               <span class="node-label">What is an LLM?</span>
             </div>
             <div class="path-node node--locked">
-              <button class="node-btn" disabled>🔒</button>
+              <button class="node-btn" data-lesson-id="w1-l3" disabled>🔒</button>
               <span class="node-label">Understanding Prompts</span>
             </div>
             <div class="path-node node--locked">
-              <button class="node-btn" disabled>🔒</button>
+              <button class="node-btn" data-lesson-id="w1-l4" disabled>🔒</button>
               <span class="node-label">Prompt Structure</span>
             </div>
             <div class="path-node node--locked">
-              <button class="node-btn" disabled>🔒</button>
+              <button class="node-btn" data-lesson-id="w1-l5" disabled>🔒</button>
               <span class="node-label">Prompt Examples</span>
             </div>
             <div class="path-node node--locked node--boss">
-              <button class="node-btn" disabled>👑</button>
+              <button class="node-btn" data-lesson-id="w1-boss" disabled>👑</button>
               <span class="node-label node-label--boss">Boss Battle</span>
             </div>
           </div>
@@ -123,10 +123,15 @@
       </button>
     </nav>
 
+    <div id="lesson-screen" class="lesson-screen hidden"></div>
+    <div id="quiz-screen" class="lesson-screen hidden"></div>
+
   </div>
 
   <script src="js/state.js"></script>
   <script src="js/xp.js"></script>
+  <script src="js/LessonEngine.js"></script>
+  <script src="js/QuizEngine.js"></script>
   <script src="js/screens/home.js"></script>
   <script src="js/screens/lesson.js"></script>
   <script src="js/screens/quiz.js"></script>
