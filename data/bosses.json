@@ -390,5 +390,61 @@
         "correct": true
       }
     ]
+  },
+  {
+    "id": "b-w8",
+    "type": "boss",
+    "title": "The Architect Construct",
+    "subtitle": "Final Boss · AI Agents",
+    "description": "The Construct is built from everything an agent needs to function — a reasoning loop, tools, memory, plans, and workflows — and it challenges you to prove you could build one yourself, piece by piece, from the ground up.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Construct.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What capability sets an AI agent apart from a simple chatbot?",
+        "options": [
+          "Using more advanced vocabulary",
+          "Being able to take actions toward a goal, not just respond conversationally",
+          "Running on more powerful hardware",
+          "Never making mistakes"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "Tools let an agent take real actions, like searching the web or sending a message, that a language model alone cannot do.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the purpose of an agent's short-term memory during a task?",
+        "options": [
+          "To permanently store every fact it has ever learned",
+          "To track the goal, steps taken, and recent results within the current task",
+          "To replace the need for tools",
+          "To slow the agent down on purpose"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple-choice",
+        "question": "If an agent's plan runs into an unexpected error, what's the best response?",
+        "options": [
+          "Stop entirely and do nothing further",
+          "Recognize the issue and adapt — retry, change approach, or revise the plan",
+          "Repeat the exact same failing action indefinitely",
+          "Pretend the error did not happen"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "In a multi-agent workflow, the output of one agent often becomes the input to the next, so its clarity matters.",
+        "correct": true
+      }
+    ]
   }
 ]

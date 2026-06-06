@@ -710,5 +710,125 @@
         "nodeType": "boss"
       }
     ]
+  },
+  {
+    "id": "w8-s1",
+    "worldId": 8,
+    "order": 1,
+    "title": "What is an AI Agent?",
+    "nodes": [
+      {
+        "nodeId": "w8-s1-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s1-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s1-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s1-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w8-s2",
+    "worldId": 8,
+    "order": 2,
+    "title": "Tools",
+    "nodes": [
+      {
+        "nodeId": "w8-s2-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s2-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s2-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s2-p1",
+        "nodeType": "puzzle"
+      }
+    ]
+  },
+  {
+    "id": "w8-s3",
+    "worldId": 8,
+    "order": 3,
+    "title": "Memory",
+    "nodes": [
+      {
+        "nodeId": "w8-s3-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s3-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s3-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w8-s4",
+    "worldId": 8,
+    "order": 4,
+    "title": "Planning",
+    "nodes": [
+      {
+        "nodeId": "w8-s4-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s4-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s4-p1",
+        "nodeType": "puzzle"
+      },
+      {
+        "nodeId": "mb-w8",
+        "nodeType": "miniboss"
+      }
+    ]
+  },
+  {
+    "id": "w8-s5",
+    "worldId": 8,
+    "order": 5,
+    "title": "Agent Workflows",
+    "nodes": [
+      {
+        "nodeId": "w8-s5-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s5-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s5-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w8-s5-c1",
+        "nodeType": "challenge"
+      },
+      {
+        "nodeId": "b-w8",
+        "nodeType": "boss"
+      }
+    ]
   }
 ]

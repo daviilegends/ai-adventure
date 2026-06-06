@@ -478,5 +478,85 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w8-s2-p1",
+    "type": "puzzle",
+    "title": "Tool Selection Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Matching the tool to the task",
+        "body": "An agent's goal is \"find out if it will rain tomorrow in Lisbon and email me a summary.\" Looking at its available tools — `getWeather(city, date)`, `sendEmail(to, subject, body)`, and `searchWeb(query)` — the first step is clearly `getWeather(\"Lisbon\", \"tomorrow\")`: it directly answers the question being asked, with no guesswork needed."
+      },
+      {
+        "type": "text",
+        "heading": "Chaining tools toward the goal",
+        "body": "Once the weather result comes back — say `{ condition: \"rain\", chance: 80 }` — the agent has what it needs to write a summary. The final step is `sendEmail(to, \"Weather Summary\", \"80% chance of rain in Lisbon tomorrow.\")`. Notice how each tool call depends on the result of the one before it — the agent couldn't write the email before knowing the forecast."
+      },
+      {
+        "type": "quiz",
+        "question": "Given the goal 'find out if it will rain tomorrow in Lisbon and email me a summary,' which tool should the agent call first?",
+        "options": [
+          "sendEmail, to notify the user it's starting",
+          "getWeather, to find out the forecast before writing anything",
+          "searchWeb, to look up what Lisbon is",
+          "None — the agent should guess the weather"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why can't the agent call `sendEmail` before calling `getWeather` in this scenario?",
+        "options": [
+          "sendEmail only works in the morning",
+          "The email's content depends on the forecast result, which doesn't exist yet",
+          "Tools must always be called in alphabetical order",
+          "Email tools require a weather tool to be installed first"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s4-p1",
+    "type": "puzzle",
+    "title": "Planning Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Decomposing a goal",
+        "body": "Goal: \"Find a recipe that uses chicken and rice, and create a shopping list for it.\" Broken into steps: (1) search for a chicken-and-rice recipe, (2) read the ingredient list from the result, (3) compare it against what's already on hand, and (4) produce a shopping list of what's missing. Each step produces information the next step depends on."
+      },
+      {
+        "type": "text",
+        "heading": "When a step doesn't go as planned",
+        "body": "Suppose step 1 returns no usable recipes. Blindly continuing to step 2 would mean working from nothing. A resilient agent instead recognizes the dead end and adapts — searching with different terms (\"chicken rice dinner easy\"), trying a different source, or reporting back that it couldn't find a suitable recipe rather than inventing one."
+      },
+      {
+        "type": "quiz",
+        "question": "In the recipe example, why does step 2 (reading the ingredient list) depend on step 1 (finding a recipe)?",
+        "options": [
+          "It doesn't — the steps could run in any order",
+          "Step 2 needs the recipe that step 1 finds before it has any ingredients to read",
+          "Step 1 is optional",
+          "Steps 1 and 2 use the same tool"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "If the recipe search in step 1 returns no results, what's the best response for the agent?",
+        "options": [
+          "Continue to step 2 anyway and invent ingredients",
+          "Recognize the dead end and adapt — try a different search or report the issue",
+          "Shut down completely",
+          "Repeat the exact same search forever"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

@@ -198,5 +198,45 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "mb-w8",
+    "type": "miniboss",
+    "title": "The Loop Guardian",
+    "subtitle": "Stage Checkpoint · AI Agents",
+    "description": "The Guardian cycles endlessly through think, act, and observe, and it won't step aside until you prove you understand that same loop — along with the tools, memory, and planning that keep an agent on track.",
+    "objective": "Answer at least 2 of 3 questions correctly to pass the checkpoint.",
+    "passThreshold": 0.67,
+    "xpReward": 60,
+    "coinsReward": 25,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What does the 'think, act, observe' loop let an agent do?",
+        "options": [
+          "Generate longer responses",
+          "Repeatedly decide on, take, and learn from actions until a goal is reached",
+          "Avoid using any tools",
+          "Run without a language model"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "An agent's context window can hold an unlimited amount of information.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is task decomposition?",
+        "options": [
+          "Deleting parts of a goal that seem too hard",
+          "Breaking a large goal into smaller, manageable steps",
+          "Running a tool multiple times",
+          "Summarizing a conversation"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

@@ -2202,5 +2202,382 @@
         "correct": 2
       }
     ]
+  },
+  {
+    "id": "w8-s1-l1",
+    "type": "lesson",
+    "title": "From Chatbot to Agent",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "More than a conversation",
+        "body": "A chatbot answers questions in a back-and-forth conversation, but an AI agent goes further — it can take actions in the world to accomplish a goal: searching the web, running code, sending an email, updating a file. The defining trait of an agent isn't how smart it sounds, but whether it can *do* things on your behalf."
+      },
+      {
+        "type": "text",
+        "heading": "The agent loop",
+        "body": "Most agents follow a loop: observe the current situation, decide what to do next, take an action, then observe the result and decide again. This \"think, act, observe\" cycle repeats until the goal is reached — much like how a person works through a multi-step task."
+      },
+      {
+        "type": "quiz",
+        "question": "What's the key difference between a simple chatbot and an AI agent?",
+        "options": [
+          "Agents always use better language",
+          "Agents can take actions to accomplish a goal, not just respond in conversation",
+          "Chatbots are faster than agents",
+          "Agents cannot answer questions"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s1-l2",
+    "type": "lesson",
+    "title": "The Role of the Language Model",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The reasoning engine",
+        "body": "At the center of most AI agents is a large language model (LLM) — the same kind of model that powers chatbots. In an agent, the LLM acts as the \"brain\": it reads the current situation, reasons about what should happen next, and decides which action to take."
+      },
+      {
+        "type": "text",
+        "heading": "Instructions and goals",
+        "body": "An agent is typically given a goal in plain language — \"find the cheapest flight to Tokyo next month\" — along with instructions about how it should behave. The LLM uses that goal to guide every decision in the loop, from picking the first action to recognizing when the job is done."
+      },
+      {
+        "type": "quiz",
+        "question": "In an AI agent, what role does the language model typically play?",
+        "options": [
+          "It only stores data",
+          "It reasons about the situation and decides what action to take next",
+          "It directly controls the computer's hardware",
+          "It replaces the need for a goal"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s1-l3",
+    "type": "lesson",
+    "title": "Autonomy and Guardrails",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "How much freedom is too much?",
+        "body": "Agents can range from tightly scripted — always following the same steps — to highly autonomous, deciding their own steps to reach a goal. More autonomy means more flexibility, but also more risk, since an agent might take an unexpected or undesired action while pursuing its goal."
+      },
+      {
+        "type": "text",
+        "heading": "Why guardrails matter",
+        "body": "Well-designed agents include guardrails: limits on what actions they're allowed to take, confirmation steps before risky actions like deleting data or spending money, and clear boundaries around their goal. Guardrails let you benefit from an agent's autonomy without losing control over what it actually does."
+      },
+      {
+        "type": "quiz",
+        "question": "Why might an AI agent need guardrails, like requiring confirmation before deleting data?",
+        "options": [
+          "To make the agent slower on purpose",
+          "To limit the risk of the agent taking unexpected or undesired actions",
+          "Because agents cannot understand instructions otherwise",
+          "To reduce the size of its memory"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s2-l1",
+    "type": "lesson",
+    "title": "What Are Agent Tools?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Giving an agent hands",
+        "body": "On its own, a language model can only generate text — it can't browse the web, run code, or check today's weather. A tool is a function the agent can call to actually do something: search the web, query a database, run a calculation, or send a message. Tools are what let an agent act, not just talk."
+      },
+      {
+        "type": "text",
+        "heading": "Describing tools to the model",
+        "body": "To use a tool, the model needs to know it exists, what it does, and what input it expects — usually given as a short description and a list of parameters, like a function named `searchWeb` that takes a `query` string. The model decides *when* to call a tool and *what* to pass it, based on the goal it's pursuing."
+      },
+      {
+        "type": "quiz",
+        "question": "Why does an AI agent need tools to accomplish real-world tasks?",
+        "options": [
+          "Tools make the agent's responses sound more polished",
+          "On its own, a language model can only generate text — tools let it actually take action",
+          "Tools are required to train the model",
+          "Tools replace the need for a goal"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s2-l2",
+    "type": "lesson",
+    "title": "Tool Calls and Results",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Choosing and calling a tool",
+        "body": "When an agent decides a tool is needed, it produces a structured \"tool call\" — naming the tool and supplying arguments, like calling `searchWeb` with `{ \"query\": \"weather in Tokyo\" }`. The system runs the tool, and the result — the actual search results — is handed back to the agent to continue reasoning with."
+      },
+      {
+        "type": "text",
+        "heading": "Looping with results",
+        "body": "A single task often involves several tool calls in sequence: search for flights, then check prices, then compare dates. After each result comes back, the agent re-evaluates the situation and decides on the next action — building toward the goal one informed step at a time."
+      },
+      {
+        "type": "quiz",
+        "question": "After an agent calls a tool, what typically happens next?",
+        "options": [
+          "The agent immediately stops",
+          "The tool's result is returned to the agent, which uses it to decide on the next step",
+          "The tool runs forever",
+          "The agent forgets the original goal"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s2-l3",
+    "type": "lesson",
+    "title": "Designing Good Tools",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Narrow and well-described",
+        "body": "A good tool does one thing clearly — `getWeather(city)` is easier for an agent to use correctly than a do-everything `doStuff(input)`. Clear names, focused responsibilities, and well-described parameters all help the model pick the right tool and use it correctly on the first try."
+      },
+      {
+        "type": "text",
+        "heading": "Returning useful results",
+        "body": "A tool's output matters as much as its input. Returning a clean, structured result — like `{ temperature: 18, condition: \"cloudy\" }` rather than a wall of raw HTML — makes it far easier for the agent to extract what it needs and reason about what to do next."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is `getWeather(city)` generally easier for an agent to use correctly than a do-everything `doStuff(input)`?",
+        "options": [
+          "It runs faster on the server",
+          "Its narrow, clearly-named purpose makes it easier for the model to pick correctly and use well",
+          "It uses less memory",
+          "It doesn't require any description"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s3-l1",
+    "type": "lesson",
+    "title": "Short-Term and Long-Term Memory",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Remembering within a task",
+        "body": "Short-term memory is what an agent keeps track of during a single task — the goal, the steps taken so far, and the results of recent tool calls. Without it, an agent might call the same tool twice or forget what it just learned halfway through a multi-step job."
+      },
+      {
+        "type": "text",
+        "heading": "Remembering across tasks",
+        "body": "Long-term memory persists beyond a single conversation or task — like remembering a user's preferences, past requests, or facts learned in earlier sessions. This is usually stored outside the model itself, in a database or file, and retrieved when relevant rather than kept in the model's head at all times."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the main difference between an agent's short-term and long-term memory?",
+        "options": [
+          "Short-term memory is for math, long-term memory is for words",
+          "Short-term memory tracks the current task; long-term memory persists across tasks and sessions",
+          "Long-term memory is faster than short-term memory",
+          "There is no real difference"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s3-l2",
+    "type": "lesson",
+    "title": "Why Memory Has Limits",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The context window",
+        "body": "A language model can only consider a limited amount of text at once — its \"context window.\" Everything the agent needs to reason about — the goal, instructions, tool results, and conversation history — has to fit inside that space, which means older or less relevant information sometimes has to be trimmed or summarized."
+      },
+      {
+        "type": "text",
+        "heading": "Choosing what to keep",
+        "body": "Because space is limited, well-designed agents are selective: they might summarize a long tool result instead of keeping it in full, or store details in long-term memory and only pull them back in when needed. Treating memory as a limited resource — not an infinite notebook — is part of designing an agent that stays focused and effective."
+      },
+      {
+        "type": "quiz",
+        "question": "Why can't an AI agent simply keep every piece of information it has ever encountered in its active memory?",
+        "options": [
+          "Memory is illegal to use",
+          "The model's context window has a limited size, so not everything can fit at once",
+          "Agents are not allowed to remember anything",
+          "Long-term memory does not exist"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s4-l1",
+    "type": "lesson",
+    "title": "Breaking Goals into Steps",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "From a big goal to small steps",
+        "body": "A goal like \"plan a weekend trip to Lisbon\" is too large to act on directly — so an agent benefits from breaking it into smaller steps: check flight prices, find a hotel, look up things to do, then summarize it all. This is called task decomposition, and it's a core part of planning."
+      },
+      {
+        "type": "text",
+        "heading": "Planning before acting",
+        "body": "Some agents plan their entire approach upfront, listing every step before taking the first action. Others plan one step at a time, deciding what to do next based on what's happened so far. Each approach trades off predictability (plan-first) against adaptability (plan-as-you-go)."
+      },
+      {
+        "type": "quiz",
+        "question": "What is 'task decomposition' in the context of AI agents?",
+        "options": [
+          "Deleting unnecessary tasks",
+          "Breaking a large goal into smaller, more manageable steps",
+          "Running multiple agents at once",
+          "Forgetting old tasks to save memory"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s4-l2",
+    "type": "lesson",
+    "title": "Adapting When Things Go Wrong",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Plans meet reality",
+        "body": "Real-world tasks rarely go exactly as planned — a tool might return an error, a search might come back empty, or a step might reveal that the original plan needs to change. A good agent notices when something doesn't match expectations and adjusts, rather than blindly continuing down a broken path."
+      },
+      {
+        "type": "text",
+        "heading": "Retrying and replanning",
+        "body": "When something goes wrong, an agent might retry the same action in case it was a temporary glitch, try a different approach — search a different way, use a different tool — or revise its plan entirely based on what it just learned. Recognizing *which* response fits the situation is what separates a resilient agent from a brittle one."
+      },
+      {
+        "type": "quiz",
+        "question": "What should a well-designed agent do if a tool call returns an unexpected error?",
+        "options": [
+          "Stop working entirely and report nothing",
+          "Recognize the problem and adapt — retry, try another approach, or revise the plan",
+          "Ignore the error and continue as if nothing happened",
+          "Delete the tool from its list permanently"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s5-l1",
+    "type": "lesson",
+    "title": "Single-Agent vs Multi-Agent Systems",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "One agent, many roles",
+        "body": "A single agent can be given a broad goal and left to figure out the steps — researching, drafting, and reviewing its own work in sequence. This keeps things simple, but can strain a single model trying to juggle very different kinds of tasks at once."
+      },
+      {
+        "type": "text",
+        "heading": "Splitting work across agents",
+        "body": "A multi-agent system assigns different roles to different agents — one researches, one writes, one reviews — each focused on a narrower job it can do well. They communicate by passing results to each other, similar to how a team of specialists might divide up a project."
+      },
+      {
+        "type": "quiz",
+        "question": "What is one potential benefit of splitting a complex task across multiple specialized agents instead of using one general agent?",
+        "options": [
+          "It guarantees the task will be completed faster in every case",
+          "Each agent can focus on a narrower job suited to its role, rather than juggling everything at once",
+          "Multi-agent systems never make mistakes",
+          "It removes the need for any tools"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s5-l2",
+    "type": "lesson",
+    "title": "Designing an Agent Workflow",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Mapping the steps",
+        "body": "Designing a workflow means deciding what stages a task passes through, which agent or tool handles each stage, and how information flows between them — for example: a research agent gathers facts, a writing agent drafts a summary, and a review agent checks it for accuracy before it's shown to the user."
+      },
+      {
+        "type": "text",
+        "heading": "Handoffs and checkpoints",
+        "body": "At each handoff, one agent's output becomes another's input — so the format and clarity of that output matters. Adding checkpoints, like a review step before anything reaches the user, helps catch mistakes early and keeps the whole workflow trustworthy, not just each piece individually."
+      },
+      {
+        "type": "quiz",
+        "question": "In a multi-agent workflow, why does the format and clarity of one agent's output matter?",
+        "options": [
+          "It doesn't — agents can interpret anything",
+          "Because that output becomes the input to the next agent or step in the workflow",
+          "Because it determines how the agent is paid",
+          "Because only the final agent's output is ever used"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s5-l3",
+    "type": "lesson",
+    "title": "Evaluating and Improving Agents",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Did it actually work?",
+        "body": "Building an agent is only half the job — you also need to check whether it reliably accomplishes its goal. This might mean running it against a set of test scenarios, checking whether its final answers are correct, or reviewing the steps it took to spot inefficiencies or mistakes."
+      },
+      {
+        "type": "text",
+        "heading": "Iterating based on what you find",
+        "body": "When an agent fails or behaves oddly, the fix might be a clearer goal description, a better-designed tool, an added guardrail, or a smarter memory strategy — rarely a single magic switch. Treating agent-building as an iterative cycle of testing and refining is what turns a rough first attempt into something genuinely useful."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is testing an AI agent against a set of scenarios important after building it?",
+        "options": [
+          "It makes the agent run faster",
+          "It helps reveal whether the agent reliably accomplishes its goal so it can be improved",
+          "It is required before an agent can use any tools",
+          "It replaces the need for a clear goal"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

@@ -736,5 +736,128 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w8-s1-c1",
+    "type": "challenge",
+    "title": "AI Agents Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What can an AI agent do that a simple chatbot typically cannot?",
+        "options": [
+          "Use proper grammar",
+          "Take actions in the world to accomplish a goal",
+          "Understand questions",
+          "Run on a computer"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What does the 'think, act, observe' loop describe?",
+        "options": [
+          "A way to format chat messages",
+          "The repeating cycle an agent uses to decide on and take actions toward a goal",
+          "A type of programming error",
+          "A method for training language models"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why do well-designed agents include guardrails?",
+        "options": [
+          "To make them harder to use",
+          "To limit risk by constraining what actions the agent can take",
+          "To make them respond more slowly",
+          "Because guardrails are required by law"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s3-c1",
+    "type": "challenge",
+    "title": "Memory Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "Which kind of memory would help an agent recall a user's favorite topics across many separate conversations?",
+        "options": [
+          "Short-term memory only",
+          "Long-term memory",
+          "No memory is needed for this",
+          "The agent's tools"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is a 'context window' in the context of language models?",
+        "options": [
+          "A setting that controls the model's creativity",
+          "The limited amount of text a model can consider at once",
+          "A type of agent tool",
+          "A way to store passwords"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why might an agent summarize a long tool result instead of keeping it in full?",
+        "options": [
+          "Summaries are always more accurate",
+          "To save space in a limited context window while keeping the important parts",
+          "Because tools cannot return long results",
+          "To make the agent forget the original goal"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w8-s5-c1",
+    "type": "challenge",
+    "title": "Agent Workflows Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What does a multi-agent system typically do differently from a single-agent approach?",
+        "options": [
+          "It uses no language models at all",
+          "It splits a task across several agents, each focused on a narrower role",
+          "It avoids using tools entirely",
+          "It removes the need for a goal"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why are checkpoints, like a review step, valuable in an agent workflow?",
+        "options": [
+          "They make the workflow take longer for no benefit",
+          "They help catch mistakes early before they reach the user",
+          "They are required by every programming language",
+          "They replace the need for any agents"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "After building an agent, why would you run it against test scenarios?",
+        "options": [
+          "To make it sound more confident",
+          "To find out whether it reliably accomplishes its goal and where it needs improvement",
+          "Because agents cannot run without tests",
+          "To reduce its memory usage"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]
