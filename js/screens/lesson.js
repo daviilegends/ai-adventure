@@ -24,7 +24,7 @@ const LessonScreen = {
 
     this._el.innerHTML = `
       <div class="lesson-header">
-        <button class="lesson-back" id="lesson-back">←</button>
+        <button class="lesson-back" id="lesson-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
         <div class="lesson-progress">
           <div class="lesson-progress__bar">
             <div class="lesson-progress__fill" style="width: ${pct}%"></div>
@@ -53,8 +53,9 @@ const LessonScreen = {
   },
 
   _renderQuiz(step) {
+    const letters = ['A', 'B', 'C', 'D'];
     const options = step.options
-      .map((opt, i) => `<button class="quiz-option" data-index="${i}">${opt}</button>`)
+      .map((opt, i) => `<button class="quiz-option" data-index="${i}"><span class="quiz-option-letter">${letters[i] || i + 1}</span>${opt}</button>`)
       .join('');
 
     document.getElementById('lesson-content').innerHTML = `
@@ -95,8 +96,9 @@ const LessonScreen = {
       <div class="lesson-complete">
         <div class="lesson-complete__icon">🎉</div>
         <h2>Lesson Complete!</h2>
-        <p>+${lesson.xpReward} XP earned</p>
-        <button class="btn btn--primary" id="lesson-done">Back to Map</button>
+        <p>Great work — keep it up!</p>
+        <div class="xp-reward">⚡ +${lesson.xpReward} XP</div>
+        <button class="btn btn--primary" id="lesson-done">Back to Map →</button>
       </div>
     `;
     document.getElementById('lesson-done').addEventListener('click', () => this._hide());

@@ -24,7 +24,7 @@ const QuizScreen = {
 
     this._el.innerHTML = `
       <div class="lesson-header">
-        <button class="lesson-back" id="quiz-back">←</button>
+        <button class="lesson-back" id="quiz-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
         <div class="lesson-progress">
           <div class="lesson-progress__bar">
             <div class="lesson-progress__fill" style="width: ${pct}%"></div>
@@ -45,8 +45,9 @@ const QuizScreen = {
   },
 
   _renderMultipleChoice(question) {
+    const letters = ['A', 'B', 'C', 'D'];
     const options = question.options
-      .map((opt, i) => `<button class="quiz-option" data-index="${i}">${opt}</button>`)
+      .map((opt, i) => `<button class="quiz-option" data-index="${i}"><span class="quiz-option-letter">${letters[i] || i + 1}</span>${opt}</button>`)
       .join('');
 
     document.getElementById('quiz-content').innerHTML = `
@@ -120,15 +121,21 @@ const QuizScreen = {
 
   _renderResults({ correct, total, earned, meta }) {
     const pct = Math.round((correct / total) * 100);
-    const icon = pct === 100 ? '🏆' : pct >= 60 ? '⭐' : '📚';
+    const icon = pct === 100 ? '🏆' : pct >= 60 ? '🎯' : '📚';
+    const stars = pct === 100 ? 3 : pct >= 60 ? 2 : 1;
+
+    const starsHtml = [1,2,3].map(n =>
+      `<span class="score-star${n <= stars ? ' score-star--lit' : ''}">⭐</span>`
+    ).join('');
 
     this._el.innerHTML = `
       <div class="lesson-complete">
         <div class="lesson-complete__icon">${icon}</div>
         <h2>${meta.title}</h2>
-        <p class="quiz-score">${correct} / ${total} correct</p>
-        <p>+${earned} XP earned</p>
-        <button class="btn btn--primary" id="quiz-done">Back to Map</button>
+        <p class="quiz-score">${correct} / ${total}</p>
+        <div class="score-stars">${starsHtml}</div>
+        <div class="xp-reward">⚡ +${earned} XP</div>
+        <button class="btn btn--primary" id="quiz-done">Back to Map →</button>
       </div>
     `;
 

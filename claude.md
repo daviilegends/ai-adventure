@@ -114,20 +114,27 @@ Prefer explaining code in chat rather than inside source files.
 
 ## UI Rules
 
-Prefer:
+## UI/UX Guidelines
 
-* CSS animations
-* SVG graphics
-* Emoji icons when appropriate
+Use Magic MCP when appropriate for UI/UX improvements.
+
+Focus on:
+
+- Modern design
+- Good typography
+- Consistent spacing
+- Responsive layouts
+- Accessible interfaces
+- Lightweight animations
 
 Avoid:
 
-* Large image assets
-* External image dependencies
-* Unnecessary visual complexity
+- Heavy visual effects
+- Unnecessary dependencies
+- Large image assets
+- Overly complex UI patterns
 
-The project should remain lightweight.
-
+The project should remain lightweight and easy to maintain.
 ---
 
 ## Data Persistence
