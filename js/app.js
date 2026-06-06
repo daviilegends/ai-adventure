@@ -1,1 +1,6 @@
-// app.js — App initialization and screen routing
+function initApp() {
+  State.init();
+  Home.init();
+}
+
+initApp();
