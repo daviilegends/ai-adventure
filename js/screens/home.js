@@ -1,8 +1,24 @@
 const Home = {
+  _view: 'home',
+
   init() {
     this.render();
     document.addEventListener('xp:gained', () => this.render());
     document.addEventListener('lesson:completed', () => this.render());
+    this._wireNav();
+  },
+
+  _wireNav() {
+    document.querySelectorAll('.nav-btn[data-nav]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.nav;
+        if (target !== 'home' && target !== 'map') return;
+        this._view = target;
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('nav-btn--active'));
+        btn.classList.add('nav-btn--active');
+        this.render();
+      });
+    });
   },
 
   render() {
@@ -28,9 +44,28 @@ const Home = {
 
     const mapEl = document.querySelector('.world-map');
     if (mapEl) {
-      mapEl.innerHTML = this._renderMap(player);
+      mapEl.classList.toggle('world-map--home', this._view === 'home');
+      mapEl.innerHTML = this._view === 'map'
+        ? this._renderMap(player)
+        : this._renderHomeView(player);
       this._wireNodes();
     }
+  },
+
+  _renderHomeView(player) {
+    const worlds = LessonEngine.getWorlds();
+    const current = this._findCurrentWorld(player, worlds);
+    if (!current) return '';
+    return this._renderWorld(current, player, worlds);
+  },
+
+  _findCurrentWorld(player, worlds) {
+    const unlocked = worlds.filter(w => player.unlockedWorlds.includes(w.id));
+    for (const world of unlocked) {
+      const lessons = LessonEngine.getForWorld(world.id);
+      if (lessons.some(l => !player.completedLessons.includes(l.id))) return world;
+    }
+    return unlocked[unlocked.length - 1] || null;
   },
 
   _renderMap(player) {
@@ -142,31 +177,27 @@ const Home = {
       }
 
       const isBoss = lesson.type === 'boss';
-      const nodeClass = `path-node node--${state}${isBoss ? ' node--boss' : ''}`;
+      const rowClass = `lesson-row lesson-row--${state}${isBoss ? ' lesson-row--boss' : ''}`;
       const disabled = state === 'locked' ? 'disabled' : '';
-      const labelClass = isBoss ? 'node-label node-label--boss' : 'node-label';
+
+      let badge;
+      if (state === 'completed') badge = isBoss ? 'cleared' : 'done';
+      else if (state === 'active') badge = isBoss ? 'battle' : 'start';
+      else badge = 'locked';
+
+      const dot = state === 'completed'
+        ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`
+        : '';
 
       return `
-        <div class="${nodeClass}">
-          <button class="node-btn" data-lesson-id="${lesson.id}" ${disabled}>
-            ${this._nodeIcon(state, isBoss)}
+        <div class="${rowClass}">
+          <div class="lesson-row__dot">${dot}</div>
+          <button class="lesson-row__btn" data-lesson-id="${lesson.id}" ${disabled}>
+            <span class="lesson-row__title">${lesson.title}</span>
+            <span class="lesson-row__badge">${badge}</span>
           </button>
-          <span class="${labelClass}">${lesson.title}</span>
         </div>`;
     }).join('');
-  },
-
-  _nodeIcon(state, isBoss) {
-    if (state === 'completed') {
-      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
-    }
-    if (isBoss && state !== 'locked') {
-      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l5 7.5 5-5.5 5 5.5 5-7.5v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4z"/></svg>`;
-    }
-    if (state === 'active') {
-      return `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>`;
-    }
-    return this._svgLock();
   },
 
   _svgLock() {
@@ -174,7 +205,7 @@ const Home = {
   },
 
   _wireNodes() {
-    document.querySelectorAll('.node-btn[data-lesson-id]').forEach(btn => {
+    document.querySelectorAll('.lesson-row__btn[data-lesson-id]').forEach(btn => {
       btn.addEventListener('click', () => LessonEngine.start(btn.dataset.lessonId));
     });
   },

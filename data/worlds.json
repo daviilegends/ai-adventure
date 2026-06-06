@@ -3,8 +3,8 @@
     "id": 1,
     "title": "AI Foundations",
     "description": "Learn the basics of AI and Large Language Models",
-    "accent": "#4f8ef0",
-    "accentRgb": "79,142,240",
+    "accent": "#7E8C54",
+    "accentRgb": "126,140,84",
     "unlockRequirement": null,
     "stages": [
       { "id": 1, "title": "Introduction" },
@@ -15,8 +15,8 @@
     "id": 2,
     "title": "Prompt Engineering",
     "description": "Master the art of crafting effective prompts",
-    "accent": "#9b71f5",
-    "accentRgb": "155,113,245",
+    "accent": "#5B7FA6",
+    "accentRgb": "91,127,166",
     "unlockRequirement": { "worldId": 1 },
     "stages": [
       { "id": 1, "title": "Foundations" }
@@ -26,8 +26,8 @@
     "id": 3,
     "title": "Automation Basics",
     "description": "Introduction to test automation concepts",
-    "accent": "#2dcf9e",
-    "accentRgb": "45,207,158",
+    "accent": "#4D8A78",
+    "accentRgb": "77,138,120",
     "unlockRequirement": { "worldId": 2 },
     "stages": [
       { "id": 1, "title": "Concepts" }
@@ -37,8 +37,8 @@
     "id": 4,
     "title": "Playwright Fundamentals",
     "description": "Browser automation with Playwright",
-    "accent": "#f06b6b",
-    "accentRgb": "240,107,107",
+    "accent": "#9E5B5B",
+    "accentRgb": "158,91,91",
     "unlockRequirement": { "worldId": 3 },
     "stages": [
       { "id": 1, "title": "Getting Started" }
