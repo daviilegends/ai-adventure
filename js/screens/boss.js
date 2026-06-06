@@ -14,6 +14,7 @@ const BossScreen = {
     document.getElementById('lesson-screen').classList.add('hidden');
     document.getElementById('quiz-screen').classList.add('hidden');
     this._el.classList.remove('hidden');
+    Animations.screenEnter(this._el);
   },
 
   _hide() {

@@ -132,6 +132,7 @@ const LessonEngine = {
     if (!nextWorld || player.unlockedWorlds.includes(nextWorld.id)) return;
 
     State.set({ unlockedWorlds: [...player.unlockedWorlds, nextWorld.id] });
+    document.dispatchEvent(new CustomEvent('world:unlocked', { detail: { world: nextWorld } }));
   },
 
   // Fixes unlockedWorlds for saves that predate the unlock system.

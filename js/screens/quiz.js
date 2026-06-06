@@ -11,6 +11,7 @@ const QuizScreen = {
   _show() {
     document.getElementById('home-screen').classList.add('hidden');
     this._el.classList.remove('hidden');
+    Animations.screenEnter(this._el);
   },
 
   _hide() {

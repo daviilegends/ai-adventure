@@ -5,6 +5,7 @@ async function initApp() {
   LessonScreen.init();
   QuizScreen.init();
   BossScreen.init();
+  Animations.init();
 }
 
 initApp();

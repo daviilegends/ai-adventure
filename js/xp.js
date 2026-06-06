@@ -27,5 +27,11 @@ const XP = {
     document.dispatchEvent(new CustomEvent('xp:gained', {
       detail: { amount, before, after, totalXp: newTotal },
     }));
+
+    if (after.level > before.level) {
+      document.dispatchEvent(new CustomEvent('level:up', {
+        detail: { level: after.level, prevLevel: before.level },
+      }));
+    }
   },
 };
