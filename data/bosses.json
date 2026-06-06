@@ -614,5 +614,61 @@
         "correct": true
       }
     ]
+  },
+  {
+    "id": "b-w12",
+    "type": "boss",
+    "title": "The Architect of It All",
+    "subtitle": "Final Boss · AI Adventure Master Path",
+    "description": "The Architect has woven together every thread of your journey — prompting, automation, testing, agents, and architecture — into one final trial. To prevail, you must show that you can bring it all together into a complete, thoughtful, AI-powered solution.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Architect and complete your journey.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "Why is it useful to hold both the strengths and limits of AI in mind at once?",
+        "options": [
+          "Because limits never actually matter in practice",
+          "Because using AI well means leaning on its strengths while staying alert to where it can fall short",
+          "Because strengths and limits cancel each other out",
+          "Because only the strengths are worth remembering"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "Treating prompting as an iterative conversation tends to produce better results than expecting a perfect response on the first try.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What kind of task tends to be the best candidate for automation?",
+        "options": [
+          "A rare, unpredictable task with major consequences",
+          "A frequent, predictable task with a clear definition of being complete",
+          "A task that requires deep human judgment every time",
+          "A task that already takes no effort to do"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the core loop that defines how an AI agent works?",
+        "options": [
+          "Generate text once and stop",
+          "Think (decide), act (use tools), observe results, and adapt the plan",
+          "Wait silently until given new instructions",
+          "Repeat the same action regardless of outcome"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "The strongest AI-powered solutions start from a deep understanding of the problem and the people affected, then choose technology to serve that problem.",
+        "correct": true
+      }
+    ]
   }
 ]

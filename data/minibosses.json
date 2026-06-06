@@ -358,5 +358,45 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "mb-w12",
+    "type": "miniboss",
+    "title": "The Echo of Lessons Past",
+    "subtitle": "Stage Checkpoint · AI Adventure Master Path",
+    "description": "This checkpoint reflects fragments of everything you've learned so far back at you — prompting, automation, and the rigor of a trustworthy Playwright suite — to see whether the lessons have truly stuck.",
+    "objective": "Answer at least 2 of 3 questions correctly to pass the checkpoint.",
+    "passThreshold": 0.67,
+    "xpReward": 60,
+    "coinsReward": 25,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What three ingredients tend to make up a strong prompt?",
+        "options": [
+          "A title, a signature, and a date",
+          "A clear goal, relevant context, and constraints like format or tone",
+          "Random keywords with no clear structure",
+          "Only the topic, with nothing else"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "A task that is frequent, predictable, and has a clear definition of 'done' tends to be a good candidate for automation.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the biggest risk when a test suite becomes unreliable?",
+        "options": [
+          "It runs a few seconds slower",
+          "People stop trusting it, so it loses its value as a safety net",
+          "It automatically repairs itself over time",
+          "Nothing changes in practice"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

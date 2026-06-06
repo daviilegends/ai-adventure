@@ -1228,5 +1228,128 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w12-s1-c1",
+    "type": "challenge",
+    "title": "AI Review Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What is AI, stripped of the hype, fundamentally good at doing?",
+        "options": [
+          "Guaranteeing every fact it states is true",
+          "Producing fluent, pattern-based language and adapting to context",
+          "Understanding the world exactly the way humans do",
+          "Knowing precisely what it does and doesn't know"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why can a language model sound confident while being wrong?",
+        "options": [
+          "Because it intentionally lies to users",
+          "Because it predicts likely-sounding continuations, which isn't the same as verifying truth",
+          "Because it always copies facts from a verified database",
+          "Because confidence and correctness are the same thing for a model"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is a recurring theme in using AI responsibly?",
+        "options": [
+          "Trusting every output without question",
+          "Being specific, verifying important claims, and keeping humans involved in consequential decisions",
+          "Avoiding AI entirely in every situation",
+          "Letting AI replace all human judgment"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s3-c1",
+    "type": "challenge",
+    "title": "Automation Review Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What should good automation primarily target?",
+        "options": [
+          "Every part of a process, without exception",
+          "Repetitive, error-prone, or tedious parts, freeing people for judgment-heavy work",
+          "Only tasks that are rare and unpredictable",
+          "Tasks that already require no effort"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What tends to make a task a good candidate for automation?",
+        "options": [
+          "It happens rarely and changes constantly",
+          "It is frequent, predictable, and has a clear definition of 'done'",
+          "It requires significant nuanced human judgment",
+          "It has major, irreversible consequences if done wrong"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why does designing automation to handle change matter?",
+        "options": [
+          "Because real-world systems and processes shift over time, and brittle automation breaks when they do",
+          "Because automation never needs to run more than once",
+          "Because change only happens in test environments, never in production",
+          "Because handling change makes automation pointless"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  {
+    "id": "w12-s5-c1",
+    "type": "challenge",
+    "title": "Agents Review Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What is the core loop that defines how an AI agent operates?",
+        "options": [
+          "Answer, forget, repeat",
+          "Think (decide), act (use tools), observe (check results), and adapt the plan",
+          "Wait for instructions and do nothing else",
+          "Generate text and stop immediately"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why does MCP matter to how modern AI agents connect to tools?",
+        "options": [
+          "It replaces the need for agents to use any tools at all",
+          "It gives agents a standard way to discover and connect to tools and resources, instead of one-off integrations",
+          "It prevents agents from accessing any external system",
+          "It has nothing to do with how agents use tools"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What should primarily drive the design of a complete AI-powered solution?",
+        "options": [
+          "Using the maximum number of advanced technologies available",
+          "A deep understanding of the problem and the people affected, with technology chosen to serve it",
+          "Picking whichever framework is currently trending",
+          "Avoiding any consideration of who will use the solution"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

@@ -1190,5 +1190,125 @@
         "nodeType": "boss"
       }
     ]
+  },
+  {
+    "id": "w12-s1",
+    "worldId": 12,
+    "order": 1,
+    "title": "AI Review",
+    "nodes": [
+      {
+        "nodeId": "w12-s1-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s1-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s1-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s1-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w12-s2",
+    "worldId": 12,
+    "order": 2,
+    "title": "Prompt Engineering Review",
+    "nodes": [
+      {
+        "nodeId": "w12-s2-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s2-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s2-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s2-p1",
+        "nodeType": "puzzle"
+      }
+    ]
+  },
+  {
+    "id": "w12-s3",
+    "worldId": 12,
+    "order": 3,
+    "title": "Automation Review",
+    "nodes": [
+      {
+        "nodeId": "w12-s3-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s3-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s3-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w12-s4",
+    "worldId": 12,
+    "order": 4,
+    "title": "Playwright Review",
+    "nodes": [
+      {
+        "nodeId": "w12-s4-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s4-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s4-p1",
+        "nodeType": "puzzle"
+      },
+      {
+        "nodeId": "mb-w12",
+        "nodeType": "miniboss"
+      }
+    ]
+  },
+  {
+    "id": "w12-s5",
+    "worldId": 12,
+    "order": 5,
+    "title": "Agents Review",
+    "nodes": [
+      {
+        "nodeId": "w12-s5-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s5-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s5-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w12-s5-c1",
+        "nodeType": "challenge"
+      },
+      {
+        "nodeId": "b-w12",
+        "nodeType": "boss"
+      }
+    ]
   }
 ]

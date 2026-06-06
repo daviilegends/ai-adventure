@@ -3710,5 +3710,382 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w12-s1-l1",
+    "type": "lesson",
+    "title": "What AI Actually Is",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Stripping away the hype",
+        "body": "At its core, the AI you've been learning about is a system trained on huge amounts of text to predict likely continuations — turning that simple ability into surprisingly useful behavior: answering questions, writing code, holding conversations. Keeping that foundation in mind helps you reason about both its strengths and its limits."
+      },
+      {
+        "type": "text",
+        "heading": "Strengths and limits, side by side",
+        "body": "AI is strong at producing fluent language, recognizing patterns, and adapting to context — and weak at guaranteeing factual accuracy, understanding things the way humans do, or knowing what it doesn't know. Holding both sides at once, rather than picking one, is what lets you use it well."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is it useful to keep both the strengths and the limits of AI in mind at the same time?",
+        "options": [
+          "Because AI has no real strengths worth knowing about",
+          "Because using it well means leaning on what it's good at while staying alert to where it falls short",
+          "Because limits don't actually affect how you should use a tool",
+          "Because strengths and limits are the same thing"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s1-l2",
+    "type": "lesson",
+    "title": "How Language Models Generate Responses",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Prediction, one piece at a time",
+        "body": "A language model builds its response step by step, each new piece chosen based on everything that came before — the prompt, and the words generated so far. This is why a small change early in a prompt can noticeably shift the entire response that follows."
+      },
+      {
+        "type": "text",
+        "heading": "Why this explains both its magic and its mistakes",
+        "body": "This step-by-step process is what makes AI so flexible — it can continue almost any kind of text in almost any direction. It's also why it can confidently produce something fluent-sounding but wrong: fluency and correctness come from different places, and the model is fundamentally optimizing for the former."
+      },
+      {
+        "type": "quiz",
+        "question": "Why can a language model produce text that sounds confident and fluent but is actually incorrect?",
+        "options": [
+          "Because it deliberately tries to deceive people",
+          "Because it generates fluent-sounding text by predicting likely continuations, which isn't the same as verifying truth",
+          "Because it copies answers directly from a database of facts",
+          "Because fluent text is always factually correct"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s1-l3",
+    "type": "lesson",
+    "title": "Using AI Responsibly",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Remembering there's a person behind every output",
+        "body": "Every AI response eventually reaches a person — a reader, a user, a decision-maker — which means the choices you make about how to use AI (what to trust, what to verify, what to disclose) ultimately affect real people. Responsible use starts with keeping that chain in view."
+      },
+      {
+        "type": "text",
+        "heading": "Carrying the lessons forward",
+        "body": "Across this entire journey, a few threads keep reappearing: be specific about what you want, verify before you rely on something important, match the tool to the task, and keep a human in the loop for anything with real consequences. These threads are the foundation for everything still ahead."
+      },
+      {
+        "type": "quiz",
+        "question": "What is a recurring theme in using AI responsibly across many different contexts?",
+        "options": [
+          "Trusting every output completely without question",
+          "Being specific, verifying important claims, matching the tool to the task, and keeping humans involved in consequential decisions",
+          "Avoiding AI entirely in all situations",
+          "Letting AI make every decision so no human has to"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s2-l1",
+    "type": "lesson",
+    "title": "The Anatomy of a Strong Prompt",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "What a good prompt actually contains",
+        "body": "A strong prompt usually combines a few ingredients: a clear goal (what you want), relevant context (what the AI needs to know), and constraints (format, tone, length, what to avoid). Missing any one of these tends to leave the AI guessing — and guesses are where weak results come from."
+      },
+      {
+        "type": "text",
+        "heading": "Showing, not just telling",
+        "body": "Beyond describing what you want, showing an example of the kind of output you're looking for — a sample sentence, a desired structure, a reference style — often communicates more precisely than a description alone. This is the same instinct behind few-shot prompting."
+      },
+      {
+        "type": "quiz",
+        "question": "What three ingredients tend to make up a strong prompt?",
+        "options": [
+          "A long title, a signature, and a timestamp",
+          "A clear goal, relevant context, and constraints like format or tone",
+          "Random keywords with no structure",
+          "Only a single word describing the topic"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s2-l2",
+    "type": "lesson",
+    "title": "Iteration Beats Perfection",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Treating prompting as a conversation",
+        "body": "Few prompts land perfectly on the first try, and that's normal — the real skill is noticing what's off about a response and adjusting: tightening the goal, adding missing context, or rephrasing a confusing instruction. Each round teaches you something about how to ask better."
+      },
+      {
+        "type": "text",
+        "heading": "Building a feedback habit",
+        "body": "A useful habit is to read each response critically and ask, \"what specifically would make this better?\" rather than just \"is this good or bad?\" That specific question is what turns a so-so result into a great one — and turns prompting from guesswork into a skill you can actually improve at."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is treating prompting as an iterative process more effective than expecting a perfect result on the first try?",
+        "options": [
+          "Because AI tools punish first attempts",
+          "Because noticing what's off and adjusting is how you steadily improve both the result and your own skill",
+          "Because the first response is always unusable",
+          "Because iteration guarantees a perfect final response"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s2-l3",
+    "type": "lesson",
+    "title": "Prompting in Context",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The same skill, many situations",
+        "body": "The core skill of writing a clear, well-scoped request shows up everywhere — asking an AI to draft an email, instructing an agent to complete a task, designing a test scenario, or describing a system to build. Different situations dress it differently, but the underlying skill is the same."
+      },
+      {
+        "type": "text",
+        "heading": "Recognizing the pattern wherever it appears",
+        "body": "Once you can spot \"this is really a prompting problem\" underneath a request that looks like something else — a vague bug report, an unclear task description, a fuzzy project brief — you can apply the same tools: clarify the goal, add context, state constraints, and iterate."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is recognizing 'this is really a prompting problem' a useful skill, even outside of chatting with an AI directly?",
+        "options": [
+          "Because prompting skills are useless outside of chat interfaces",
+          "Because the same goal-context-constraints thinking applies any time you need to clearly communicate what you want",
+          "Because every problem is secretly about AI",
+          "Because recognizing patterns has no practical benefit"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s3-l1",
+    "type": "lesson",
+    "title": "What Automation Is Really For",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Removing the repetitive, not the meaningful",
+        "body": "Good automation targets the parts of a process that are repetitive, error-prone, or tedious — freeing people to spend their attention on the parts that actually require judgment, creativity, or care. Automating the wrong thing (or everything indiscriminately) often creates more problems than it solves."
+      },
+      {
+        "type": "text",
+        "heading": "Recognizing what's worth automating",
+        "body": "A task is often a good candidate for automation when it's done frequently, follows a predictable pattern, and has a clear definition of \"done.\" Tasks that require nuanced judgment, change in unpredictable ways, or carry heavy consequences usually need more human involvement, not less."
+      },
+      {
+        "type": "quiz",
+        "question": "What kind of task tends to be a good candidate for automation?",
+        "options": [
+          "A rare, unpredictable task with major consequences",
+          "A frequent, predictable task with a clear definition of being complete",
+          "Any task at all, regardless of its nature",
+          "Only tasks that involve no computers whatsoever"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s3-l2",
+    "type": "lesson",
+    "title": "Designing Automation That Lasts",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Building for change, not just for now",
+        "body": "Real-world processes shift — websites redesign their pages, APIs introduce new versions, business rules evolve. Automation that's brittle (hard-coded values, fragile selectors, no error handling) breaks the moment something changes. Automation that's designed to adapt — using stable identifiers, clear structure, and sensible fallbacks — keeps working through the inevitable small shifts."
+      },
+      {
+        "type": "text",
+        "heading": "Maintenance is part of the design",
+        "body": "Thinking about how an automated process will be checked, debugged, and updated later is just as important as getting it working today. Clear naming, good structure, logging, and useful error messages are what make the difference between automation you can maintain and automation you end up rewriting from scratch."
+      },
+      {
+        "type": "quiz",
+        "question": "Why does designing automation to handle change matter, beyond just making it work right now?",
+        "options": [
+          "Because real-world processes and systems change over time, and brittle automation breaks when they do",
+          "Because automation never needs to be updated once it's written",
+          "Because change only ever happens in testing environments",
+          "Because handling change makes automation slower for no benefit"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  {
+    "id": "w12-s4-l1",
+    "type": "lesson",
+    "title": "Playwright as a Case Study in Good Tooling",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "What made Playwright worth learning deeply",
+        "body": "Across your journey with Playwright, a few qualities stood out: clear APIs, sensible defaults (like auto-waiting), strong tooling for debugging (traces, the inspector), and patterns — like the Page Object Model and fixtures — that scale from a single test to a whole suite. These are the same qualities worth looking for in any tool you adopt."
+      },
+      {
+        "type": "text",
+        "heading": "Carrying the patterns beyond Playwright",
+        "body": "The instincts you built — isolate what changes from what stays the same, design for reuse, make failures easy to diagnose, run things in parallel safely — aren't specific to browser testing. They transfer directly to API automation, AI agent design, and software architecture decisions you'll keep making."
+      },
+      {
+        "type": "quiz",
+        "question": "Why are the patterns you learned through Playwright (like the Page Object Model and fixtures) valuable beyond browser testing specifically?",
+        "options": [
+          "They only work inside Playwright and nowhere else",
+          "They reflect general principles — reuse, isolation, maintainability — that apply to many kinds of systems",
+          "They are outdated and no longer useful",
+          "They make code run faster but teach nothing transferable"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s4-l2",
+    "type": "lesson",
+    "title": "From Test Scripts to Reliable Suites",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "What separates a script from a suite",
+        "body": "A single test script proves an idea works. A reliable suite is something else entirely — tests that are isolated from each other, produce the same result every run, fail with messages that explain what went wrong, and run efficiently enough that people actually wait for them. Getting from one to the other is mostly about discipline, not cleverness."
+      },
+      {
+        "type": "text",
+        "heading": "Trustworthiness is the real goal",
+        "body": "A test suite's biggest job is to be trusted — if tests fail unpredictably or pass when they shouldn't, people stop paying attention to them, and the whole safety net disappears. Investing in stability, clarity, and good CI integration is what keeps a suite worth having around."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the biggest risk if a test suite produces unpredictable or unreliable results?",
+        "options": [
+          "Tests run slightly slower than expected",
+          "People stop trusting and paying attention to the suite, which removes its value as a safety net",
+          "The suite automatically fixes itself",
+          "Nothing changes — unreliable suites are just as useful"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s5-l1",
+    "type": "lesson",
+    "title": "What Makes an Agent an Agent",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Beyond answering: acting and adapting",
+        "body": "An AI agent isn't just a chatbot with extra steps — it's a system that can perceive a situation, decide on an action, use tools to carry that action out, observe what happened, and adjust its plan based on the result. That loop — think, act, observe, adapt — is what turns a language model into something that can get things done."
+      },
+      {
+        "type": "text",
+        "heading": "Why the loop matters more than any single step",
+        "body": "Any individual step in that loop is fairly simple on its own; the real power comes from how they connect — a plan that adapts when a tool fails, a decision informed by what was just observed, memory that carries useful context forward. Agents are interesting because of how the parts work together, not any single part alone."
+      },
+      {
+        "type": "quiz",
+        "question": "What makes an AI agent meaningfully different from a simple chatbot?",
+        "options": [
+          "Agents only know how to answer questions, nothing more",
+          "Agents can perceive, decide, act through tools, observe results, and adapt — a full loop, not just a single response",
+          "Agents are slower and less capable than chatbots",
+          "There is no real difference between the two"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s5-l2",
+    "type": "lesson",
+    "title": "Tools, Memory, and Trust",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "The scaffolding that makes agents useful",
+        "body": "An agent is only as useful as the tools it can reach, the memory it can draw on, and the trust placed in its actions. Well-designed tools with clear purposes, memory that holds the right context without overflowing, and guardrails that keep consequential actions in human hands — these are what separate a capable agent from an unpredictable one."
+      },
+      {
+        "type": "text",
+        "heading": "MCP as the connective tissue",
+        "body": "The Model Context Protocol exists precisely to make this scaffolding manageable — giving agents a standard way to discover tools, fetch resources, and connect to the systems they need, instead of every integration being built from scratch. Understanding MCP is understanding how modern agents actually plug into the world."
+      },
+      {
+        "type": "quiz",
+        "question": "Why do tools, memory, and trust matter so much to how well an AI agent performs?",
+        "options": [
+          "They don't matter — only the underlying language model matters",
+          "They form the scaffolding that determines what an agent can actually do, remember, and be trusted to do safely",
+          "They are optional extras that agents can always do without",
+          "They only matter for agents that never take any actions"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s5-l3",
+    "type": "lesson",
+    "title": "Designing a Complete AI-Powered Solution",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Bringing every thread together",
+        "body": "A complete AI-powered automation solution draws on everything from this journey: clear prompting to communicate intent, automation principles to decide what to streamline, Playwright-style rigor to verify things work, agent design to let a system act and adapt, MCP to connect it to real tools, and architectural thinking to keep it maintainable as it grows."
+      },
+      {
+        "type": "text",
+        "heading": "Starting from the problem, not the technology",
+        "body": "The strongest solutions start by deeply understanding the problem and the people affected by it, then choosing which pieces — prompting, automation, agents, architecture — actually serve that problem. Technology is the toolkit; the problem is what decides which tools belong in the solution."
+      },
+      {
+        "type": "quiz",
+        "question": "What should drive the design of a complete AI-powered solution, according to this lesson?",
+        "options": [
+          "Using as many advanced technologies as possible, regardless of fit",
+          "A deep understanding of the problem and the people affected by it, with technology chosen to serve that problem",
+          "Picking whichever tool is newest or most popular",
+          "Avoiding any thought about who the solution is actually for"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

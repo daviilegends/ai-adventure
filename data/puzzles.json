@@ -798,5 +798,85 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w12-s2-p1",
+    "type": "puzzle",
+    "title": "Prompt Engineering Review Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "A request that goes nowhere",
+        "body": "Someone asks an AI: \"fix my code.\" They paste in 200 lines with no explanation of what's wrong, what they expected, or what they're working on. The response comes back with generic suggestions that miss the actual problem entirely — the AI had no way to know what 'fixed' would even look like."
+      },
+      {
+        "type": "text",
+        "heading": "The same request, reframed",
+        "body": "A stronger version: \"This function should return the highest score in the list, but it's returning undefined when the list is empty. Here's the function and an example input. What's causing this, and how would you fix it while keeping the same style as the rest of the file?\" Now the AI has the goal, the symptom, the context, and a constraint — everything it needs to actually help."
+      },
+      {
+        "type": "quiz",
+        "question": "What was the core problem with the original request, 'fix my code'?",
+        "options": [
+          "It included too much code",
+          "It lacked a clear goal, the specific symptom, and context the AI needed to help meaningfully",
+          "It was phrased too politely",
+          "AI tools cannot read code under any circumstances"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What does the rewritten version add that made it far more likely to produce a useful answer?",
+        "options": [
+          "Nothing — both versions are equally vague",
+          "A clear description of expected vs. actual behavior, relevant context, and a constraint to respect",
+          "A demand that the AI respond instantly",
+          "A much longer block of unrelated code"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w12-s4-p1",
+    "type": "puzzle",
+    "title": "Playwright Review Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "A suite that nobody trusts anymore",
+        "body": "A team's test suite passes about 80% of the time, fails for different reasons each run, and takes 40 minutes to finish. Engineers have started merging code without waiting for it, because \"it's probably just flaky.\" The suite still runs — but it has stopped doing its actual job."
+      },
+      {
+        "type": "text",
+        "heading": "Diagnosing what really broke",
+        "body": "The problem isn't that the suite is slow or imperfect — it's that it became untrustworthy. Shared state between tests, fragile selectors, and no clear failure messages turned a useful safety net into background noise. Rebuilding trust means isolating tests, stabilizing selectors, parallelizing safely, and making failures easy to diagnose — the exact practices from Stages 1 through 4 of your Playwright journey."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the real underlying problem with the team's test suite?",
+        "options": [
+          "It runs too quickly for anyone to notice results",
+          "It has become untrustworthy, so people have stopped relying on it",
+          "It contains too few tests to be useful",
+          "It only runs on one specific operating system"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Which combination of practices would most directly help rebuild trust in this suite?",
+        "options": [
+          "Deleting all existing tests and starting over with no plan",
+          "Isolating tests, stabilizing selectors, running safely in parallel, and making failures easy to diagnose",
+          "Running the suite even less often so failures are seen less",
+          "Removing all assertions so tests can never fail"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]
