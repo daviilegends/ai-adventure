@@ -613,5 +613,128 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w7-s1-c1",
+    "type": "challenge",
+    "title": "APIs Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What format do most modern web APIs use to exchange data?",
+        "options": [
+          "Plain text paragraphs",
+          "JSON",
+          "Spreadsheets",
+          "Images"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What does the endpoint `https://api.example.com/products/7` most likely return?",
+        "options": [
+          "A list of all products",
+          "A single product with ID 7",
+          "The number 7",
+          "An error"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What does `JSON.parse()` do?",
+        "options": [
+          "Converts a JavaScript object into JSON text",
+          "Converts JSON text into a JavaScript object",
+          "Sends a request to an API",
+          "Deletes a JSON file"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s3-c1",
+    "type": "challenge",
+    "title": "Status Codes Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "Which family of status codes indicates a successful response?",
+        "options": [
+          "1xx",
+          "2xx",
+          "4xx",
+          "5xx"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What does a `401 Unauthorized` response usually mean?",
+        "options": [
+          "The resource was deleted",
+          "You need to authenticate before accessing this resource",
+          "The server crashed",
+          "The request succeeded"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "If a request returns `500 Internal Server Error`, where does the problem most likely lie?",
+        "options": [
+          "In your request's formatting",
+          "On the server's side, while it was handling your request",
+          "In your internet connection",
+          "In the JSON you sent"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s5-c1",
+    "type": "challenge",
+    "title": "Authentication Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What question does authentication answer?",
+        "options": [
+          "What are you allowed to do?",
+          "Who are you?",
+          "How fast is the server?",
+          "What format is the data in?"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Where is an API token commonly placed when making a request?",
+        "options": [
+          "In the page's CSS",
+          "In an Authorization header",
+          "In the browser's address bar only",
+          "It cannot be sent with requests"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why do many APIs issue tokens that expire after some time rather than lasting forever?",
+        "options": [
+          "To save storage space on the server",
+          "To limit how long a leaked or stolen token remains usable",
+          "Because permanent tokens are not technically possible",
+          "To make requests faster"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

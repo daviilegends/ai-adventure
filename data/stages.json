@@ -590,5 +590,125 @@
         "nodeType": "boss"
       }
     ]
+  },
+  {
+    "id": "w7-s1",
+    "worldId": 7,
+    "order": 1,
+    "title": "What is an API?",
+    "nodes": [
+      {
+        "nodeId": "w7-s1-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s1-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s1-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s1-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w7-s2",
+    "worldId": 7,
+    "order": 2,
+    "title": "HTTP Methods",
+    "nodes": [
+      {
+        "nodeId": "w7-s2-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s2-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s2-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s2-p1",
+        "nodeType": "puzzle"
+      }
+    ]
+  },
+  {
+    "id": "w7-s3",
+    "worldId": 7,
+    "order": 3,
+    "title": "Status Codes",
+    "nodes": [
+      {
+        "nodeId": "w7-s3-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s3-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s3-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w7-s4",
+    "worldId": 7,
+    "order": 4,
+    "title": "Request Bodies",
+    "nodes": [
+      {
+        "nodeId": "w7-s4-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s4-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s4-p1",
+        "nodeType": "puzzle"
+      },
+      {
+        "nodeId": "mb-w7",
+        "nodeType": "miniboss"
+      }
+    ]
+  },
+  {
+    "id": "w7-s5",
+    "worldId": 7,
+    "order": 5,
+    "title": "Authentication",
+    "nodes": [
+      {
+        "nodeId": "w7-s5-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s5-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s5-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w7-s5-c1",
+        "nodeType": "challenge"
+      },
+      {
+        "nodeId": "b-w7",
+        "nodeType": "boss"
+      }
+    ]
   }
 ]

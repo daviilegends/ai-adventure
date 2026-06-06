@@ -398,5 +398,85 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w7-s2-p1",
+    "type": "puzzle",
+    "title": "HTTP Method Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Choosing the right verb",
+        "body": "Imagine you're building a to-do list app that talks to an API. Adding a new task means sending its details to the server so it can be stored — that's creating a brand-new resource, which calls for `POST /tasks`."
+      },
+      {
+        "type": "text",
+        "heading": "Reading, changing, and removing",
+        "body": "Once tasks exist, viewing them is `GET /tasks` (or `GET /tasks/5` for one specific task), marking one complete without touching its other fields is `PATCH /tasks/5`, and removing it entirely is `DELETE /tasks/5`. Each action maps to exactly one HTTP method because each expresses a different intent."
+      },
+      {
+        "type": "quiz",
+        "question": "Which request would you send to add a brand-new task to the list?",
+        "options": [
+          "GET /tasks",
+          "POST /tasks",
+          "DELETE /tasks",
+          "PUT /tasks/5"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Which request marks task 5 as complete without changing its title or due date?",
+        "options": [
+          "PATCH /tasks/5",
+          "GET /tasks/5",
+          "POST /tasks/5",
+          "DELETE /tasks/5"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  {
+    "id": "w7-s4-p1",
+    "type": "puzzle",
+    "title": "Request Body Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Spotting the missing piece",
+        "body": "A teammate's code isn't saving new comments:\n\nfetch('/comments', {\n  method: 'POST',\n  body: { text: 'Great post!' },\n});\n\nTwo things are missing: there's no `Content-Type` header telling the server the body is JSON, and the body itself is a raw object — `fetch` needs a string, not an object, in the `body` field."
+      },
+      {
+        "type": "text",
+        "heading": "The corrected request",
+        "body": "fetch('/comments', {\n  method: 'POST',\n  headers: { 'Content-Type': 'application/json' },\n  body: JSON.stringify({ text: 'Great post!' }),\n});\n\nNow the server receives a properly formatted JSON string and a header telling it exactly how to read it — the two pieces working together are what make the request actually succeed."
+      },
+      {
+        "type": "quiz",
+        "question": "What was wrong with the original `body: { text: 'Great post!' }` line?",
+        "options": [
+          "Nothing — it would work fine",
+          "fetch requires the body to be a string, but a raw object was passed",
+          "The text was too long",
+          "POST requests cannot have a body"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why does the corrected version add a `Content-Type: application/json` header?",
+        "options": [
+          "To make the request run faster",
+          "To tell the server how to interpret the body it receives",
+          "To authenticate the user",
+          "To prevent the request from being cached"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

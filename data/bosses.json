@@ -334,5 +334,61 @@
         "correct": true
       }
     ]
+  },
+  {
+    "id": "b-w7",
+    "type": "boss",
+    "title": "The Gatekeeper API",
+    "subtitle": "Final Boss · APIs",
+    "description": "The Gatekeeper stands between you and a fully automated workflow, testing everything you've learned about endpoints, methods, status codes, request bodies, and authentication. Only a request crafted with real understanding will get past it.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Gatekeeper.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What does an API endpoint represent?",
+        "options": [
+          "A random string of characters",
+          "A specific URL representing a resource or action",
+          "A type of error message",
+          "A programming language"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "A GET request is generally expected to retrieve data without changing anything on the server.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "A request returns status code 201. What does that most likely mean?",
+        "options": [
+          "The request failed validation",
+          "A new resource was successfully created",
+          "The server crashed",
+          "You need to log in again"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What must you do to the body of a POST request before passing it to `fetch`?",
+        "options": [
+          "Encrypt it",
+          "Convert it to a JSON string with JSON.stringify()",
+          "Convert it to an array",
+          "Nothing — objects can be sent directly"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "Including a valid Authorization header lets a server verify who is making a request before deciding whether to allow it.",
+        "correct": true
+      }
+    ]
   }
 ]

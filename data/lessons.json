@@ -1825,5 +1825,382 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w7-s1-l1",
+    "type": "lesson",
+    "title": "What is an API?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Programs talking to programs",
+        "body": "An API (Application Programming Interface) is a defined way for one piece of software to request services or data from another. It's like a restaurant menu — you don't need to know how the kitchen works, just what you can order and what you'll get back."
+      },
+      {
+        "type": "text",
+        "heading": "Web APIs and JSON",
+        "body": "Most modern web APIs communicate over HTTP and exchange data as JSON, a lightweight text format like `{\"name\": \"Mira\", \"level\": 5}` that's easy for both humans and machines to read. When a weather widget loads on a webpage, it's likely calling a weather API behind the scenes and rendering the JSON it gets back."
+      },
+      {
+        "type": "quiz",
+        "question": "What does an API let one piece of software do?",
+        "options": [
+          "Run faster than normal code",
+          "Request services or data from another piece of software through a defined interface",
+          "Replace the need for a database",
+          "Automatically test itself"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s1-l2",
+    "type": "lesson",
+    "title": "Endpoints and URLs",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Where requests go",
+        "body": "An API endpoint is a specific URL that represents a resource or action, like `https://api.example.com/users` (a list of users) or `https://api.example.com/users/42` (one specific user). The URL's structure tells you what you're asking for."
+      },
+      {
+        "type": "text",
+        "heading": "Base URLs and paths",
+        "body": "APIs usually share a common base URL, like `https://api.example.com`, with different paths branching off it — `/users`, `/orders`, `/products/7`. Reading an endpoint's path is often enough to guess what it returns, even before you make the request."
+      },
+      {
+        "type": "quiz",
+        "question": "Given the endpoint `https://api.example.com/orders/19`, what does it most likely represent?",
+        "options": [
+          "A list of all orders",
+          "A single order with ID 19",
+          "A user named 19",
+          "An error page"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s1-l3",
+    "type": "lesson",
+    "title": "Reading JSON Responses",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Data as text",
+        "body": "JSON (JavaScript Object Notation) represents data using objects (`{}`) and arrays (`[]`):\n\n{\n  \"id\": 42,\n  \"name\": \"Mira\",\n  \"skills\": [\"JavaScript\", \"Testing\"]\n}\n\nThis looks just like the JavaScript objects and arrays you already know — because JSON's syntax is based directly on them."
+      },
+      {
+        "type": "text",
+        "heading": "Parsing JSON in JavaScript",
+        "body": "When your code receives JSON as text, `JSON.parse()` converts it into a real JavaScript object you can work with: `let user = JSON.parse(responseText); console.log(user.name);` prints `\"Mira\"`. The reverse, `JSON.stringify()`, turns an object back into JSON text to send."
+      },
+      {
+        "type": "quiz",
+        "question": "Given `let data = JSON.parse('{\"name\": \"Mira\", \"level\": 5}');`, what does `data.level` equal?",
+        "options": [
+          "\"5\"",
+          "5",
+          "\"level\"",
+          "undefined"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s2-l1",
+    "type": "lesson",
+    "title": "GET and POST",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Asking for data with GET",
+        "body": "GET requests ask a server to return data without changing anything — like visiting `https://api.example.com/users` to fetch a list of users. GET requests are \"safe\": making the same one twice should produce the same result and leave no side effects."
+      },
+      {
+        "type": "text",
+        "heading": "Creating data with POST",
+        "body": "POST requests send data to the server to create something new — like submitting a sign-up form to create a new account. Unlike GET, a POST typically changes server-side state, and sending the same POST twice might create two records instead of one."
+      },
+      {
+        "type": "quiz",
+        "question": "Which HTTP method would you use to fetch a list of users without changing anything?",
+        "options": [
+          "POST",
+          "GET",
+          "DELETE",
+          "PUT"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s2-l2",
+    "type": "lesson",
+    "title": "PUT, PATCH, and DELETE",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Updating existing data",
+        "body": "PUT and PATCH both update existing resources, but differ in scope: PUT typically replaces an entire resource with new data, while PATCH updates only the fields you specify. If you only want to change a user's email, PATCH is the better fit — PUT might wipe out fields you didn't include."
+      },
+      {
+        "type": "text",
+        "heading": "Removing data",
+        "body": "DELETE requests ask the server to remove a resource, like `DELETE /users/42` to remove user 42. Like POST, DELETE changes server state — and most APIs require you to be authenticated before they'll honor one."
+      },
+      {
+        "type": "quiz",
+        "question": "If you want to update only a user's email address without affecting their other fields, which method is the better fit?",
+        "options": [
+          "PUT, because it replaces the whole resource",
+          "PATCH, because it updates only the specified fields",
+          "GET, because it retrieves data",
+          "DELETE, because it removes the resource"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s2-l3",
+    "type": "lesson",
+    "title": "Matching Methods to Actions",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "CRUD and HTTP methods",
+        "body": "Many APIs map directly onto CRUD operations — Create, Read, Update, Delete:\nCreate maps to POST, Read maps to GET, Update maps to PUT or PATCH, and Delete maps to DELETE. Recognizing this pattern makes it much easier to predict what an unfamiliar API expects."
+      },
+      {
+        "type": "text",
+        "heading": "Methods carry meaning",
+        "body": "Choosing the right method isn't just a technicality — it tells the server, and anyone reading your code, what you intend to do. A GET that secretly deletes data would violate expectations baked into the web's infrastructure, breaking caching, retries, and tooling that all assume GET is safe."
+      },
+      {
+        "type": "quiz",
+        "question": "In the CRUD pattern, which HTTP method typically corresponds to 'Create'?",
+        "options": [
+          "GET",
+          "POST",
+          "PUT",
+          "DELETE"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s3-l1",
+    "type": "lesson",
+    "title": "Status Code Categories",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Five families of responses",
+        "body": "Every HTTP response includes a 3-digit status code that summarizes what happened, grouped into five families by their first digit: 1xx (informational), 2xx (success), 3xx (redirection), 4xx (client error — you made a mistake), and 5xx (server error — the server made a mistake). The family alone tells you a lot before you even read the details."
+      },
+      {
+        "type": "text",
+        "heading": "The codes you'll see most",
+        "body": "Day to day, you'll mostly meet `200 OK` (success), `201 Created` (a new resource was made), `400 Bad Request` (your request was malformed), `401 Unauthorized` (you need to authenticate), `404 Not Found` (the resource doesn't exist), and `500 Internal Server Error` (something broke server-side)."
+      },
+      {
+        "type": "quiz",
+        "question": "A response comes back with status code 404. What does that tell you?",
+        "options": [
+          "The request succeeded and created something",
+          "The requested resource could not be found",
+          "The server crashed",
+          "You need to wait and retry"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s3-l2",
+    "type": "lesson",
+    "title": "Diagnosing Failures by Code",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Whose fault is it?",
+        "body": "The first digit of a status code tells you where to look when something goes wrong. A `4xx` code means the request itself was the problem — a typo in the URL, missing authentication, invalid data — so fixing it means changing what you send. A `5xx` code means the server failed while handling a valid request, so the fix is on the server's side."
+      },
+      {
+        "type": "text",
+        "heading": "Reading codes alongside messages",
+        "body": "Status codes are deliberately terse, so APIs usually pair them with a JSON body explaining what went wrong, like `{\"error\": \"Email is required\"}`. Combining the code's category with that message tells you both *who* needs to act and *what* needs to change."
+      },
+      {
+        "type": "quiz",
+        "question": "You send a request and get back `400 Bad Request`. Where should you look first to fix the problem?",
+        "options": [
+          "The server's database",
+          "Your own request — something about it was malformed or invalid",
+          "Your internet connection",
+          "The API's hosting provider"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s4-l1",
+    "type": "lesson",
+    "title": "Sending Data in a Request Body",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Beyond the URL",
+        "body": "GET requests typically carry all their information in the URL, but POST, PUT, and PATCH requests usually carry a request body — a chunk of data (often JSON) sent along with the request. Creating a new user might mean sending `{\"name\": \"Mira\", \"email\": \"mira@example.com\"}` as the body of a POST request."
+      },
+      {
+        "type": "text",
+        "heading": "Headers tell the server what to expect",
+        "body": "Alongside a body, requests include headers — metadata about the request. The `Content-Type: application/json` header tells the server \"the body you're about to read is JSON,\" so it knows how to parse it. Forgetting this header is a common source of confusing \"why isn't my data being saved?\" bugs."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the purpose of a request body in a POST request?",
+        "options": [
+          "To specify which browser sent the request",
+          "To carry the data being sent to the server, such as a new resource's details",
+          "To store the server's response",
+          "To redirect the user to another page"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s4-l2",
+    "type": "lesson",
+    "title": "Making Requests with fetch",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "fetch and request options",
+        "body": "JavaScript's `fetch()` function sends HTTP requests. A GET is as simple as `fetch('/users')`, but a POST needs more detail:\n\nfetch('/users', {\n  method: 'POST',\n  headers: { 'Content-Type': 'application/json' },\n  body: JSON.stringify({ name: 'Mira', email: 'mira@example.com' }),\n});\n\nThe `body` must be a string, which is why `JSON.stringify()` converts the JavaScript object into JSON text first."
+      },
+      {
+        "type": "text",
+        "heading": "Handling the response",
+        "body": "`fetch()` returns a promise that resolves to a response object, which itself has a `.json()` method for parsing the body:\n\nfetch('/users/42')\n  .then(response => response.json())\n  .then(user => console.log(user.name));\n\nThis two-step \"get the response, then parse its body\" pattern shows up in nearly every fetch call you'll write."
+      },
+      {
+        "type": "quiz",
+        "question": "In the POST example above, why is `JSON.stringify()` used on the data before sending it?",
+        "options": [
+          "Because fetch() requires the body to be a string, and stringify converts the object to JSON text",
+          "Because it encrypts the data",
+          "Because it changes GET to POST",
+          "Because it validates the email address"
+        ],
+        "correct": 0
+      }
+    ]
+  },
+  {
+    "id": "w7-s5-l1",
+    "type": "lesson",
+    "title": "Why APIs Require Authentication",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Proving who you are",
+        "body": "Authentication is how an API verifies who's making a request — telling a legitimate user apart from a stranger. Without it, anyone could read private data or make changes on someone else's behalf, simply by knowing an endpoint's URL."
+      },
+      {
+        "type": "text",
+        "heading": "Authentication vs. authorization",
+        "body": "Authentication answers \"who are you?\"; authorization answers \"what are you allowed to do?\" A logged-in user is authenticated, but might still be denied access to an admin-only endpoint — that's authorization deciding they lack permission, even though the system knows exactly who they are."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the difference between authentication and authorization?",
+        "options": [
+          "They mean exactly the same thing",
+          "Authentication verifies who you are; authorization decides what you're allowed to do",
+          "Authentication is for APIs; authorization is for websites",
+          "Authorization happens first, then authentication"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s5-l2",
+    "type": "lesson",
+    "title": "API Keys and Tokens",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Proving identity with a key",
+        "body": "An API key is a unique string that identifies whoever is making a request — often included in a header like `Authorization: Bearer abc123xyz` or as a query parameter. The server checks the key against its records, treating an invalid or missing key as a reason to reject the request with `401 Unauthorized`."
+      },
+      {
+        "type": "text",
+        "heading": "Tokens and expiration",
+        "body": "Many modern APIs use tokens — temporary credentials issued after a successful login, often with an expiration time. When a token expires, the client must obtain a new one, often by logging in again or using a \"refresh token\" — limiting how long a stolen credential stays useful."
+      },
+      {
+        "type": "quiz",
+        "question": "Why might an API issue a token that expires after a set time, instead of one that lasts forever?",
+        "options": [
+          "To make the API run faster",
+          "To limit how long a stolen or leaked credential could be used",
+          "Because tokens cannot be stored otherwise",
+          "To reduce the size of JSON responses"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w7-s5-l3",
+    "type": "lesson",
+    "title": "Sending Authenticated Requests",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Attaching credentials to a request",
+        "body": "To make an authenticated request with `fetch`, you typically add an `Authorization` header carrying the token:\n\nfetch('/profile', {\n  headers: { 'Authorization': 'Bearer abc123xyz' },\n});\n\nThe server reads this header, validates the token, and — if it checks out — returns the requested data tied to that account."
+      },
+      {
+        "type": "text",
+        "heading": "What happens when credentials are missing or invalid",
+        "body": "If the token is missing, expired, or invalid, the server typically responds with `401 Unauthorized`. A well-built client checks for this status and responds gracefully — for example, redirecting the user to a login screen — rather than showing a confusing blank page."
+      },
+      {
+        "type": "quiz",
+        "question": "What status code would you expect if you send a request with an expired or missing authentication token?",
+        "options": [
+          "200 OK",
+          "201 Created",
+          "401 Unauthorized",
+          "500 Internal Server Error"
+        ],
+        "correct": 2
+      }
+    ]
   }
 ]

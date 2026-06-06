@@ -158,5 +158,45 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "mb-w7",
+    "type": "miniboss",
+    "title": "The Endpoint Enforcer",
+    "subtitle": "Stage Checkpoint · APIs",
+    "description": "The Enforcer guards every endpoint along the path to Authentication, checking whether you truly understand methods, status codes, and how data travels in a request. Slip up here, and it sends your request right back.",
+    "objective": "Answer at least 2 of 3 questions correctly to pass the checkpoint.",
+    "passThreshold": 0.67,
+    "xpReward": 60,
+    "coinsReward": 25,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "Which HTTP method should you use to permanently remove a resource from a server?",
+        "options": [
+          "GET",
+          "POST",
+          "DELETE",
+          "PATCH"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "true-false",
+        "question": "A status code in the 5xx range means the problem is with the request you sent, not the server.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What does `fetch()` return when you call it?",
+        "options": [
+          "The parsed JSON immediately",
+          "A promise that resolves to a response object",
+          "A string of HTML",
+          "An error"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]
