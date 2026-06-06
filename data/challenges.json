@@ -490,5 +490,128 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w6-s1-c1",
+    "type": "challenge",
+    "title": "Fixtures Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "Which built-in Playwright fixture represents a single browser tab?",
+        "options": [
+          "browser",
+          "context",
+          "page",
+          "test"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "What problem do fixtures primarily solve?",
+        "options": [
+          "Making assertions optional",
+          "Repeating setup code across many tests",
+          "Slowing down test execution",
+          "Removing the need for a browser"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "If two tests both need a logged-in user, what's the cleanest way to avoid duplicating the login steps?",
+        "options": [
+          "Copy and paste the login code into each test",
+          "Write a custom fixture that performs the login and provides a ready page",
+          "Run the tests one at a time manually",
+          "Disable login during tests"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s3-c1",
+    "type": "challenge",
+    "title": "Data-Driven Testing Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What is the main advantage of generating tests from an array of data, compared to writing one test per case by hand?",
+        "options": [
+          "It hides failures so the suite always passes",
+          "Adding a new case means adding one entry instead of duplicating a whole test",
+          "It makes the browser run in headless mode",
+          "It removes the need for assertions"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Given `const nums = [2, 4, 6]; nums.forEach(n => { test(`checks ${n}`, async () => {}); });`, how many tests are generated?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "6"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "quiz",
+        "question": "Why is naming each generated test with a template string like `rejects invalid email: ${email}` useful?",
+        "options": [
+          "It makes the test run faster",
+          "It lets failure reports show exactly which input caused the failure",
+          "It is required by JavaScript syntax",
+          "It hides the input value from the report"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s5-c1",
+    "type": "challenge",
+    "title": "CI/CD Challenge",
+    "xpReward": 35,
+    "steps": [
+      {
+        "type": "quiz",
+        "question": "What is the main goal of running a test suite automatically in a CI pipeline?",
+        "options": [
+          "To replace the need for writing tests",
+          "To catch regressions automatically every time code changes",
+          "To make the application run faster in production",
+          "To generate documentation"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "Why do CI configurations commonly forbid `test.only` from being committed (e.g. `forbidOnly: !!process.env.CI`)?",
+        "options": [
+          "Because test.only is slower than running the full suite",
+          "Because a forgotten test.only would silently skip the rest of the suite in CI",
+          "Because CI servers cannot run more than one test",
+          "Because test.only is not valid JavaScript"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What is a Playwright trace primarily used for?",
+        "options": [
+          "Speeding up test execution",
+          "Stepping through a recorded run to debug exactly what happened during a failure",
+          "Writing new test cases automatically",
+          "Deploying the application to production"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

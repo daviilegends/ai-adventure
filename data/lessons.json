@@ -1448,5 +1448,382 @@
         "correct": 1
       }
     ]
+  },
+  {
+    "id": "w6-s1-l1",
+    "type": "lesson",
+    "title": "What Are Fixtures?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Setting the stage for tests",
+        "body": "A fixture is a reusable block that prepares a known environment before a test runs and cleans up afterward — logging in a user, opening a page, seeding data — so each test starts from a consistent state without repeating the same setup steps over and over."
+      },
+      {
+        "type": "text",
+        "heading": "Why not just repeat the setup code?",
+        "body": "Copy-pasting setup into every test file works at first, but the moment that setup needs to change — say, the login flow gains a new field — you'd have to update every single test that uses it. Fixtures keep that logic in one place, so a single change ripples out automatically."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the main purpose of a fixture in testing?",
+        "options": [
+          "To slow tests down for accuracy",
+          "To provide a consistent, reusable setup and teardown for tests",
+          "To replace the need for assertions",
+          "To generate random test data"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s1-l2",
+    "type": "lesson",
+    "title": "Playwright's Built-in Fixtures",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "page, browser, and context",
+        "body": "Playwright Test ships with built-in fixtures like `page` (a single browser tab), `context` (an isolated browser session), and `browser` (the running browser instance). Most tests only need `page`: `test('loads homepage', async ({ page }) => { await page.goto('/'); });` — Playwright creates and tears it down for you automatically."
+      },
+      {
+        "type": "text",
+        "heading": "Why isolation matters",
+        "body": "Each test gets a fresh `context` and `page` by default, so cookies, local storage, and session state from one test never leak into another. That isolation is what lets a suite of hundreds of tests run without one test's leftover state quietly breaking the next."
+      },
+      {
+        "type": "quiz",
+        "question": "Why does each Playwright test get a fresh `page` and `context` by default?",
+        "options": [
+          "To make tests run slower",
+          "So tests don't interfere with each other through shared state",
+          "Because browsers can only open one page at a time",
+          "To save memory on the test server"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s1-l3",
+    "type": "lesson",
+    "title": "Writing a Custom Fixture",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Extending the base test",
+        "body": "When several tests need the same setup — like a logged-in user — you can define a custom fixture by extending Playwright's `test`:\n\nconst test = base.extend({\n  loggedInPage: async ({ page }, use) => {\n    await page.goto('/login');\n    await page.fill('#username', 'demo');\n    await page.click('#submit');\n    await use(page);\n  },\n});\n\nNow any test can request `loggedInPage` and start out already authenticated."
+      },
+      {
+        "type": "text",
+        "heading": "The role of `use`",
+        "body": "The `use` function is how a fixture hands control to the test. Code written before `await use(page)` is the setup; code written after it (if any) is the teardown, run once the test finishes. Keeping setup and cleanup tied together in one block makes fixtures easy to read and trust."
+      },
+      {
+        "type": "quiz",
+        "question": "In a custom fixture, what does the code written AFTER `await use(page)` represent?",
+        "options": [
+          "Code that runs before the test starts",
+          "Teardown code that runs after the test finishes",
+          "Code that never executes",
+          "An error handler"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s2-l1",
+    "type": "lesson",
+    "title": "What is the Page Object Model?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Wrapping pages in objects",
+        "body": "The Page Object Model (POM) is a design pattern where each page (or component) of an app gets its own class that wraps its elements and actions. Instead of scattering raw selectors through every test, a test calls a readable method like `loginPage.login('demo', 'pass123')`."
+      },
+      {
+        "type": "text",
+        "heading": "Why it pays off",
+        "body": "When the UI changes — a button's selector, a form's layout — you update the page object once, and every test built on top of it keeps working. POM keeps tests focused on *what* they're checking, not *how* to find and click things."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the main benefit of the Page Object Model?",
+        "options": [
+          "It makes tests run in parallel automatically",
+          "It centralizes page interactions so UI changes only require one update",
+          "It removes the need for fixtures",
+          "It makes selectors case-insensitive"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s2-l2",
+    "type": "lesson",
+    "title": "Building a Page Object",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Anatomy of a page object",
+        "body": "A page object is typically a class that takes a `page` in its constructor and exposes methods for the actions a user can take:\n\nclass LoginPage {\n  constructor(page) {\n    this.page = page;\n    this.username = page.locator('#username');\n    this.password = page.locator('#password');\n    this.submit = page.locator('#submit');\n  }\n  async login(user, pass) {\n    await this.username.fill(user);\n    await this.password.fill(pass);\n    await this.submit.click();\n  }\n}"
+      },
+      {
+        "type": "text",
+        "heading": "Locators as properties",
+        "body": "Storing locators as properties (like `this.username`) means each selector is defined exactly once. If the username field's ID changes from `#username` to `#user-input`, you update one line inside the page object — not every test that touches the login form."
+      },
+      {
+        "type": "quiz",
+        "question": "In the LoginPage example, what does calling `loginPage.login('demo', 'pass123')` do?",
+        "options": [
+          "Opens a new browser window",
+          "Fills the username and password fields and clicks submit",
+          "Creates a new user account",
+          "Returns the page's HTML"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s2-l3",
+    "type": "lesson",
+    "title": "Using Page Objects in Tests",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Tests that read like user stories",
+        "body": "With page objects in place, a test becomes a short, readable sequence of intentions:\n\ntest('user can log in', async ({ page }) => {\n  const loginPage = new LoginPage(page);\n  await loginPage.login('demo', 'pass123');\n  await expect(page.locator('.welcome')).toBeVisible();\n});\n\nAnyone reading this — even without deep Playwright knowledge — can follow what's being verified."
+      },
+      {
+        "type": "text",
+        "heading": "Composing multiple page objects",
+        "body": "Larger flows often span several pages. A checkout test might lean on a `CartPage`, then a `CheckoutPage`, then an `OrderConfirmationPage` — each handling its own piece, while the test stitches the whole story together step by step."
+      },
+      {
+        "type": "quiz",
+        "question": "Why is `await loginPage.login('demo', 'pass123')` easier to read than raw selector calls in the test?",
+        "options": [
+          "Because it hides what the test is actually checking",
+          "Because it expresses the user's intent without exposing selector details",
+          "Because it runs faster than raw selectors",
+          "Because it skips the assertion step"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s3-l1",
+    "type": "lesson",
+    "title": "Why Data-Driven Tests?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "One test, many inputs",
+        "body": "Data-driven testing means running the same test logic against a list of different inputs, instead of writing a near-identical test for each case. To check that a login form rejects five invalid email formats, you don't write five tests — you write one test and feed it five values."
+      },
+      {
+        "type": "text",
+        "heading": "Less duplication, easier maintenance",
+        "body": "When the assertion logic changes, you update it in one place instead of five. And adding a new case is as simple as adding one more entry to the data list — no copy-pasting an entire test block just to check one more input."
+      },
+      {
+        "type": "quiz",
+        "question": "What is the core idea behind data-driven testing?",
+        "options": [
+          "Running tests faster by skipping setup",
+          "Reusing one test's logic across multiple sets of input data",
+          "Testing only with real production data",
+          "Avoiding the use of fixtures"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s3-l2",
+    "type": "lesson",
+    "title": "Looping Over Test Data with forEach",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Generating tests from an array",
+        "body": "Playwright lets you build tests in a loop by calling `test()` inside a `forEach`:\n\nconst invalidEmails = ['plainaddress', 'missing@dot', '@nodomain.com'];\ninvalidEmails.forEach(email => {\n  test(`rejects invalid email: ${email}`, async ({ page }) => {\n    await page.fill('#email', email);\n    await page.click('#submit');\n    await expect(page.locator('.error')).toBeVisible();\n  });\n});\n\nThis produces three separate, individually reportable tests from one block of code."
+      },
+      {
+        "type": "text",
+        "heading": "Readable failure reports",
+        "body": "Because each generated test gets its own name from the template string, a failure clearly tells you *which* input broke things — `rejects invalid email: missing@dot` — instead of leaving you to guess which of several checks inside one giant test went wrong."
+      },
+      {
+        "type": "quiz",
+        "question": "In the example above, how many separate tests does Playwright generate from the `invalidEmails` array?",
+        "options": [
+          "One",
+          "Two",
+          "Three",
+          "It depends on the browser"
+        ],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "w6-s4-l1",
+    "type": "lesson",
+    "title": "Running Tests in Parallel",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Many tests, at the same time",
+        "body": "Instead of running test files one after another, Playwright can run many of them at once across multiple \"workers\" — separate processes that each handle a slice of the suite. A suite that takes 20 minutes serially might finish in 4 minutes spread across 5 workers."
+      },
+      {
+        "type": "text",
+        "heading": "Configuring workers",
+        "body": "You control parallelism through configuration, such as `workers: 4` in `playwright.config.js`, or a flag like `npx playwright test --workers=4`. More workers can mean faster runs, but each one consumes CPU and memory, so the right number depends on the machine or CI runner."
+      },
+      {
+        "type": "quiz",
+        "question": "What is a 'worker' in the context of running Playwright tests in parallel?",
+        "options": [
+          "A person who writes the tests",
+          "A separate process that runs a portion of the test suite concurrently",
+          "A type of browser fixture",
+          "A function that retries failed tests"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s4-l2",
+    "type": "lesson",
+    "title": "Test Isolation Across Workers",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Why shared state breaks parallel runs",
+        "body": "If two tests running at the same time both try to create a user named `\"testuser\"` in the same database, one will likely fail — not because the feature is broken, but because the tests collided. Parallel execution only works reliably when tests don't depend on shared, mutable state."
+      },
+      {
+        "type": "text",
+        "heading": "Designing for isolation",
+        "body": "Common fixes include generating unique data per test (like `testuser-${Date.now()}`), using separate accounts or databases per worker, and avoiding tests that depend on the order or side effects of other tests. A well-isolated test passes whether it runs alone or alongside a hundred others."
+      },
+      {
+        "type": "quiz",
+        "question": "Why might two tests fail when run in parallel, even though each passes fine on its own?",
+        "options": [
+          "Playwright doesn't support parallel execution",
+          "They may be colliding over shared, mutable state like a database record",
+          "Parallel tests always run in a different browser",
+          "Workers cannot access the network"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s5-l1",
+    "type": "lesson",
+    "title": "What is CI/CD?",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Continuous Integration, Continuous Delivery",
+        "body": "CI/CD is the practice of automatically building, testing, and often deploying code every time it changes — usually triggered by pushing to a shared repository. Continuous Integration (CI) means automatically running your test suite on every change; Continuous Delivery/Deployment (CD) means automatically preparing or shipping the verified result."
+      },
+      {
+        "type": "text",
+        "heading": "Why automated tests matter here",
+        "body": "A CI pipeline is only as trustworthy as the tests it runs. Automated Playwright tests give it a fast, repeatable way to answer \"does this change break anything in the browser?\" before a human ever looks — catching regressions within minutes of a push."
+      },
+      {
+        "type": "quiz",
+        "question": "In CI/CD, what does 'CI' (Continuous Integration) primarily refer to?",
+        "options": [
+          "Automatically deploying code to production",
+          "Automatically building and running tests every time code changes",
+          "Writing documentation automatically",
+          "Manually reviewing every pull request"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s5-l2",
+    "type": "lesson",
+    "title": "Configuring Playwright for CI",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Running headless and reproducibly",
+        "body": "CI servers don't have a visible screen, so tests run \"headless\" — the browser runs without a graphical window, which is also Playwright's default. A typical CI step installs dependencies, installs browsers with `npx playwright install --with-deps`, and then runs `npx playwright test`."
+      },
+      {
+        "type": "text",
+        "heading": "Settings that matter in CI",
+        "body": "CI configurations often differ from local ones — enabling retries for flaky network conditions (`retries: 2`), limiting workers to match the runner's CPU count, and forbidding `test.only` so a forgotten \"focus on this test\" line can't silently skip the rest of the suite (`forbidOnly: !!process.env.CI`)."
+      },
+      {
+        "type": "quiz",
+        "question": "Why do Playwright tests typically run in 'headless' mode on a CI server?",
+        "options": [
+          "Headless mode runs tests more slowly on purpose",
+          "CI servers have no graphical display, so the browser runs without a visible window",
+          "Headless mode is required to use page objects",
+          "It disables all assertions"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s5-l3",
+    "type": "lesson",
+    "title": "Reading Reports and Artifacts",
+    "xpReward": 20,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "What a test run leaves behind",
+        "body": "When a CI run finishes, Playwright can produce an HTML report summarizing every test's outcome, plus \"artifacts\" like screenshots, videos, and traces captured at the moment of failure. These let you see exactly what the browser looked like when something broke — without reproducing it locally."
+      },
+      {
+        "type": "text",
+        "heading": "Using traces to debug failures",
+        "body": "A Playwright trace is a step-by-step recording of a run — every action, network request, and DOM snapshot — that you can open in the Trace Viewer and scrub through like a video. For a test that fails only in CI and never locally, a trace is often the fastest way to see what really happened."
+      },
+      {
+        "type": "quiz",
+        "question": "Why are screenshots, videos, and traces especially useful for tests that fail only in CI?",
+        "options": [
+          "They make the test suite run faster",
+          "They let you see exactly what happened during the failure without needing to reproduce it locally",
+          "They automatically fix the failing test",
+          "They replace the need for assertions"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

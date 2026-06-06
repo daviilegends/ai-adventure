@@ -278,5 +278,61 @@
         "correct": true
       }
     ]
+  },
+  {
+    "id": "b-w6",
+    "type": "boss",
+    "title": "The Pipeline Overlord",
+    "subtitle": "Final Boss · Advanced Playwright",
+    "description": "The Overlord runs an endless automated pipeline, and only a tester who has mastered fixtures, page objects, data-driven design, parallel execution, and CI/CD can keep pace with it. This battle draws on everything from the world to test whether your suite is truly production-ready.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Overlord.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What problem do custom fixtures solve when several tests need the same setup, like a logged-in user?",
+        "options": [
+          "They make the browser open faster",
+          "They let you define the setup once and reuse it across tests",
+          "They remove the need for assertions entirely",
+          "They automatically translate the UI"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "In the Page Object Model, tests should call descriptive methods like `loginPage.login(...)` instead of repeating raw selectors.",
+        "correct": true
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What does looping over an array of inputs with `forEach` and `test()` produce?",
+        "options": [
+          "A single test that checks all inputs at once",
+          "One generated test per item in the array",
+          "A syntax error",
+          "A fixture"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the safest way to avoid collisions when the same test runs in many parallel workers?",
+        "options": [
+          "Disable parallel execution entirely",
+          "Use shared, fixed data for every run",
+          "Generate unique data per run, such as appending a timestamp",
+          "Run all workers against production"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "true-false",
+        "question": "Playwright tests typically run headless in CI because CI servers don't have a graphical display.",
+        "correct": true
+      }
+    ]
   }
 ]

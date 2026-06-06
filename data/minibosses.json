@@ -118,5 +118,45 @@
         "correct": 2
       }
     ]
+  },
+  {
+    "id": "mb-w6",
+    "type": "miniboss",
+    "title": "The Parallel Phantom",
+    "subtitle": "Stage Checkpoint · Advanced Playwright",
+    "description": "The Phantom splits into copies of itself, daring you to keep your tests straight when everything runs at once. Prove you understand fixtures, page objects, and what it really takes for tests to survive running side by side.",
+    "objective": "Answer at least 2 of 3 questions correctly to pass the checkpoint.",
+    "passThreshold": 0.67,
+    "xpReward": 60,
+    "coinsReward": 25,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What does the `page` fixture in a Playwright test represent?",
+        "options": [
+          "The entire browser application",
+          "A single browser tab, isolated from other tests",
+          "A test data file",
+          "A CI/CD pipeline step"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "The Page Object Model means writing raw CSS selectors directly inside every test.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Why is generating unique test data (like appending a timestamp) important when running tests in parallel?",
+        "options": [
+          "It makes the test file shorter",
+          "It prevents multiple parallel runs from colliding over the same shared data",
+          "It is required by Playwright's syntax",
+          "It disables retries"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]

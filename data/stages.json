@@ -470,5 +470,125 @@
         "nodeType": "boss"
       }
     ]
+  },
+  {
+    "id": "w6-s1",
+    "worldId": 6,
+    "order": 1,
+    "title": "Fixtures",
+    "nodes": [
+      {
+        "nodeId": "w6-s1-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s1-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s1-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s1-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w6-s2",
+    "worldId": 6,
+    "order": 2,
+    "title": "Page Object Model",
+    "nodes": [
+      {
+        "nodeId": "w6-s2-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s2-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s2-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s2-p1",
+        "nodeType": "puzzle"
+      }
+    ]
+  },
+  {
+    "id": "w6-s3",
+    "worldId": 6,
+    "order": 3,
+    "title": "Data-Driven Testing",
+    "nodes": [
+      {
+        "nodeId": "w6-s3-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s3-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s3-c1",
+        "nodeType": "challenge"
+      }
+    ]
+  },
+  {
+    "id": "w6-s4",
+    "worldId": 6,
+    "order": 4,
+    "title": "Parallel Execution",
+    "nodes": [
+      {
+        "nodeId": "w6-s4-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s4-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s4-p1",
+        "nodeType": "puzzle"
+      },
+      {
+        "nodeId": "mb-w6",
+        "nodeType": "miniboss"
+      }
+    ]
+  },
+  {
+    "id": "w6-s5",
+    "worldId": 6,
+    "order": 5,
+    "title": "CI/CD Integration",
+    "nodes": [
+      {
+        "nodeId": "w6-s5-l1",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s5-l2",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s5-l3",
+        "nodeType": "lesson"
+      },
+      {
+        "nodeId": "w6-s5-c1",
+        "nodeType": "challenge"
+      },
+      {
+        "nodeId": "b-w6",
+        "nodeType": "boss"
+      }
+    ]
   }
 ]

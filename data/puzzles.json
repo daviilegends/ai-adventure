@@ -318,5 +318,85 @@
         "correct": 2
       }
     ]
+  },
+  {
+    "id": "w6-s2-p1",
+    "type": "puzzle",
+    "title": "Page Object Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Spotting what belongs in a page object",
+        "body": "Suppose a test repeats this block across five different test files:\n\nawait page.fill('#search-input', 'laptop');\nawait page.click('#search-button');\nawait expect(page.locator('.results-count')).toBeVisible();\n\nThe natural fix is to wrap these steps in a `SearchPage` class with a `search(term)` method and a `resultsCount` locator — turning five copies of the same selectors into a single source of truth."
+      },
+      {
+        "type": "text",
+        "heading": "From raw steps to a method",
+        "body": "class SearchPage {\n  constructor(page) {\n    this.page = page;\n    this.input = page.locator('#search-input');\n    this.button = page.locator('#search-button');\n    this.resultsCount = page.locator('.results-count');\n  }\n  async search(term) {\n    await this.input.fill(term);\n    await this.button.click();\n  }\n}\n\nNow every test calls `await searchPage.search('laptop')` and checks `searchPage.resultsCount` — five files' worth of selectors live in exactly one place."
+      },
+      {
+        "type": "quiz",
+        "question": "If the search input's selector changes from `#search-input` to `#searchBox`, how many places need updating when using the `SearchPage` class above?",
+        "options": [
+          "Five — once per test file",
+          "One — inside the SearchPage class",
+          "Zero — Playwright updates it automatically",
+          "Every test and the page object"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "What does calling `searchPage.search('laptop')` do, based on the class definition above?",
+        "options": [
+          "Opens a new browser tab",
+          "Fills the search input with 'laptop' and clicks the search button",
+          "Returns the number of results as text",
+          "Logs in the user"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "w6-s4-p1",
+    "type": "puzzle",
+    "title": "Parallel Execution Puzzle",
+    "xpReward": 40,
+    "steps": [
+      {
+        "type": "text",
+        "heading": "Spotting a parallel-unsafe test",
+        "body": "Consider this test:\n\ntest('creates a project', async ({ page }) => {\n  await page.fill('#project-name', 'Demo Project');\n  await page.click('#create');\n  await expect(page.locator('.project-list')).toContainText('Demo Project');\n});\n\nIf this runs in five parallel workers at once, all five try to create a project named exactly \"Demo Project\". Depending on how the app handles duplicates, some runs may collide or fail for reasons that have nothing to do with a real bug."
+      },
+      {
+        "type": "text",
+        "heading": "Making it isolation-safe",
+        "body": "A safer version generates a unique name per run:\n\ntest('creates a project', async ({ page }) => {\n  const name = `Demo Project ${Date.now()}`;\n  await page.fill('#project-name', name);\n  await page.click('#create');\n  await expect(page.locator('.project-list')).toContainText(name);\n});\n\nNow every parallel run creates and checks for its own uniquely named project, so the tests can't collide no matter how many run at once."
+      },
+      {
+        "type": "quiz",
+        "question": "What's the risk of the first version of the test running in multiple parallel workers?",
+        "options": [
+          "It will run twice as fast",
+          "All workers may try to create a project with the same name and collide",
+          "Playwright will refuse to run it",
+          "It will use less memory"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "quiz",
+        "question": "How does adding `Date.now()` to the project name fix the parallel execution problem?",
+        "options": [
+          "It makes the test run faster",
+          "It gives each parallel run a unique name, preventing collisions",
+          "It disables parallel execution for this test",
+          "It skips the assertion step"
+        ],
+        "correct": 1
+      }
+    ]
   }
 ]
