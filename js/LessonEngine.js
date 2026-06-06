@@ -1,19 +1,17 @@
 const LessonEngine = {
   _lessons: [],
   _worlds: [],
-  _quizzes: [],
   _current: null,
   _stepIndex: 0,
+  _pendingBossHandler: null,
 
   async load() {
-    const [lessons, worlds, quizzes] = await Promise.all([
+    const [lessons, worlds] = await Promise.all([
       fetch('data/lessons.json').then(r => r.json()),
       fetch('data/worlds.json').then(r => r.json()),
-      fetch('data/quizzes.json').then(r => r.json()),
     ]);
     this._lessons = lessons;
     this._worlds = worlds;
-    this._quizzes = quizzes;
     this._syncWorldUnlocks();
   },
 
@@ -65,10 +63,18 @@ const LessonEngine = {
   },
 
   _startBoss(lesson) {
-    const quiz = this._quizzes.find(q => q.id === lesson.quizId);
-    if (!quiz) return;
+    if (!lesson.bossId) return;
 
-    document.addEventListener('quiz:completed', () => {
+    // Remove any stale handler from a previously abandoned boss attempt
+    if (this._pendingBossHandler) {
+      document.removeEventListener('boss:completed', this._pendingBossHandler);
+    }
+
+    const handler = (e) => {
+      if (e.detail.boss.id !== lesson.bossId) return;
+      document.removeEventListener('boss:completed', handler);
+      this._pendingBossHandler = null;
+
       const player = State.get();
       if (!player.completedLessons.includes(lesson.id)) {
         State.set({ completedLessons: [...player.completedLessons, lesson.id] });
@@ -76,9 +82,11 @@ const LessonEngine = {
         this._checkWorldUnlock(lesson.worldId);
       }
       document.dispatchEvent(new CustomEvent('lesson:completed', { detail: { lesson } }));
-    }, { once: true });
+    };
 
-    QuizEngine.start(quiz);
+    this._pendingBossHandler = handler;
+    document.addEventListener('boss:completed', handler);
+    BossEngine.start(lesson.bossId);
   },
 
   _dispatchStep() {

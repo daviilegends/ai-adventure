@@ -166,7 +166,6 @@
     "order": 3,
     "title": "Boss Battle",
     "type": "boss",
-    "quizId": "q-w1",
-    "xpReward": 0
+    "bossId": "b-w1"
   }
 ]

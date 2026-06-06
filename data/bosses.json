@@ -1,0 +1,58 @@
+[
+  {
+    "id": "b-w1",
+    "worldId": 1,
+    "title": "The AI Guardian",
+    "subtitle": "Final Challenge · AI Foundations",
+    "description": "You have studied the fundamentals. Now face the Guardian — an ancient intelligence that tests only those ready to advance. Prove your knowledge to unlock the next world.",
+    "objective": "Answer at least 3 of 5 challenges correctly to defeat the Guardian.",
+    "passThreshold": 0.6,
+    "xpReward": 100,
+    "coinsReward": 50,
+    "challenges": [
+      {
+        "type": "multiple-choice",
+        "question": "What does AI stand for?",
+        "options": [
+          "Automated Integration",
+          "Artificial Intelligence",
+          "Advanced Interface",
+          "Autonomous Interaction"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "true-false",
+        "question": "An LLM generates responses by searching the internet in real time.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "What is the main thing an LLM learns to do during training?",
+        "options": [
+          "Memorize facts from Wikipedia",
+          "Translate languages",
+          "Predict the next token in a sequence",
+          "Execute code"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "true-false",
+        "question": "A vague prompt is likely to produce a more creative and useful response.",
+        "correct": false
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which of these is a key element of a well-structured prompt?",
+        "options": [
+          "Using as few words as possible",
+          "Providing a role, clear instructions, and the input",
+          "Avoiding any context to keep the model unbiased",
+          "Always asking the model to guess the format"
+        ],
+        "correct": 1
+      }
+    ]
+  }
+]

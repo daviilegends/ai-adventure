@@ -7,6 +7,7 @@ const DEFAULT_STATE = {
   coins: 0,
   streak: 0,
   completedLessons: [],
+  completedBosses: {},
   unlockedWorlds: [1],
   createdAt: null,
   lastActiveAt: null,
